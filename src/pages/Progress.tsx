@@ -1,4 +1,4 @@
-import { Trophy, Award, Target, TrendingUp, BookOpen, Gamepad2, GraduationCap, Calendar } from 'lucide-react'
+import { Trophy, Award, Target, TrendingUp, BookOpen, Gamepad2, GraduationCap, Calendar, Star, Lock, CheckCircle } from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
 
 const Progress = () => {
@@ -53,39 +53,42 @@ const Progress = () => {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="text-center space-y-2 mb-8">
-        <h2 className="section-title">Your Progress</h2>
-        <p className="text-gray-600 text-lg">
-          Track your learning journey and celebrate achievements
+      {/* Header */}
+      <div className="text-center space-y-4 max-w-3xl mx-auto">
+        <h1 className="section-title">Your Learning Progress</h1>
+        <p className="section-subtitle">
+          Track your achievements and see how far you've come
         </p>
       </div>
 
       {/* Level Card */}
-      <div className="card bg-gradient-to-br from-primary-500 via-accent-500 to-purple-500 text-white">
-        <div className="flex items-center justify-between mb-6">
-          <div>
-            <div className="text-sm opacity-90 mb-1">Current Level</div>
-            <div className="flex items-center space-x-3">
-              <Trophy className="w-10 h-10" />
+      <div className="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-600 rounded-3xl p-8 md:p-10 text-white shadow-hard">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
+          <div className="text-center md:text-left">
+            <div className="text-sm font-semibold opacity-90 mb-2 uppercase tracking-wide">Current Level</div>
+            <div className="flex items-center gap-4 justify-center md:justify-start">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
+                <Trophy className="w-8 h-8" />
+              </div>
               <div>
-                <div className="text-4xl font-bold">{currentLevel.level}</div>
-                <div className="text-lg font-semibold">{currentLevel.name}</div>
+                <div className="text-5xl md:text-6xl font-black leading-none mb-1">{currentLevel.level}</div>
+                <div className="text-xl md:text-2xl font-bold">{currentLevel.name}</div>
               </div>
             </div>
           </div>
-          <div className="text-right">
-            <div className="text-5xl font-bold">{totalPoints}</div>
-            <div className="text-sm opacity-90">Total Points</div>
+          <div className="text-center">
+            <div className="text-6xl md:text-7xl font-black mb-2">{totalPoints}</div>
+            <div className="text-sm font-semibold opacity-90 uppercase tracking-wide">Total Points</div>
           </div>
         </div>
 
         {currentLevel.next && (
-          <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
+          <div className="space-y-3 bg-white/10 backdrop-blur rounded-2xl p-6">
+            <div className="flex items-center justify-between text-sm font-semibold">
               <span>Progress to Level {currentLevel.level + 1}</span>
               <span>{pointsToNextLevel} points to go</span>
             </div>
-            <div className="h-3 bg-white/20 rounded-full overflow-hidden">
+            <div className="h-4 bg-white/20 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-white rounded-full transition-all duration-500"
                 style={{ width: `${levelProgress}%` }}
@@ -96,123 +99,141 @@ const Progress = () => {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="card text-center">
-          <BookOpen className="w-10 h-10 mx-auto mb-3 text-primary-500" />
-          <div className="text-3xl font-bold text-gray-800">{categoryStats.tutorial}</div>
-          <div className="text-gray-600">Tutorials</div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="stat-card hover:shadow-xl transition-all">
+          <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <BookOpen className="w-6 h-6 text-blue-600" />
+          </div>
+          <div className="text-4xl font-black text-gray-900 mb-1">{categoryStats.tutorial}</div>
+          <div className="text-sm font-semibold text-gray-600">Tutorials</div>
         </div>
 
-        <div className="card text-center">
-          <GraduationCap className="w-10 h-10 mx-auto mb-3 text-purple-500" />
-          <div className="text-3xl font-bold text-gray-800">{categoryStats.training}</div>
-          <div className="text-gray-600">Training Modules</div>
+        <div className="stat-card hover:shadow-xl transition-all">
+          <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <GraduationCap className="w-6 h-6 text-purple-600" />
+          </div>
+          <div className="text-4xl font-black text-gray-900 mb-1">{categoryStats.training}</div>
+          <div className="text-sm font-semibold text-gray-600">Training</div>
         </div>
 
-        <div className="card text-center">
-          <Gamepad2 className="w-10 h-10 mx-auto mb-3 text-accent-500" />
-          <div className="text-3xl font-bold text-gray-800">{categoryStats.game}</div>
-          <div className="text-gray-600">Games Played</div>
+        <div className="stat-card hover:shadow-xl transition-all">
+          <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <Gamepad2 className="w-6 h-6 text-green-600" />
+          </div>
+          <div className="text-4xl font-black text-gray-900 mb-1">{categoryStats.game}</div>
+          <div className="text-sm font-semibold text-gray-600">Games</div>
         </div>
 
-        <div className="card text-center">
-          <Award className="w-10 h-10 mx-auto mb-3 text-yellow-500" />
-          <div className="text-3xl font-bold text-gray-800">{unlockedAchievements.length}</div>
-          <div className="text-gray-600">Achievements</div>
+        <div className="stat-card hover:shadow-xl transition-all">
+          <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-3">
+            <Award className="w-6 h-6 text-amber-600" />
+          </div>
+          <div className="text-4xl font-black text-gray-900 mb-1">{unlockedAchievements.length}</div>
+          <div className="text-sm font-semibold text-gray-600">Achievements</div>
         </div>
       </div>
 
       {/* Overall Progress */}
       <div className="card">
-        <div className="flex items-center justify-between mb-4">
-          <h3 className="text-xl font-bold text-gray-800 flex items-center space-x-2">
-            <Target className="w-6 h-6 text-primary-500" />
+        <div className="flex items-center justify-between mb-6">
+          <h3 className="text-2xl font-black text-gray-900 flex items-center gap-3">
+            <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
+              <Target className="w-5 h-5 text-purple-600" />
+            </div>
             <span>Overall Completion</span>
           </h3>
-          <span className="text-2xl font-bold text-primary-600">
+          <span className="text-4xl font-black text-purple-600">
             {Math.round(completionPercentage)}%
           </span>
         </div>
-        <div className="progress-bar h-4">
+        <div className="progress-bar h-4 mb-4">
           <div 
             className="progress-fill"
             style={{ width: `${completionPercentage}%` }}
           />
         </div>
-        <p className="text-gray-600 text-sm mt-3">
+        <p className="text-gray-600 font-medium">
           {completedLessons.length} of ~{totalLessons} lessons completed
         </p>
       </div>
 
       {/* Achievements */}
       <div className="card">
-        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
-          <Award className="w-6 h-6 text-accent-500" />
+        <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
+          <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center">
+            <Award className="w-5 h-5 text-amber-600" />
+          </div>
           <span>Achievements</span>
         </h3>
 
-        {/* Unlocked Achievements */}
-        {unlockedAchievements.length > 0 && (
-          <div className="mb-6">
-            <h4 className="font-semibold text-gray-700 mb-3">Unlocked ({unlockedAchievements.length})</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {unlockedAchievements.map((achievement) => (
-                <div 
-                  key={achievement.id}
-                  className="bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-yellow-300 rounded-lg p-4 flex items-start space-x-3"
-                >
-                  <div className="text-3xl">{achievement.icon}</div>
-                  <div className="flex-1">
-                    <h5 className="font-bold text-gray-800">{achievement.title}</h5>
-                    <p className="text-sm text-gray-600">{achievement.description}</p>
-                    {achievement.unlockedAt && (
-                      <p className="text-xs text-gray-500 mt-1">
-                        Unlocked {formatDate(achievement.unlockedAt)}
-                      </p>
-                    )}
-                  </div>
-                  <Trophy className="w-5 h-5 text-yellow-600" />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Locked Achievements */}
-        {lockedAchievements.length > 0 && (
+        <div className="space-y-8">
+          {/* Unlocked Achievements */}
           <div>
-            <h4 className="font-semibold text-gray-700 mb-3">Locked ({lockedAchievements.length})</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {lockedAchievements.map((achievement) => (
-                <div 
-                  key={achievement.id}
-                  className="bg-gray-50 border-2 border-gray-200 rounded-lg p-4 flex items-start space-x-3 opacity-60"
-                >
-                  <div className="text-3xl grayscale">{achievement.icon}</div>
-                  <div className="flex-1">
-                    <h5 className="font-bold text-gray-800">{achievement.title}</h5>
-                    <p className="text-sm text-gray-600">{achievement.description}</p>
+            <h4 className="font-bold text-gray-900 mb-4 text-lg">Unlocked ({unlockedAchievements.length})</h4>
+            {unlockedAchievements.length === 0 ? (
+              <p className="text-gray-600">No achievements unlocked yet. Keep learning!</p>
+            ) : (
+              <div className="grid md:grid-cols-2 gap-4">
+                {unlockedAchievements.map((achievement) => (
+                  <div 
+                    key={achievement.id}
+                    className="bg-green-50 border-2 border-green-500 rounded-2xl p-5 flex items-start gap-4"
+                  >
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                      {achievement.icon}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h5 className="font-bold text-gray-900">{achievement.title}</h5>
+                        <CheckCircle className="w-4 h-4 text-green-600" />
+                      </div>
+                      <p className="text-sm text-gray-700 mb-2">{achievement.description}</p>
+                      {achievement.unlockedAt && (
+                        <p className="text-xs text-gray-500 font-medium">
+                          Unlocked {formatDate(achievement.unlockedAt)}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                  <div className="w-5 h-5 rounded-full border-2 border-gray-400" />
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
-        )}
 
-        {unlockedAchievements.length === 0 && (
-          <div className="text-center py-12">
-            <Award className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-            <p className="text-gray-500 mb-2">No achievements unlocked yet</p>
-            <p className="text-gray-400 text-sm">Complete lessons to start earning achievements!</p>
-          </div>
-        )}
+          {/* Locked Achievements */}
+          {lockedAchievements.length > 0 && (
+            <div>
+              <h4 className="font-bold text-gray-900 mb-4 text-lg">Locked ({lockedAchievements.length})</h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                {lockedAchievements.map((achievement) => (
+                  <div 
+                    key={achievement.id}
+                    className="content-box flex items-start gap-4 opacity-60"
+                  >
+                    <div className="w-12 h-12 bg-gray-300 rounded-xl flex items-center justify-center text-2xl flex-shrink-0 grayscale">
+                      {achievement.icon}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <h5 className="font-bold text-gray-900">{achievement.title}</h5>
+                        <Lock className="w-4 h-4 text-gray-500" />
+                      </div>
+                      <p className="text-sm text-gray-600">{achievement.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Recent Activity */}
       <div className="card">
-        <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center space-x-2">
-          <TrendingUp className="w-6 h-6 text-green-500" />
+        <h3 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
+          <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+            <Calendar className="w-5 h-5 text-blue-600" />
+          </div>
           <span>Recent Activity</span>
         </h3>
 
@@ -221,31 +242,37 @@ const Progress = () => {
             {recentActivity.map((lesson) => (
               <div 
                 key={lesson.id}
-                className="flex items-center space-x-4 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg"
+                className="flex items-center justify-between p-5 content-box hover:shadow-xl transition-all"
               >
-                <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
-                  {lesson.category === 'tutorial' && <BookOpen className="w-5 h-5 text-white" />}
-                  {lesson.category === 'training' && <GraduationCap className="w-5 h-5 text-white" />}
-                  {lesson.category === 'game' && <Gamepad2 className="w-5 h-5 text-white" />}
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-800 capitalize">
-                    Completed {lesson.category}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                    {lesson.category === 'tutorial' && <BookOpen className="w-6 h-6" />}
+                    {lesson.category === 'training' && <GraduationCap className="w-6 h-6" />}
+                    {lesson.category === 'game' && <Gamepad2 className="w-6 h-6" />}
                   </div>
-                  <div className="text-sm text-gray-600">{lesson.id}</div>
+                  <div>
+                    <div className="font-bold text-gray-900 capitalize">
+                      Completed {lesson.category}
+                    </div>
+                    <div className="text-sm text-gray-600 font-medium">{lesson.id}</div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-500">
-                  <Calendar className="w-4 h-4" />
-                  <span>{formatDate(lesson.completedAt)}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-semibold text-gray-600">
+                    {formatDate(lesson.completedAt)}
+                  </span>
+                  <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
                 </div>
               </div>
             ))}
           </div>
         ) : (
           <div className="text-center py-12">
-            <TrendingUp className="w-16 h-16 mx-auto text-gray-300 mb-4" />
-            <p className="text-gray-500 mb-2">No activity yet</p>
-            <p className="text-gray-400 text-sm">Start learning to see your progress here!</p>
+            <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <TrendingUp className="w-8 h-8 text-gray-400" />
+            </div>
+            <p className="text-gray-600 font-medium mb-1">No activity yet</p>
+            <p className="text-gray-500 text-sm">Start learning to see your progress here!</p>
           </div>
         )}
       </div>

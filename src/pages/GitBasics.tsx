@@ -359,12 +359,237 @@ const GitBasics = () => {
         </div>
       </div>
 
+      {/* Collaboration Workflows */}
+      <div className="card space-y-6">
+        <h2 className="text-3xl font-bold text-gray-800">Collaborating with GitHub</h2>
+        <p className="text-gray-600">How to work with teammates on the same project</p>
+
+        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 space-y-6">
+          <div className="bg-white rounded-lg p-6 space-y-4">
+            <h3 className="text-2xl font-bold text-gray-800">Step 1: Share Your Project on GitHub</h3>
+            <div className="space-y-3">
+              <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-lg p-5">
+                <h4 className="font-bold text-gray-800 mb-3">Creating a GitHub Repository</h4>
+                <ol className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold text-blue-600">1.</span>
+                    <span>Go to <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">github.com</a> and sign in</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold text-blue-600">2.</span>
+                    <span>Click the "+" button in top right, choose "New repository"</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold text-blue-600">3.</span>
+                    <span>Name it (same as your project folder is good)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold text-blue-600">4.</span>
+                    <span>Choose Public (anyone can see) or Private (only you and invited people)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold text-blue-600">5.</span>
+                    <span>Click "Create repository"</span>
+                  </li>
+                </ol>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-300 rounded-lg p-5">
+                <h4 className="font-bold text-gray-800 mb-3">Connecting Your Local Project to GitHub</h4>
+                <p className="text-sm text-gray-700 mb-3">GitHub shows you commands after creating a repo. Copy them, or use these:</p>
+                <div className="bg-gray-900 text-green-400 rounded p-4 font-mono text-xs space-y-2">
+                  <div>git remote add origin https://github.com/yourname/yourproject.git</div>
+                  <div>git branch -M main</div>
+                  <div>git push -u origin main</div>
+                </div>
+                <p className="text-xs text-gray-600 mt-3">
+                  💡 Tip: You can also use Cursor's Source Control panel → "..." menu → "Push" after setting up the remote
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 space-y-4">
+            <h3 className="text-2xl font-bold text-gray-800">Step 2: Invite Teammates</h3>
+            <div className="space-y-3">
+              <p className="text-gray-700">On your GitHub repository page:</p>
+              <ol className="space-y-2 text-sm text-gray-700 pl-5">
+                <li>1. Click "Settings" tab</li>
+                <li>2. Click "Collaborators" in the sidebar</li>
+                <li>3. Click "Add people"</li>
+                <li>4. Enter their GitHub username or email</li>
+                <li>5. They'll get an invitation email</li>
+              </ol>
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
+                <p className="text-sm text-gray-700">
+                  <strong>Note:</strong> For private repos, you need to add collaborators. 
+                  Public repos can be seen by anyone, but only collaborators can push changes.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 space-y-4">
+            <h3 className="text-2xl font-bold text-gray-800">Step 3: The Collaboration Workflow</h3>
+            <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-300 rounded-lg p-5 space-y-4">
+              <h4 className="font-bold text-gray-800">The Daily Workflow (Follow This!)</h4>
+              
+              <div className="space-y-3">
+                <div className="bg-white rounded p-4">
+                  <p className="font-bold text-gray-800 mb-2">🌅 Morning: Pull Latest Changes</p>
+                  <p className="text-sm text-gray-700 mb-2">Before you start working, get your teammates' latest changes:</p>
+                  <div className="bg-gray-50 border border-gray-300 rounded p-3">
+                    <p className="font-mono text-xs text-gray-800">git pull</p>
+                    <p className="text-xs text-gray-600 mt-1">Or: Click "Sync" button in Cursor's Source Control</p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded p-4">
+                  <p className="font-bold text-gray-800 mb-2">💼 During Work: Commit Often</p>
+                  <p className="text-sm text-gray-700 mb-2">Make small, frequent commits with clear messages:</p>
+                  <ul className="text-xs text-gray-700 space-y-1 ml-4">
+                    <li>✅ "Added user profile header"</li>
+                    <li>✅ "Fixed navigation button styling"</li>
+                    <li>✅ "Updated color scheme in design system"</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white rounded p-4">
+                  <p className="font-bold text-gray-800 mb-2">🌆 End of Day: Push Your Changes</p>
+                  <p className="text-sm text-gray-700 mb-2">Share your work with the team:</p>
+                  <div className="bg-gray-50 border border-gray-300 rounded p-3">
+                    <p className="font-mono text-xs text-gray-800">git push</p>
+                    <p className="text-xs text-gray-600 mt-1">Or: Click the "↑" or "Sync" in Cursor</p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded p-4">
+                  <p className="font-bold text-gray-800 mb-2">🔄 If You Get Conflicts:</p>
+                  <p className="text-sm text-gray-700 mb-2">When you and a teammate edited the same file:</p>
+                  <ol className="text-xs text-gray-700 space-y-1 ml-4">
+                    <li>1. Don't panic! This is normal</li>
+                    <li>2. Cursor shows you both versions</li>
+                    <li>3. Choose which changes to keep (or keep both!)</li>
+                    <li>4. Save, commit, and push</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 space-y-4">
+            <h3 className="text-2xl font-bold text-gray-800">Step 4: Cloning a Teammate's Project</h3>
+            <p className="text-gray-700">Want to work on someone else's project?</p>
+            <div className="space-y-3">
+              <div className="bg-gray-50 rounded-lg p-5">
+                <h4 className="font-bold text-gray-800 mb-3">Getting a Copy</h4>
+                <ol className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">1.</span>
+                    <span>Go to the project's GitHub page</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">2.</span>
+                    <span>Click the green "Code" button</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">3.</span>
+                    <span>Copy the URL (HTTPS link)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">4.</span>
+                    <span>In Cursor, open terminal (Cmd+`)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">5.</span>
+                    <span>Type: <code className="bg-white px-2 py-1 rounded text-xs">git clone [paste-url-here]</code></span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">6.</span>
+                    <span>A new folder appears with all the project files!</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="font-bold">7.</span>
+                    <span>Open that folder in Cursor (File → Open Folder)</span>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          {!completed.has('collaboration') && (
+            <button
+              onClick={() => handleComplete('collaboration')}
+              className="btn-primary w-full"
+            >
+              <CheckCircle className="w-5 h-5" />
+              <span>I Understand Git Collaboration!</span>
+            </button>
+          )}
+          {completed.has('collaboration') && (
+            <div className="bg-green-50 border-2 border-green-500 rounded-lg p-4 flex items-center justify-center gap-3 text-green-700">
+              <CheckCircle className="w-6 h-6" />
+              <span className="font-bold">Awesome! You can now work with teams!</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Branching (Advanced) */}
+      <div className="card space-y-6">
+        <h2 className="text-3xl font-bold text-gray-800">Branches: Working on Features Separately (Advanced)</h2>
+        <p className="text-gray-600">For when you want to experiment without affecting the main code</p>
+
+        <div className="bg-blue-50 border-2 border-blue-300 rounded-xl p-6 space-y-4">
+          <div className="bg-white rounded-lg p-5">
+            <h3 className="text-xl font-bold text-gray-800 mb-3">What are Branches?</h3>
+            <p className="text-gray-700 mb-3">
+              Think of branches like parallel universes for your code:
+            </p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• <strong>main</strong> branch = the official, working version</li>
+              <li>• <strong>feature</strong> branches = where you try new things</li>
+              <li>• Work on features without breaking main</li>
+              <li>• When ready, merge your feature into main</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-lg p-5 space-y-3">
+            <h3 className="text-xl font-bold text-gray-800">Common Workflow</h3>
+            <div className="space-y-2 text-sm text-gray-700">
+              <div className="bg-gray-50 rounded p-3">
+                <p className="font-bold mb-1">Create a branch:</p>
+                <p className="font-mono text-xs">git checkout -b feature/user-profile</p>
+              </div>
+              <div className="bg-gray-50 rounded p-3">
+                <p className="font-bold mb-1">Work on it, commit changes as normal</p>
+              </div>
+              <div className="bg-gray-50 rounded p-3">
+                <p className="font-bold mb-1">When done, switch back to main:</p>
+                <p className="font-mono text-xs">git checkout main</p>
+              </div>
+              <div className="bg-gray-50 rounded p-3">
+                <p className="font-bold mb-1">Merge your feature:</p>
+                <p className="font-mono text-xs">git merge feature/user-profile</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+            <p className="text-sm text-gray-700">
+              <strong>💡 For Beginners:</strong> Branches are powerful but not essential when starting out. 
+              Focus on the basic workflow first. Come back to branches when your projects get more complex.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Next Steps */}
       <div className="card bg-gradient-to-r from-orange-500 to-red-500 text-white text-center space-y-4">
         <CheckCircle className="w-16 h-16 mx-auto" />
-        <h2 className="text-3xl font-bold">You're Now a Git User! 🎉</h2>
+        <h2 className="text-3xl font-bold">You're Now a Git Collaborator! 🎉</h2>
         <p className="text-xl opacity-90 max-w-3xl mx-auto">
-          You can now save your work, track changes, and never lose progress.
+          You can save your work, track changes, collaborate with teams, and never lose progress.
           Ready to start building actual projects?
         </p>
         <Link 

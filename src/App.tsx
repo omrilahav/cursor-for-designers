@@ -3,9 +3,12 @@ import { ProgressProvider } from './contexts/ProgressContext'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import BeginnerGuide from './pages/BeginnerGuide'
+import Installation from './pages/Installation'
+import CursorAgent from './pages/CursorAgent'
 import IDEBasics from './pages/IDEBasics'
 import TerminalBasics from './pages/TerminalBasics'
 import GitBasics from './pages/GitBasics'
+import Troubleshooting from './pages/Troubleshooting'
 import Tutorials from './pages/Tutorials'
 import Training from './pages/Training'
 import Games from './pages/Games'
@@ -22,9 +25,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/beginner-guide" element={<BeginnerGuide />} />
+            <Route path="/installation" element={<Installation />} />
+            <Route path="/cursor-agent" element={<CursorAgent />} />
             <Route path="/ide-basics" element={<IDEBasics />} />
             <Route path="/terminal-basics" element={<TerminalBasics />} />
             <Route path="/git-basics" element={<GitBasics />} />
+            <Route path="/troubleshooting" element={<Troubleshooting />} />
             <Route path="/tutorials" element={<Tutorials />} />
             <Route path="/training" element={<Training />} />
             <Route path="/games" element={<Games />} />

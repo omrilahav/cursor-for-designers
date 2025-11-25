@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CheckCircle2, Play, ChevronRight, Award } from 'lucide-react'
+import { CheckCircle2, Play, ChevronRight, Award, Clock, BookOpen, Target, ArrowLeft, Star, Lightbulb, ArrowRight } from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
 
 interface TutorialStep {
@@ -27,6 +27,163 @@ const Tutorials = () => {
   const [showCompleteModal, setShowCompleteModal] = useState(false)
 
   const tutorials: Tutorial[] = [
+    {
+      id: 'build-first-component',
+      title: 'Build Your First Component (Hands-On)',
+      description: 'Create a working profile card from scratch - perfect for absolute beginners',
+      difficulty: 'Beginner',
+      duration: '30 min',
+      steps: [
+        {
+          id: 'step-1',
+          title: 'Set Up Your Project',
+          description: 'Get ready to build - create a place for your component',
+          content: [
+            'Open Cursor and create a new folder on your Desktop called "my-first-component"',
+            'In Cursor, go to File → Open Folder and select your new folder',
+            'You should now see an empty folder in the sidebar',
+            'We\'re going to build a beautiful profile card component!'
+          ],
+          tips: [
+            'Make sure the folder is empty - fresh start!',
+            'If you see a "Trust" dialog, click "Trust" - it\'s your own folder',
+            'The sidebar on the left shows all your files'
+          ],
+          exercise: 'Create the folder and open it in Cursor. You\'re ready when you see an empty sidebar.'
+        },
+        {
+          id: 'step-2',
+          title: 'Create Your HTML File',
+          description: 'Make the canvas where we\'ll build',
+          content: [
+            'Click the "New File" icon in the sidebar (or press Cmd+N)',
+            'A new file appears - let\'s save it immediately',
+            'Press Cmd+S (or Ctrl+S on Windows) to save',
+            'Name it "profile-card.html" and press Enter',
+            'Perfect! You now have your first file'
+          ],
+          tips: [
+            'Always save files right away so you don\'t lose work',
+            'The .html extension tells Cursor this is a web page',
+            'You can see the file appear in the sidebar'
+          ],
+          exercise: 'Create and save profile-card.html. The file should be visible in your sidebar.'
+        },
+        {
+          id: 'step-3',
+          title: 'Use AI to Build the Structure',
+          description: 'Let AI help you create the basic HTML structure',
+          content: [
+            'Make sure your cursor is in the empty profile-card.html file',
+            'Press Cmd+K (or Ctrl+K on Windows) to open AI inline edit',
+            'Type: "create a basic HTML page structure"',
+            'Press Enter and watch the AI generate code!',
+            'Press Tab to accept the suggestion',
+            'Save the file (Cmd+S)'
+          ],
+          tips: [
+            'This is your first AI-generated code - congratulations!',
+            'The AI created the skeleton every HTML page needs',
+            'Don\'t worry about understanding every detail yet',
+            'You can always ask AI to explain: Cmd+L then "explain this code"'
+          ],
+          exercise: 'Use AI to generate basic HTML structure. You should see <html>, <head>, and <body> tags.'
+        },
+        {
+          id: 'step-4',
+          title: 'Build the Profile Card',
+          description: 'Create an actual component with AI assistance',
+          content: [
+            'Place your cursor inside the <body> tag (between <body> and </body>)',
+            'Press Cmd+K again',
+            'Type this detailed request: "create a centered profile card with a circular avatar image, name Sarah Chen, title UX Designer, short bio, and a follow button. Make it look modern with nice spacing and colors"',
+            'Press Enter and watch AI build it!',
+            'Press Tab to accept',
+            'Save your file'
+          ],
+          tips: [
+            'The more specific your description, the better the result',
+            'Notice how AI interpreted "modern" and "nice spacing"',
+            'You can always refine: select the code, Cmd+K, "make the button blue"'
+          ],
+          exercise: 'Generate the profile card. You should see a complete card with avatar, text, and button.'
+        },
+        {
+          id: 'step-5',
+          title: 'Preview Your Creation',
+          description: 'See your component in a browser!',
+          content: [
+            'Right-click on profile-card.html in the sidebar',
+            'Choose "Open with Live Server" (or just double-click the file)',
+            'Your default browser opens showing YOUR profile card!',
+            'This is a real, working component you just built!',
+            'Try resizing the browser - see how it adapts'
+          ],
+          tips: [
+            'If "Open with Live Server" isn\'t there, just double-click the file and open it in a browser',
+            'You can edit the code and refresh to see changes',
+            'This is actual web development - you\'re doing it!'
+          ],
+          exercise: 'Open your profile card in a browser. Celebrate - you built something real! 🎉'
+        },
+        {
+          id: 'step-6',
+          title: 'Customize and Iterate',
+          description: 'Make it your own with quick AI edits',
+          content: [
+            'Back in Cursor, select the button code',
+            'Press Cmd+K and type: "add a hover effect that changes background to purple"',
+            'Accept the change, save, and refresh your browser',
+            'See the hover effect? You just added an interaction!',
+            'Try more: "make the avatar larger" or "add a shadow to the card"'
+          ],
+          tips: [
+            'This iterative workflow is how professionals work',
+            'Make one change at a time so you can track what works',
+            'If you don\'t like something, Cmd+Z to undo',
+            'The cycle is: edit → save → refresh → repeat'
+          ],
+          exercise: 'Add at least two customizations using AI. Make the card uniquely yours!'
+        },
+        {
+          id: 'step-7',
+          title: 'Understanding What You Built',
+          description: 'Learn from your code',
+          content: [
+            'Select all your code (Cmd+A)',
+            'Press Cmd+L to open AI chat',
+            'Ask: "Explain this code to me like I\'m new to web development"',
+            'Read the explanation - AI will break down each part',
+            'Ask follow-up questions: "What does the style section do?" or "How does the button work?"'
+          ],
+          tips: [
+            'Understanding your code makes you a better builder',
+            'Don\'t move on until you grasp the basics',
+            'There\'s no shame in asking AI to explain things multiple times',
+            'This learning process is how you build real skills'
+          ],
+          exercise: 'Get an explanation of your code. Ask at least one follow-up question.'
+        },
+        {
+          id: 'step-8',
+          title: 'Congratulations - You\'re a Builder!',
+          description: 'Celebrate your achievement!',
+          content: [
+            'You just built a real web component from scratch',
+            'You used AI assistance - that\'s the modern way to build',
+            'You iterated and improved your work',
+            'You learned by doing - the best way to learn',
+            'This is just the beginning of what you can create!'
+          ],
+          tips: [
+            'Save this project - you\'ll want to reference it',
+            'Try building variations: a product card, a testimonial card',
+            'Every professional started exactly where you are now',
+            'The next tutorial will build on these skills'
+          ]
+        }
+      ]
+    },
     {
       id: 'getting-started',
       title: 'Getting Started with Cursor',
@@ -274,6 +431,234 @@ const Tutorials = () => {
       ]
     },
     {
+      id: 'file-organization',
+      title: 'Project Organization & File Structure',
+      description: 'Learn how to organize files like a professional',
+      difficulty: 'Beginner',
+      duration: '25 min',
+      steps: [
+        {
+          id: 'step-1',
+          title: 'Why Organization Matters',
+          description: 'Understand the importance of good structure',
+          content: [
+            'Good file organization makes finding things easy',
+            'It helps you and teammates understand the project',
+            'Professional projects all follow similar patterns',
+            'A clean structure prevents chaos as projects grow',
+            'It\'s much easier to organize from the start than to refactor later'
+          ],
+          tips: [
+            'Think of it like organizing your closet - everything has a place',
+            'Consistency is more important than perfection',
+            'Follow common conventions so others can navigate easily'
+          ]
+        },
+        {
+          id: 'step-2',
+          title: 'The Basic Folder Structure',
+          description: 'Essential folders every project needs',
+          content: [
+            '/src - Your source code lives here (everything you write)',
+            '/public - Static files that don\'t change (images, fonts, icons)',
+            '/components - Reusable UI pieces (buttons, cards, headers)',
+            '/pages - Full page components (home, about, profile)',
+            '/styles or /css - Styling files',
+            '/utils or /helpers - Utility functions',
+            'package.json - Project dependencies and scripts (auto-generated)'
+          ],
+          tips: [
+            'Ask AI: "Create a folder structure for a portfolio website"',
+            'Not every project needs every folder',
+            'Add folders as you need them, not all at once'
+          ],
+          exercise: 'Ask AI in chat: "What folders should I create for a blog website?"'
+        },
+        {
+          id: 'step-3',
+          title: 'Naming Conventions',
+          description: 'How to name files and folders',
+          content: [
+            'Components: PascalCase (UserCard.tsx, PrimaryButton.tsx)',
+            'Utilities: camelCase (formatDate.ts, validateEmail.ts)',
+            'Folders: kebab-case or lowercase (user-profile/, components/)',
+            'Be descriptive: "UserProfileCard.tsx" not "card1.tsx"',
+            'Match names between design and code for easy reference',
+            'Use consistent naming throughout your project'
+          ],
+          tips: [
+            'PascalCase means FirstLetterUppercase',
+            'camelCase means firstLetterLowercase',
+            'kebab-case means words-separated-by-dashes',
+            'Pick one style and stick to it!'
+          ],
+          exercise: 'Rename any poorly named files in your projects to follow these conventions'
+        },
+        {
+          id: 'step-4',
+          title: 'Grouping Related Files',
+          description: 'Organize by feature, not file type',
+          content: [
+            'OLD WAY: All .ts files together, all .css files together → Hard to find related code',
+            'NEW WAY: Group by feature → user-profile/ contains JS, CSS, tests for user profile',
+            'Example good structure:',
+            '  /components/Button/Button.tsx',
+            '  /components/Button/Button.css',
+            '  /components/Button/Button.test.ts',
+            'Everything related to Button is together!'
+          ],
+          tips: [
+            'If you need to change the button, you know exactly where to look',
+            'You can copy an entire feature folder to another project',
+            'This scales much better as projects grow'
+          ],
+          exercise: 'Reorganize a component and its related files into one folder'
+        },
+        {
+          id: 'step-5',
+          title: 'The Index File Pattern',
+          description: 'Make imports cleaner and easier',
+          content: [
+            'Create an index.ts file in each folder',
+            'Use it to export everything from that folder',
+            'Then you can import from the folder, not specific files',
+            'Example: import { Button, Card } from "./components" instead of "./components/Button/Button.tsx"',
+            'This makes refactoring easier - move files around without breaking imports'
+          ],
+          tips: [
+            'This is an advanced pattern - don\'t worry if it\'s confusing at first',
+            'You\'ll appreciate it as projects grow',
+            'Many professional projects use this pattern'
+          ]
+        },
+        {
+          id: 'step-6',
+          title: 'What NOT to Commit',
+          description: 'Understanding .gitignore',
+          content: [
+            'Some files should NEVER be committed to Git:',
+            'node_modules/ - Contains downloaded packages (huge!)',
+            '.env - Contains secrets and API keys',
+            '.DS_Store - Mac system files',
+            'dist/ or build/ - Generated code',
+            'Create a .gitignore file listing these',
+            'Git will then ignore them automatically'
+          ],
+          tips: [
+            'node_modules can be re-downloaded with npm install',
+            'Never commit passwords or API keys!',
+            'Generated code can be regenerated',
+            'Ask AI: "Create a .gitignore file for a React project"'
+          ],
+          exercise: 'Create a .gitignore file with AI\'s help'
+        }
+      ]
+    },
+    {
+      id: 'multi-file-workflow',
+      title: 'Working Across Multiple Files',
+      description: 'Navigate and edit multiple files efficiently',
+      difficulty: 'Intermediate',
+      duration: '20 min',
+      steps: [
+        {
+          id: 'step-1',
+          title: 'Quick File Navigation',
+          description: 'Jump to any file instantly',
+          content: [
+            'Press Cmd+P (or Ctrl+P) - this is THE most important shortcut',
+            'Start typing any part of a filename',
+            'Results appear instantly - no clicking through folders!',
+            'Press Enter to open the file',
+            'This works even with hundreds of files'
+          ],
+          tips: [
+            'You don\'t need to type the full name - "user" finds "UserProfile.tsx"',
+            'You can type parts from anywhere: "prof.tsx" finds "UserProfile.tsx"',
+            'Much faster than clicking through folders',
+            'Use this constantly - it\'s a game-changer'
+          ],
+          exercise: 'Close all files, then use Cmd+P to open three different files without clicking'
+        },
+        {
+          id: 'step-2',
+          title: 'Split View Editing',
+          description: 'View multiple files side-by-side',
+          content: [
+            'Right-click a file tab and choose "Split Right" (or "Split Down")',
+            'You can now see two files at once',
+            'Perfect for: copying code, referencing another file, comparing versions',
+            'Drag the divider to adjust sizes',
+            'Click the X on a split to close it'
+          ],
+          tips: [
+            'Shortcut: Cmd+\\ (Ctrl+\\) to split',
+            'You can have many splits open',
+            'Especially useful for component + styles',
+            'Or for copying patterns from one file to another'
+          ],
+          exercise: 'Open a component and its style file side-by-side'
+        },
+        {
+          id: 'step-3',
+          title: 'Using @ Mentions Across Files',
+          description: 'Let AI understand multi-file context',
+          content: [
+            'When asking AI for help, reference multiple files with @',
+            'Example: "@Button.tsx and @Card.tsx should have consistent styling"',
+            'AI reads both files and understands the context',
+            'You can @ entire folders: "@components/ make all buttons blue"',
+            'This is incredibly powerful for large changes'
+          ],
+          tips: [
+            'Always @ the files you\'re talking about',
+            'AI can only help with files it can see',
+            'Use @folder/ for project-wide changes',
+            'The more context you provide, the better AI\'s suggestions'
+          ],
+          exercise: 'Ask AI to make changes across 2-3 files using @ mentions'
+        },
+        {
+          id: 'step-4',
+          title: 'Search Across All Files',
+          description: 'Find anything in your entire project',
+          content: [
+            'Press Cmd+Shift+F (or Ctrl+Shift+F)',
+            'Type what you\'re looking for',
+            'See results from EVERY file in your project',
+            'Click any result to jump to that file and line',
+            'Perfect for finding where you used something'
+          ],
+          tips: [
+            'Search for color codes to find all uses: "#0ea5e9"',
+            'Find where you called a function',
+            'Locate todos: search for "TODO"',
+            'Use this instead of manually checking every file'
+          ],
+          exercise: 'Search for a CSS class or function name across your project'
+        },
+        {
+          id: 'step-5',
+          title: 'Multi-Cursor Editing',
+          description: 'Edit multiple places at once',
+          content: [
+            'Hold Alt (or Option on Mac) and click in multiple places',
+            'You now have multiple cursors!',
+            'Type and it appears in all places at once',
+            'Or: Select text, press Cmd+D repeatedly to select next occurrence',
+            'Press Escape to go back to one cursor'
+          ],
+          tips: [
+            'Perfect for renaming things consistently',
+            'Great for adding the same code in multiple places',
+            'Feels like magic the first time!',
+            'Takes practice but becomes super useful'
+          ],
+          exercise: 'Use multi-cursor to change a word in 3 different places at once'
+        }
+      ]
+    },
+    {
       id: 'project-setup',
       title: 'Setting Up Your Project',
       description: 'Create new projects and configure them properly',
@@ -369,13 +754,13 @@ const Tutorials = () => {
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Beginner':
-        return 'bg-green-100 text-green-700'
+        return 'badge-success'
       case 'Intermediate':
-        return 'bg-yellow-100 text-yellow-700'
+        return 'badge-warning'
       case 'Advanced':
-        return 'bg-red-100 text-red-700'
+        return 'badge-purple'
       default:
-        return 'bg-gray-100 text-gray-700'
+        return 'badge-info'
     }
   }
 
@@ -384,114 +769,165 @@ const Tutorials = () => {
     const progress = ((currentStep + 1) / selectedTutorial.steps.length) * 100
 
     return (
-      <div className="max-w-4xl mx-auto animate-fade-in">
+      <div className="max-w-5xl mx-auto animate-fade-in space-y-6">
+        {/* Back Button */}
+        <button
+          onClick={handleCloseTutorial}
+          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Back to Tutorials</span>
+        </button>
+
         {/* Tutorial Header */}
-        <div className="card mb-6">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-800">{selectedTutorial.title}</h2>
-              <p className="text-gray-600">{selectedTutorial.description}</p>
+        <div className="card">
+          <div className="mb-6">
+            <div className="flex items-start justify-between gap-4 mb-4">
+              <div className="flex-1">
+                <h1 className="text-3xl font-black text-gray-900 mb-2">{selectedTutorial.title}</h1>
+                <p className="text-gray-600 text-lg">{selectedTutorial.description}</p>
+              </div>
+              <span className={`${getDifficultyColor(selectedTutorial.difficulty)} whitespace-nowrap`}>
+                {selectedTutorial.difficulty}
+              </span>
             </div>
-            <button
-              onClick={handleCloseTutorial}
-              className="text-gray-500 hover:text-gray-700 font-medium"
-            >
-              Close
-            </button>
+            
+            <div className="flex items-center gap-6 text-sm text-gray-600">
+              <span className="flex items-center gap-2">
+                <Clock className="w-4 h-4" />
+                {selectedTutorial.duration}
+              </span>
+              <span className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4" />
+                {selectedTutorial.steps.length} steps
+              </span>
+              <span className="flex items-center gap-2">
+                <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                100 points
+              </span>
+            </div>
           </div>
           
-          <div className="progress-bar mb-2">
-            <div className="progress-fill" style={{ width: `${progress}%` }} />
-          </div>
-          <div className="text-sm text-gray-600">
-            Step {currentStep + 1} of {selectedTutorial.steps.length}
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-sm font-medium">
+              <span className="text-gray-700">Step {currentStep + 1} of {selectedTutorial.steps.length}</span>
+              <span className="text-purple-600">{Math.round(progress)}% Complete</span>
+            </div>
+            <div className="progress-bar h-3">
+              <div className="progress-fill" style={{ width: `${progress}%` }} />
+            </div>
           </div>
         </div>
 
         {/* Current Step Content */}
-        <div className="card space-y-6">
-          <div>
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 flex items-center justify-center text-white font-bold">
-                {currentStep + 1}
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-gray-800">{currentStepData.title}</h3>
-                <p className="text-gray-600">{currentStepData.description}</p>
-              </div>
+        <div className="card space-y-8">
+          {/* Step Header */}
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-xl bg-gray-900 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+              {currentStep + 1}
+            </div>
+            <div className="flex-1">
+              <h2 className="text-3xl font-black text-gray-900 mb-2">{currentStepData.title}</h2>
+              <p className="text-lg text-gray-600">{currentStepData.description}</p>
             </div>
           </div>
 
           {/* Content */}
-          <div className="bg-blue-50 rounded-lg p-6 space-y-3">
-            <h4 className="font-bold text-gray-800 mb-3">What you'll learn:</h4>
-            {currentStepData.content.map((point, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <ChevronRight className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
-                <p className="text-gray-700">{point}</p>
-              </div>
-            ))}
+          <div className="content-box space-y-4">
+            <div className="flex items-center gap-2 mb-4">
+              <BookOpen className="w-5 h-5 text-gray-700" />
+              <h3 className="font-bold text-gray-900 text-lg">What You'll Learn</h3>
+            </div>
+            <div className="space-y-3">
+              {currentStepData.content.map((point, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-gray-700 leading-relaxed">{point}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Tips */}
           {currentStepData.tips.length > 0 && (
-            <div className="bg-accent-50 rounded-lg p-6 space-y-3">
-              <h4 className="font-bold text-gray-800 mb-3">💡 Pro Tips:</h4>
-              {currentStepData.tips.map((tip, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-accent-500 rounded-full flex-shrink-0 mt-2" />
-                  <p className="text-gray-700">{tip}</p>
-                </div>
-              ))}
+            <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 space-y-4">
+              <div className="flex items-center gap-2">
+                <Lightbulb className="w-5 h-5 text-purple-600" />
+                <h3 className="font-bold text-gray-900 text-lg">Pro Tips</h3>
+              </div>
+              <div className="space-y-3">
+                {currentStepData.tips.map((tip, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <ChevronRight className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-gray-700 leading-relaxed">{tip}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
 
           {/* Exercise */}
           {currentStepData.exercise && (
-            <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-              <h4 className="font-bold text-gray-800 mb-2">🎯 Try This:</h4>
-              <p className="text-gray-700">{currentStepData.exercise}</p>
+            <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Target className="w-5 h-5 text-green-600" />
+                <h3 className="font-bold text-gray-900 text-lg">Try This Exercise</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed">{currentStepData.exercise}</p>
             </div>
           )}
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between mt-6">
+        <div className="flex items-center justify-between gap-4 sticky bottom-6 bg-white border border-gray-200 rounded-2xl p-6 shadow-hard">
           <button
             onClick={handlePreviousStep}
             disabled={currentStep === 0}
-            className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-              currentStep === 0
-                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-white text-primary-600 border-2 border-primary-500 hover:bg-primary-50'
-            }`}
+            className="btn-outline disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Previous
+            <ArrowLeft className="w-5 h-5" />
+            <span>Previous</span>
           </button>
+          
+          <span className="text-sm font-medium text-gray-600">
+            Step {currentStep + 1} / {selectedTutorial.steps.length}
+          </span>
           
           <button
             onClick={handleNextStep}
             className="btn-primary"
           >
-            {currentStep === selectedTutorial.steps.length - 1 ? 'Complete Tutorial' : 'Next Step'}
+            <span>{currentStep === selectedTutorial.steps.length - 1 ? 'Complete Tutorial' : 'Next Step'}</span>
+            <ChevronRight className="w-5 h-5" />
           </button>
         </div>
 
         {/* Completion Modal */}
         {showCompleteModal && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-            <div className="card max-w-md animate-slide-up">
-              <div className="text-center space-y-4">
-                <Award className="w-16 h-16 text-accent-500 mx-auto" />
-                <h3 className="text-2xl font-bold text-gray-800">Tutorial Complete! 🎉</h3>
-                <p className="text-gray-600">
-                  You've earned 100 points and completed "{selectedTutorial.title}"
-                </p>
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
+            <div className="card max-w-md w-full animate-scale-in shadow-hard">
+              <div className="text-center space-y-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto">
+                  <Award className="w-10 h-10 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-3xl font-black text-gray-900 mb-2">Congratulations!</h3>
+                  <p className="text-lg text-gray-600">
+                    You've completed <strong>"{selectedTutorial.title}"</strong>
+                  </p>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6">
+                  <div className="flex items-center justify-center gap-2 text-2xl font-bold text-gray-900">
+                    <Star className="w-6 h-6 fill-amber-400 text-amber-400" />
+                    <span>+100 Points</span>
+                  </div>
+                </div>
                 <button
                   onClick={handleCloseTutorial}
                   className="btn-primary w-full"
                 >
-                  Back to Tutorials
+                  <span>Continue Learning</span>
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             </div>
@@ -502,67 +938,138 @@ const Tutorials = () => {
   }
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      <div className="text-center space-y-2 mb-8">
-        <h2 className="section-title">Interactive Tutorials</h2>
-        <p className="text-gray-600 text-lg">
-          Step-by-step guides to master Cursor from basics to advanced
-        </p>
+    <div className="space-y-12 animate-fade-in">
+      {/* Header */}
+      <div className="relative">
+        <div className="absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute -top-20 left-1/3 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-float"></div>
+        </div>
+        
+        <div className="text-center space-y-6 max-w-4xl mx-auto pt-8">
+          <h1 className="section-title">
+            Learn by <span className="gradient-text">Doing</span>
+          </h1>
+          <p className="section-subtitle">
+            Step-by-step tutorials that transform you from beginner to builder
+          </p>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Progress Overview */}
+      <div className="card-glass relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 -z-10"></div>
+        
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
+          <div>
+            <h2 className="text-3xl font-black text-gray-900 mb-2">Your Progress</h2>
+            <p className="text-gray-600 font-medium">
+              {tutorials.filter(t => isTutorialCompleted(t.id)).length} of {tutorials.length} tutorials completed
+            </p>
+          </div>
+          <div className="text-5xl font-black gradient-text">
+            {Math.round((tutorials.filter(t => isTutorialCompleted(t.id)).length / tutorials.length) * 100)}%
+          </div>
+        </div>
+        
+        <div className="progress-bar h-4">
+          <div 
+            className="progress-fill" 
+            style={{ width: `${(tutorials.filter(t => isTutorialCompleted(t.id)).length / tutorials.length) * 100}%` }}
+          />
+        </div>
+      </div>
+
+      {/* Tutorials Grid */}
+      <div className="grid md:grid-cols-2 gap-8">
         {tutorials.map((tutorial) => {
           const isCompleted = isTutorialCompleted(tutorial.id)
           
           return (
-            <div key={tutorial.id} className="card group hover:scale-105 transition-all duration-300">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <h3 className="text-xl font-bold text-gray-800">{tutorial.title}</h3>
-                    {isCompleted && (
-                      <CheckCircle2 className="w-6 h-6 text-green-500" />
-                    )}
-                  </div>
-                  <p className="text-gray-600 mb-3">{tutorial.description}</p>
-                  
-                  <div className="flex items-center space-x-3 text-sm">
-                    <span className={`badge ${getDifficultyColor(tutorial.difficulty)}`}>
-                      {tutorial.difficulty}
-                    </span>
-                    <span className="text-gray-500">⏱️ {tutorial.duration}</span>
-                    <span className="text-gray-500">📚 {tutorial.steps.length} steps</span>
+            <div key={tutorial.id} className="card-hover glow group relative">
+              {isCompleted && (
+                <div className="absolute -top-4 -right-4 z-10">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+                    <CheckCircle2 className="w-7 h-7 text-white" />
                   </div>
                 </div>
-              </div>
+              )}
 
-              <button
-                onClick={() => handleStartTutorial(tutorial)}
-                className="btn-primary w-full flex items-center justify-center space-x-2"
-              >
-                <Play className="w-5 h-5" />
-                <span>{isCompleted ? 'Review' : 'Start'} Tutorial</span>
-              </button>
+              <div className="space-y-6">
+                {/* Header */}
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3 className="text-3xl font-black text-gray-900 group-hover:gradient-text transition-all leading-tight">
+                      {tutorial.title}
+                    </h3>
+                    <span className={`${getDifficultyColor(tutorial.difficulty)} whitespace-nowrap text-xs`}>
+                      {tutorial.difficulty}
+                    </span>
+                  </div>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    {tutorial.description}
+                  </p>
+                </div>
+
+                {/* Meta Info */}
+                <div className="flex items-center gap-6 text-sm font-semibold text-gray-600">
+                  <span className="flex items-center gap-2">
+                    <Clock className="w-5 h-5" />
+                    {tutorial.duration}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <BookOpen className="w-5 h-5" />
+                    {tutorial.steps.length} steps
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                    100
+                  </span>
+                </div>
+
+                {/* CTA */}
+                <button
+                  onClick={() => handleStartTutorial(tutorial)}
+                  className={`w-full ${isCompleted ? 'btn-outline' : 'btn-primary'} group/btn`}
+                >
+                  {isCompleted ? (
+                    <>
+                      <CheckCircle2 className="w-6 h-6 group-hover/btn:rotate-12 transition-transform" />
+                      <span>Review</span>
+                    </>
+                  ) : (
+                    <>
+                      <Play className="w-6 h-6 group-hover/btn:scale-110 transition-transform" />
+                      <span>Start Now</span>
+                      <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           )
         })}
       </div>
 
-      {/* Progress Section */}
-      <div className="card bg-gradient-to-r from-primary-50 to-accent-50 border-2 border-primary-200">
-        <h3 className="text-xl font-bold text-gray-800 mb-3">Your Progress</h3>
-        <div className="space-y-2">
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-gray-600">Tutorials Completed</span>
-            <span className="font-bold text-gray-800">
-              {tutorials.filter(t => isTutorialCompleted(t.id)).length} / {tutorials.length}
-            </span>
-          </div>
-          <div className="progress-bar">
-            <div 
-              className="progress-fill" 
-              style={{ width: `${(tutorials.filter(t => isTutorialCompleted(t.id)).length / tutorials.length) * 100}%` }}
-            />
+      {/* CTA Banner */}
+      <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-purple-600 via-blue-600 to-purple-600 p-12 md:p-16 text-center text-white shadow-2xl">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
+        
+        <div className="relative space-y-8">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tight">Complete Your Learning</h2>
+          <p className="text-xl font-medium opacity-90 max-w-2xl mx-auto">
+            Finish all tutorials to earn {tutorials.length * 100} points
+          </p>
+          
+          <div className="flex items-center justify-center gap-6 pt-4">
+            <div className="bg-white/20 backdrop-blur-xl rounded-3xl px-8 py-6 min-w-[140px]">
+              <div className="text-5xl font-black mb-2">{tutorials.filter(t => isTutorialCompleted(t.id)).length}</div>
+              <div className="text-sm opacity-90 font-bold uppercase tracking-wide">Completed</div>
+            </div>
+            <div className="text-4xl font-black opacity-50">/</div>
+            <div className="bg-white/20 backdrop-blur-xl rounded-3xl px-8 py-6 min-w-[140px]">
+              <div className="text-5xl font-black mb-2">{tutorials.length}</div>
+              <div className="text-sm opacity-90 font-bold uppercase tracking-wide">Total</div>
+            </div>
           </div>
         </div>
       </div>
