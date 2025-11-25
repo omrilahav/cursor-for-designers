@@ -1,0 +1,109 @@
+# Cursor Design Academy - Project Rules
+
+## Project Context
+This is an educational web application designed to teach product designers how to use Cursor.
+The target audience is designers with little to no coding experience.
+
+## Tech Stack
+- React 18.2 with TypeScript
+- Vite for build tooling
+- Tailwind CSS for styling
+- React Router for navigation
+- Lucide React for icons
+- Framer Motion for animations
+
+## Design System
+
+### Colors
+- Primary: #0ea5e9 (blue)
+- Primary Dark: #0284c7
+- Accent: #d946ef (purple)
+- Accent Dark: #c026d3
+- Success: #10b981 (green)
+- Warning: #f59e0b (yellow)
+- Error: #ef4444 (red)
+
+### Spacing
+Based on 8px unit:
+- xs: 4px
+- sm: 8px
+- md: 16px
+- lg: 24px
+- xl: 32px
+- 2xl: 48px
+
+### Typography
+- Headings: Bold, gradient colors
+- Body: Regular weight, 16px base
+- Use Inter or system fonts
+
+### Components
+- Cards: white bg, rounded-xl, shadow-lg, p-6
+- Buttons: gradient backgrounds, hover effects, rounded-lg
+- Badges: rounded-full, small text
+- Progress bars: h-2, gradient fill
+
+## Code Style
+
+### React Components
+- Use functional components with TypeScript
+- Props interfaces above component
+- Descriptive prop names
+- Export as default at bottom
+
+### Naming Conventions
+- Components: PascalCase (UserCard.tsx)
+- Files: PascalCase for components, camelCase for utilities
+- CSS classes: Tailwind utility classes
+- Functions: camelCase
+- Constants: UPPER_SNAKE_CASE
+
+### File Organization
+```
+/src
+  /components  - Reusable UI components
+  /pages       - Route pages
+  /contexts    - React contexts
+  /utils       - Helper functions (if needed)
+```
+
+### Styling
+- Prefer Tailwind utility classes
+- Use custom CSS only when necessary
+- Responsive: mobile-first approach
+- Animations: subtle and purposeful
+
+## AI Instructions
+
+When helping with this project:
+1. Keep explanations simple and educational
+2. Always consider responsive design
+3. Follow accessibility best practices (semantic HTML, ARIA labels)
+4. Use TypeScript for type safety
+5. Comment complex logic
+6. Suggest improvements when relevant
+7. Be encouraging - this is a learning project!
+
+## Best Practices
+- Every component should work on mobile, tablet, and desktop
+- Use semantic HTML (button, nav, header, etc.)
+- Add hover and focus states for interactive elements
+- Keep components small and focused
+- Extract reusable logic
+- Test as you build
+
+## Don'ts
+- Don't use external libraries without discussion
+- Don't overcomplicate - keep it simple
+- Don't skip accessibility features
+- Don't use inline styles
+- Don't create God components (too many responsibilities)
+
+## Testing
+When adding new features:
+1. Test on different screen sizes
+2. Check keyboard navigation
+3. Verify color contrast
+4. Test with screen reader (if possible)
+5. Check browser console for errors
+
