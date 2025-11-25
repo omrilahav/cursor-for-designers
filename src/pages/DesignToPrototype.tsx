@@ -19,9 +19,9 @@ const DesignToPrototype = () => {
       {/* Hero */}
       <div className="card bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 text-white text-center space-y-4">
         <Sparkles className="w-16 h-16 mx-auto" />
-        <h1 className="text-4xl font-bold">Generate Designs from Scratch with AI</h1>
+        <h1 className="text-4xl font-bold">From Idea to Production Code with AI</h1>
         <p className="text-xl opacity-90 max-w-3xl mx-auto">
-          Skip Figma. Learn how to create stunning designs using only AI prompts—from idea to production code
+          Learn how designers use Cursor + Claude to generate stunning designs and ship working products
         </p>
       </div>
 

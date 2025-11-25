@@ -7,7 +7,7 @@ const BeginnerGuide = () => {
       id: 'what-is-cursor',
       icon: Code,
       title: 'What is Cursor (For Designers)?',
-      simple: 'Cursor is your AI design tool. Describe your vision, and Claude generates complete, working designs—no Figma needed.',
+      simple: 'Cursor is your AI-powered builder tool. Describe your vision, and Claude generates complete, working designs—ready to ship.',
       detailed: [
         'Start with an idea: "Create a modern landing page for a SaaS product"',
         'AI (Claude) generates the entire design—layout, colors, typography, interactions',
@@ -120,7 +120,7 @@ const BeginnerGuide = () => {
           
           <p className="section-subtitle max-w-3xl mx-auto">
             Learn how to generate stunning designs from scratch using AI. Create design systems, 
-            build complete interfaces, and ship production code—all with Claude and Cursor. No Figma. No code.
+            build complete interfaces, and ship production code—all with Claude and Cursor. Just conversation.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
@@ -136,9 +136,9 @@ const BeginnerGuide = () => {
       {/* Why Learn Section */}
       <section className="space-y-10">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Use AI to Generate Designs</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Use Cursor + AI</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Skip traditional tools. Design with AI from scratch.
+            Become a builder. Generate designs and ship real products.
           </p>
         </div>
         
@@ -149,7 +149,7 @@ const BeginnerGuide = () => {
             </div>
             <h3 className="text-2xl font-black text-gray-900 mb-3">Generate Designs in Seconds</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Forget Figma. Describe your vision to Claude, and watch AI generate complete designs—layouts, colors, typography, interactions. Iterate through conversation, not clicking.
+              Describe your vision to Claude, and watch AI generate complete designs—layouts, colors, typography, interactions. Iterate through conversation with instant results.
             </p>
           </div>
           
