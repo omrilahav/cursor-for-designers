@@ -452,7 +452,7 @@ const Modal = ({ isOpen, onClose, children }) => {
             <ul className="space-y-3 text-gray-700">
               <li className="flex items-start gap-2">
                 <span className="text-red-600 font-bold">•</span>
-                <span className="text-sm">Slow animations (>500ms feels laggy)</span>
+                <span className="text-sm">Slow animations (&gt;500ms feels laggy)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-red-600 font-bold">•</span>
