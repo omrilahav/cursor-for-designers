@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GitBranch, Save, Upload, History, Users, CheckCircle, ArrowRight } from 'lucide-react'
+import { GitBranch, Save, Upload, History, CheckCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useProgress } from '../contexts/ProgressContext'
 

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { 
-  Keyboard, Mouse, Search, FileCode, Terminal, GitBranch, 
-  Zap, Eye, Package, Settings, CheckCircle2, Play, BookOpen
+  Keyboard, FileCode, Terminal as TerminalIcon, 
+  Zap, Package, CheckCircle2, Play, BookOpen
 } from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
 
@@ -220,7 +220,7 @@ const Training = () => {
       id: 'terminal-git',
       title: 'Terminal & Git Integration',
       description: 'Master the integrated terminal and version control',
-      icon: Terminal,
+      icon: TerminalIcon,
       category: 'workflow',
       lessons: [
         {

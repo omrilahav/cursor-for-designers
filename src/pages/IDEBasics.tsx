@@ -1,15 +1,45 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { 
   Layout, Folder, File, Search, Play, Terminal as TerminalIcon,
-  Settings, ChevronRight, CheckCircle, ArrowRight 
+  ChevronRight, CheckCircle, ArrowRight 
 } from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
+
+interface ContentBlock {
+  heading?: string
+  text?: string
+  image?: string
+  description?: string
+  shortcut?: string
+  when?: string
+  example?: string
+  tip?: string
+  usage?: string
+  details?: any[]
+  tips?: string[]
+  examples?: string[]
+  shortcuts?: string[]
+  steps?: any[]
+}
+
+interface Section {
+  id: string
+  title: string
+  icon: any
+  description: string
+  content: ContentBlock[]
+  exercise?: {
+    title: string
+    steps: string[]
+  }
+}
 
 const IDEBasics = () => {
   const { completeLesson } = useProgress()
   const [completed, setCompleted] = useState<Set<string>>(new Set())
 
-  const sections = [
+  const sections: Section[] = [
     {
       id: 'interface-overview',
       title: 'The Cursor Interface - Your New Workspace',

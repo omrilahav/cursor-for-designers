@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CheckCircle2, Circle, Lock, Play, ChevronRight, Award } from 'lucide-react'
+import { CheckCircle2, Play, ChevronRight, Award } from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
 
 interface TutorialStep {
