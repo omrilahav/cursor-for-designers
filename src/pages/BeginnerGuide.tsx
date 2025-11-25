@@ -119,8 +119,8 @@ const BeginnerGuide = () => {
           </h1>
           
           <p className="section-subtitle max-w-3xl mx-auto">
-            Learn how to generate stunning designs from scratch using AI. Create design systems, 
-            build complete interfaces, and ship production code—all with Claude and Cursor. Just conversation.
+            Learn how to generate stunning designs, prototypes, and design systems from scratch using AI. 
+            Create, iterate, and collaborate—all with Claude and Cursor through simple conversation.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
@@ -138,7 +138,7 @@ const BeginnerGuide = () => {
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Use Cursor + AI</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Become a builder. Generate designs and ship real products.
+            Generate designs. Build systems. Collaborate with teams.
           </p>
         </div>
         
@@ -157,9 +157,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Code className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Ship Production Code</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Perfect Developer Handoffs</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Your AI-generated designs ARE the final product. No handoff needed—developers get working, tested code ready to integrate. Zero translation errors.
+              Share working prototypes with developers. They see exactly how designs should behave—interactions, animations, responsive layouts. Clear, accurate handoffs every time.
             </p>
           </div>
           

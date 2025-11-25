@@ -49,23 +49,23 @@ const Home = () => {
   const features = [
     {
       icon: Sparkles,
-      title: 'AI-Powered Design',
-      description: 'Describe your vision, Claude generates complete designs'
-    },
-    {
-      icon: Code,
-      title: 'Become a Builder',
-      description: 'Designers create working products with Cursor + AI'
+      title: 'Generate Designs',
+      description: 'Create designs, wireframes, and prototypes with AI'
     },
     {
       icon: Trophy,
-      title: 'Ship Design Systems',
-      description: 'Generate tokens, components, and documentation instantly'
+      title: 'Build Design Systems',
+      description: 'Generate tokens, components, and design language'
+    },
+    {
+      icon: Users,
+      title: 'Team Collaboration',
+      description: 'Share with designers and developers seamlessly'
     },
     {
       icon: Lightbulb,
-      title: 'Production Quality',
-      description: 'Every design is deployment-ready code'
+      title: 'Iterate Instantly',
+      description: 'Refine designs through conversation with Claude'
     },
   ]
 
@@ -76,12 +76,12 @@ const Home = () => {
   ]
 
   const benefits = [
-    'Generate complete designs from plain English descriptions',
+    'Generate designs and prototypes from plain English',
     'Build design systems with AI-created tokens and components',
-    'Create pixel-perfect, responsive layouts with AI assistance',
-    'Iterate designs through conversation with Claude',
-    'Ship production-ready code instantly',
-    'Transform from designer to builder with AI tools'
+    'Create wireframes and high-fidelity mockups instantly',
+    'Collaborate with your design team in real-time',
+    'Share working prototypes with developers for handoff',
+    'Iterate designs through conversation with AI'
   ]
 
   return (
@@ -98,12 +98,12 @@ const Home = () => {
             <h1 className="section-title">
               Design with AI.
               <br />
-              <span className="gradient-text">Ship Production Code.</span>
+              <span className="gradient-text">Build with Confidence.</span>
             </h1>
             
             <p className="section-subtitle max-w-3xl mx-auto">
-              Learn how product and UX/UI designers use Cursor and Claude to generate stunning designs, 
-              build design systems, and create production-ready code—all through conversation with AI.
+              Learn how product and UX/UI designers use Cursor and Claude to generate designs, prototypes, 
+              and design systems—all through conversation with AI.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ const Home = () => {
       <section className="space-y-12">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Choose Cursor</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Become a builder. Design with AI. Ship real products.</p>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Create faster. Design with AI. Collaborate better.</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

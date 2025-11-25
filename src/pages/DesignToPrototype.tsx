@@ -19,9 +19,9 @@ const DesignToPrototype = () => {
       {/* Hero */}
       <div className="card bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 text-white text-center space-y-4">
         <Sparkles className="w-16 h-16 mx-auto" />
-        <h1 className="text-4xl font-bold">From Idea to Production Code with AI</h1>
+        <h1 className="text-4xl font-bold">From Idea to Working Prototype with AI</h1>
         <p className="text-xl opacity-90 max-w-3xl mx-auto">
-          Learn how designers use Cursor + Claude to generate stunning designs and ship working products
+          Learn how designers use Cursor + Claude to generate designs, prototypes, and design systems
         </p>
       </div>
 
@@ -78,8 +78,8 @@ const DesignToPrototype = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-yellow-600 to-amber-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Share2 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">5. Ship Code</h3>
-              <p className="text-sm text-gray-600">Deploy production-ready design</p>
+              <h3 className="font-bold text-gray-800 mb-2">5. Share</h3>
+              <p className="text-sm text-gray-600">Collaborate with team and developers</p>
             </div>
           </div>
         </div>
