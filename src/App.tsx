@@ -16,6 +16,11 @@ import BestPractices from './pages/BestPractices'
 import Configuration from './pages/Configuration'
 import SpecsSharing from './pages/SpecsSharing'
 import Progress from './pages/Progress'
+import DesignToPrototype from './pages/DesignToPrototype'
+import DesignSystems from './pages/DesignSystems'
+import DesignHandoff from './pages/DesignHandoff'
+import Animations from './pages/Animations'
+import Collaboration from './pages/Collaboration'
 
 function App() {
   return (
@@ -38,6 +43,11 @@ function App() {
             <Route path="/configuration" element={<Configuration />} />
             <Route path="/specs-sharing" element={<SpecsSharing />} />
             <Route path="/progress" element={<Progress />} />
+            <Route path="/design-to-prototype" element={<DesignToPrototype />} />
+            <Route path="/design-systems" element={<DesignSystems />} />
+            <Route path="/design-handoff" element={<DesignHandoff />} />
+            <Route path="/animations" element={<Animations />} />
+            <Route path="/collaboration" element={<Collaboration />} />
           </Routes>
         </Layout>
       </Router>

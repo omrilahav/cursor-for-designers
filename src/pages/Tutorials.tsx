@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CheckCircle2, Play, ChevronRight, Award, Clock, BookOpen, Target, ArrowLeft, Star, Lightbulb, ArrowRight } from 'lucide-react'
+import { Link, useNavigate } from 'react-router-dom'
 import { useProgress } from '../contexts/ProgressContext'
 
 interface TutorialStep {
@@ -25,6 +26,51 @@ const Tutorials = () => {
   const [selectedTutorial, setSelectedTutorial] = useState<Tutorial | null>(null)
   const [currentStep, setCurrentStep] = useState(0)
   const [showCompleteModal, setShowCompleteModal] = useState(false)
+  const navigate = useNavigate()
+
+  // Designer-focused tutorials (link to dedicated pages)
+  const designerTutorials = [
+    {
+      id: 'design-to-prototype',
+      title: 'Design to Prototype',
+      description: 'Turn mockups into working prototypes using AI - the complete designer workflow',
+      difficulty: 'Beginner' as const,
+      duration: '30 min',
+      link: '/design-to-prototype'
+    },
+    {
+      id: 'design-systems',
+      title: 'Building Design Systems',
+      description: 'Create scalable component libraries and design tokens that your team can use',
+      difficulty: 'Intermediate' as const,
+      duration: '45 min',
+      link: '/design-systems'
+    },
+    {
+      id: 'design-handoff',
+      title: 'Design Handoff to Developers',
+      description: 'Perfect handoffs with production-ready code that developers will love',
+      difficulty: 'Intermediate' as const,
+      duration: '30 min',
+      link: '/design-handoff'
+    },
+    {
+      id: 'animations',
+      title: 'Prototyping Interactions & Animations',
+      description: 'Bring designs to life with smooth, delightful animations',
+      difficulty: 'Intermediate' as const,
+      duration: '35 min',
+      link: '/animations'
+    },
+    {
+      id: 'collaboration',
+      title: 'Team Collaboration for Designers',
+      description: 'Work seamlessly with other designers, developers, and stakeholders',
+      difficulty: 'Beginner' as const,
+      duration: '25 min',
+      link: '/collaboration'
+    }
+  ]
 
   const tutorials: Tutorial[] = [
     {
@@ -979,8 +1025,97 @@ const Tutorials = () => {
         </div>
       </div>
 
-      {/* Tutorials Grid */}
-      <div className="grid md:grid-cols-2 gap-8">
+      {/* Designer-Focused Tutorials */}
+      <div className="space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+          <h2 className="text-2xl font-black text-gray-900">🎨 Designer Workflows</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+        </div>
+        <p className="text-center text-gray-600 max-w-3xl mx-auto">
+          Complete guides for product and UX/UI designers to build prototypes, design systems, and collaborate with teams
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {designerTutorials.map((tutorial) => {
+            const isCompleted = isTutorialCompleted(tutorial.id)
+            
+            return (
+              <div key={tutorial.id} className="card-hover glow group relative">
+                {isCompleted && (
+                  <div className="absolute -top-4 -right-4 z-10">
+                    <div className="w-14 h-14 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+                      <CheckCircle2 className="w-7 h-7 text-white" />
+                    </div>
+                  </div>
+                )}
+
+                <div className="space-y-6">
+                  {/* Header */}
+                  <div>
+                    <div className="flex items-start justify-between gap-4 mb-4">
+                      <h3 className="text-3xl font-black text-gray-900 group-hover:gradient-text transition-all leading-tight">
+                        {tutorial.title}
+                      </h3>
+                      <span className={`${getDifficultyColor(tutorial.difficulty)} whitespace-nowrap text-xs`}>
+                        {tutorial.difficulty}
+                      </span>
+                    </div>
+                    <p className="text-gray-600 leading-relaxed text-lg">
+                      {tutorial.description}
+                    </p>
+                  </div>
+
+                  {/* Meta Info */}
+                  <div className="flex items-center gap-6 text-sm font-semibold text-gray-600">
+                    <span className="flex items-center gap-2">
+                      <Clock className="w-5 h-5" />
+                      {tutorial.duration}
+                    </span>
+                    <span className="flex items-center gap-2">
+                      <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
+                      150
+                    </span>
+                  </div>
+
+                  {/* CTA */}
+                  <Link
+                    to={tutorial.link}
+                    className={`w-full ${isCompleted ? 'btn-outline' : 'btn-primary'} group/btn flex items-center justify-center gap-3`}
+                  >
+                    {isCompleted ? (
+                      <>
+                        <CheckCircle2 className="w-6 h-6 group-hover/btn:rotate-12 transition-transform" />
+                        <span>Review</span>
+                      </>
+                    ) : (
+                      <>
+                        <Play className="w-6 h-6 group-hover/btn:scale-110 transition-transform" />
+                        <span>Start Now</span>
+                        <ArrowRight className="w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
+                      </>
+                    )}
+                  </Link>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Interactive Tutorials */}
+      <div className="space-y-6">
+        <div className="flex items-center gap-3">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
+          <h2 className="text-2xl font-black text-gray-900">💻 Interactive Tutorials</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
+        </div>
+        <p className="text-center text-gray-600 max-w-3xl mx-auto">
+          Step-by-step hands-on tutorials where you learn by doing
+        </p>
+
+        {/* Tutorials Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
         {tutorials.map((tutorial) => {
           const isCompleted = isTutorialCompleted(tutorial.id)
           
@@ -1048,6 +1183,7 @@ const Tutorials = () => {
             </div>
           )
         })}
+        </div>
       </div>
 
       {/* CTA Banner */}
