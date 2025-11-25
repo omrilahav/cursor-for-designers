@@ -19,9 +19,9 @@ const DesignToPrototype = () => {
       {/* Hero */}
       <div className="card bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 text-white text-center space-y-4">
         <Sparkles className="w-16 h-16 mx-auto" />
-        <h1 className="text-4xl font-bold">From Idea to Working Prototype with AI</h1>
+        <h1 className="text-4xl font-bold">Tutorial: From Idea to Design with AI</h1>
         <p className="text-xl opacity-90 max-w-3xl mx-auto">
-          Learn how designers use Cursor + Claude to generate designs, prototypes, and design systems
+          Step-by-step guide to creating designs, prototypes, and design systems using Cursor and Claude
         </p>
       </div>
 

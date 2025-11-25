@@ -119,8 +119,8 @@ const BeginnerGuide = () => {
           </h1>
           
           <p className="section-subtitle max-w-3xl mx-auto">
-            Learn how to generate stunning designs, prototypes, and design systems from scratch using AI. 
-            Create, iterate, and collaborate—all with Claude and Cursor through simple conversation.
+            This tutorial teaches you everything from scratch—no coding or IDE experience needed. 
+            Learn how to use Cursor and Claude to design products, build design systems, and collaborate with teams.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
@@ -136,9 +136,9 @@ const BeginnerGuide = () => {
       {/* Why Learn Section */}
       <section className="space-y-10">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Use Cursor + AI</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">What This Tutorial Covers</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Generate designs. Build systems. Collaborate with teams.
+            Master everything from basics to advanced AI design techniques
           </p>
         </div>
         
@@ -147,9 +147,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Zap className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Generate Designs in Seconds</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Creating Designs with AI</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Describe your vision to Claude, and watch AI generate complete designs—layouts, colors, typography, interactions. Iterate through conversation with instant results.
+              Learn how to describe your vision to Claude and create complete designs—layouts, colors, typography, interactions. Master the art of iterating through conversation.
             </p>
           </div>
           
@@ -167,9 +167,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Lightbulb className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">AI-Generated Design Systems</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Building Design Systems</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Describe your brand guidelines. AI generates complete design systems—tokens, components, documentation. Enterprise-grade quality in hours, not weeks.
+              Learn how to create design systems with AI—tokens, components, guidelines, and documentation. Follow best practices used by top design teams.
             </p>
           </div>
           
@@ -177,9 +177,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Rocket className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Iterate Through Conversation</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Team Collaboration</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              No clicking, no menus, no learning curves. Just talk to Claude: "Make it more modern", "Add animations", "Try a dark theme". Instant iterations.
+              Learn how to collaborate effectively with your design team and developers. Share your work, give and receive feedback, and work together on design projects.
             </p>
           </div>
         </div>

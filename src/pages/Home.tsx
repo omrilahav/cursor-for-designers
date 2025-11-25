@@ -49,23 +49,23 @@ const Home = () => {
   const features = [
     {
       icon: Sparkles,
-      title: 'Generate Designs',
-      description: 'Create designs, wireframes, and prototypes with AI'
+      title: 'Learn AI-Powered Design',
+      description: 'Master how to create designs with Cursor and Claude'
     },
     {
       icon: Trophy,
       title: 'Build Design Systems',
-      description: 'Generate tokens, components, and design language'
+      description: 'Learn best practices for tokens, components, and guidelines'
     },
     {
       icon: Users,
-      title: 'Team Collaboration',
-      description: 'Share with designers and developers seamlessly'
+      title: 'Collaborate with Teams',
+      description: 'Work with designers and developers effectively'
     },
     {
       icon: Lightbulb,
-      title: 'Iterate Instantly',
-      description: 'Refine designs through conversation with Claude'
+      title: 'Best Practices & Rules',
+      description: 'How the best designers use AI tools'
     },
   ]
 
@@ -76,12 +76,12 @@ const Home = () => {
   ]
 
   const benefits = [
-    'Generate designs and prototypes from plain English',
-    'Build design systems with AI-created tokens and components',
-    'Create wireframes and high-fidelity mockups instantly',
-    'Collaborate with your design team in real-time',
-    'Share working prototypes with developers for handoff',
-    'Iterate designs through conversation with AI'
+    'How to use Cursor and Claude for design work',
+    'Creating designs and design systems from scratch',
+    'Best practices, rules, and guidelines for AI design',
+    'Collaborating with your design team',
+    'Working with developers and sharing your work',
+    'Turning ideas into best-in-class designs'
   ]
 
   return (
@@ -96,14 +96,14 @@ const Home = () => {
         <div className="max-w-5xl mx-auto text-center space-y-12">
           <div className="space-y-6">
             <h1 className="section-title">
-              Design with AI.
+              Learn to Design
               <br />
-              <span className="gradient-text">Build with Confidence.</span>
+              <span className="gradient-text">with Cursor and AI.</span>
             </h1>
             
             <p className="section-subtitle max-w-3xl mx-auto">
-              Learn how product and UX/UI designers use Cursor and Claude to generate designs, prototypes, 
-              and design systems—all through conversation with AI.
+              A complete tutorial for product and UX/UI designers to master Cursor and Claude. 
+              No coding background needed. Learn how to turn ideas into designs and design systems.
             </p>
           </div>
 
@@ -140,8 +140,8 @@ const Home = () => {
       {/* Features Grid */}
       <section className="space-y-12">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Choose Cursor</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Create faster. Design with AI. Collaborate better.</p>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">What You'll Learn</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to master AI-powered design</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
