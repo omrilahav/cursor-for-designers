@@ -7,15 +7,15 @@ const BeginnerGuide = () => {
       id: 'what-is-cursor',
       icon: Code,
       title: 'What is Cursor (For Designers)?',
-      simple: 'Cursor is like Figma, but instead of static mockups, you create interactive, working prototypes using AI.',
+      simple: 'Cursor is your AI design tool. Describe your vision, and Claude generates complete, working designs—no Figma needed.',
       detailed: [
-        'Describe your design in plain English: "Create a card with an image, title, and button"',
-        'AI generates the actual working component - not just a picture',
-        'Edit and refine with more natural language: "Make the button rounder", "Add a hover effect"',
-        'Export production-ready code that developers can use directly',
-        'No need to learn HTML, CSS, or JavaScript - AI handles all the technical stuff'
+        'Start with an idea: "Create a modern landing page for a SaaS product"',
+        'AI (Claude) generates the entire design—layout, colors, typography, interactions',
+        'Refine through conversation: "Make it more minimalist", "Add animations to the hero section"',
+        'Build complete design systems: "Generate a color palette and component library for a fintech brand"',
+        'The result is production-ready code that looks professional and works perfectly'
       ],
-      example: 'Say: "Create a pricing card with 3 tiers, each showing features and a CTA button" - AI builds it!'
+      example: 'Say: "Design a dashboard with sidebar navigation, data cards, and charts in a dark theme" - AI creates everything!'
     },
     {
       id: 'what-is-ide',
@@ -119,8 +119,8 @@ const BeginnerGuide = () => {
           </h1>
           
           <p className="section-subtitle max-w-3xl mx-auto">
-            Learn how to turn your designs into interactive prototypes, build design systems, 
-            and create production-ready components—all with AI assistance. No coding required.
+            Learn how to generate stunning designs from scratch using AI. Create design systems, 
+            build complete interfaces, and ship production code—all with Claude and Cursor. No Figma. No code.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
@@ -136,9 +136,9 @@ const BeginnerGuide = () => {
       {/* Why Learn Section */}
       <section className="space-y-10">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Use Cursor</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Use AI to Generate Designs</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Bridge the gap between design and development
+            Skip traditional tools. Design with AI from scratch.
           </p>
         </div>
         
@@ -147,9 +147,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Zap className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Prototype 10x Faster</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Generate Designs in Seconds</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Stop using static mockup tools. Turn your Figma designs into interactive, high-fidelity prototypes in minutes—not days. Test real interactions, animations, and responsive behavior instantly.
+              Forget Figma. Describe your vision to Claude, and watch AI generate complete designs—layouts, colors, typography, interactions. Iterate through conversation, not clicking.
             </p>
           </div>
           
@@ -157,9 +157,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Code className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Perfect Dev Handoffs</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Ship Production Code</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Generate production-ready code from your designs. Hand off actual working components to developers, not just static specs. They'll love you for it.
+              Your AI-generated designs ARE the final product. No handoff needed—developers get working, tested code ready to integrate. Zero translation errors.
             </p>
           </div>
           
@@ -167,9 +167,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Lightbulb className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Build Design Systems</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">AI-Generated Design Systems</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Create and maintain living design systems. Build reusable component libraries with design tokens, ensuring consistency across your entire product.
+              Describe your brand guidelines. AI generates complete design systems—tokens, components, documentation. Enterprise-grade quality in hours, not weeks.
             </p>
           </div>
           
@@ -177,9 +177,9 @@ const BeginnerGuide = () => {
             <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
               <Rocket className="w-8 h-8 text-white" />
             </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Design & Validate Faster</h3>
+            <h3 className="text-2xl font-black text-gray-900 mb-3">Iterate Through Conversation</h3>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Don't wait weeks for developers to build prototypes. Test your ideas immediately with real users. Iterate based on feedback before development even starts.
+              No clicking, no menus, no learning curves. Just talk to Claude: "Make it more modern", "Add animations", "Try a dark theme". Instant iterations.
             </p>
           </div>
         </div>

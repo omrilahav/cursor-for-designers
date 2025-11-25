@@ -48,24 +48,24 @@ const Home = () => {
 
   const features = [
     {
-      icon: Zap,
-      title: 'Design to Code',
-      description: 'Turn mockups into working prototypes instantly'
+      icon: Sparkles,
+      title: 'Generate Designs with AI',
+      description: 'Describe your vision, AI creates the design'
     },
     {
       icon: Code,
-      title: 'No Coding Required',
-      description: 'Describe your design, AI builds it'
+      title: 'No Figma, No Code',
+      description: 'Design directly in Cursor with AI prompts'
     },
     {
       icon: Trophy,
-      title: 'Build Design Systems',
-      description: 'Create reusable component libraries'
+      title: 'AI-Generated Design Systems',
+      description: 'Create enterprise-grade systems from scratch'
     },
     {
       icon: Lightbulb,
-      title: 'Perfect Handoffs',
-      description: 'Share production-ready code with developers'
+      title: 'Production-Ready Code',
+      description: 'Your designs ARE the final product'
     },
   ]
 
@@ -76,12 +76,12 @@ const Home = () => {
   ]
 
   const benefits = [
-    'Turn Figma designs into working prototypes',
-    'Build interactive components with animations',
-    'Create and maintain design systems',
-    'Generate production-ready code for developers',
-    'Prototype faster than traditional tools',
-    'No coding experience required'
+    'Generate complete designs from plain English descriptions',
+    'Build design systems with AI-created tokens and components',
+    'Create pixel-perfect layouts without touching Figma',
+    'Iterate designs through conversation with Claude',
+    'Ship production-ready code to developers instantly',
+    'No design tools required—just AI and ideas'
   ]
 
   return (
@@ -96,14 +96,14 @@ const Home = () => {
         <div className="max-w-5xl mx-auto text-center space-y-12">
           <div className="space-y-6">
             <h1 className="section-title">
-              From Design to Prototype.
+              Generate World-Class Designs.
               <br />
-              <span className="gradient-text">In Minutes, Not Days.</span>
+              <span className="gradient-text">With AI. No Figma Required.</span>
             </h1>
             
             <p className="section-subtitle max-w-3xl mx-auto">
-              Learn how to turn your designs into high-fidelity, interactive prototypes using Cursor. 
-              Build design systems, share with developers, and bring your vision to life—no coding experience needed.
+              Learn how to create stunning designs and design systems from scratch using Claude and Cursor. 
+              From idea to production code—all with AI prompts. No Figma. No code. Just conversation.
             </p>
           </div>
 
@@ -140,8 +140,8 @@ const Home = () => {
       {/* Features Grid */}
       <section className="space-y-12">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Why Designers Love Cursor</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">The fastest path from design to interactive prototype</p>
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">AI as Your Design Tool</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Skip traditional tools. Design directly with Claude and Cursor.</p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

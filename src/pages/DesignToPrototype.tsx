@@ -18,26 +18,26 @@ const DesignToPrototype = () => {
     <div className="space-y-8 animate-fade-in max-w-5xl mx-auto">
       {/* Hero */}
       <div className="card bg-gradient-to-br from-purple-600 via-pink-600 to-red-600 text-white text-center space-y-4">
-        <Figma className="w-16 h-16 mx-auto" />
-        <h1 className="text-4xl font-bold">From Design to Interactive Prototype</h1>
+        <Sparkles className="w-16 h-16 mx-auto" />
+        <h1 className="text-4xl font-bold">Generate Designs from Scratch with AI</h1>
         <p className="text-xl opacity-90 max-w-3xl mx-auto">
-          Learn the complete workflow: mockup → AI → working prototype in minutes
+          Skip Figma. Learn how to create stunning designs using only AI prompts—from idea to production code
         </p>
       </div>
 
       {/* The Workflow Overview */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The Designer's Workflow</h2>
-        <p className="text-gray-600 text-lg">This is how modern designers work - fast, iterative, and collaborative</p>
+        <h2 className="text-3xl font-bold text-gray-800">The AI-First Design Workflow</h2>
+        <p className="text-gray-600 text-lg">How to generate world-class designs using only AI and conversation</p>
 
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <Figma className="w-8 h-8 text-white" />
+                <Sparkles className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">1. Design</h3>
-              <p className="text-sm text-gray-600">Create mockups in Figma/Sketch</p>
+              <h3 className="font-bold text-gray-800 mb-2">1. Describe</h3>
+              <p className="text-sm text-gray-600">Tell Claude your design vision</p>
             </div>
 
             <div className="flex items-center justify-center">
@@ -48,8 +48,8 @@ const DesignToPrototype = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Wand2 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">2. Describe</h3>
-              <p className="text-sm text-gray-600">Tell AI what to build</p>
+              <h3 className="font-bold text-gray-800 mb-2">2. Generate</h3>
+              <p className="text-sm text-gray-600">AI creates complete design</p>
             </div>
 
             <div className="flex items-center justify-center">
@@ -60,8 +60,8 @@ const DesignToPrototype = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Play className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">3. Prototype</h3>
-              <p className="text-sm text-gray-600">Get working, interactive version</p>
+              <h3 className="font-bold text-gray-800 mb-2">3. Review</h3>
+              <p className="text-sm text-gray-600">See live, working design</p>
             </div>
           </div>
 
@@ -70,16 +70,16 @@ const DesignToPrototype = () => {
               <div className="w-16 h-16 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Eye className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">4. Test & Iterate</h3>
-              <p className="text-sm text-gray-600">Test with users, refine quickly</p>
+              <h3 className="font-bold text-gray-800 mb-2">4. Refine with AI</h3>
+              <p className="text-sm text-gray-600">Iterate through conversation</p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-yellow-600 to-amber-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Share2 className="w-8 h-8 text-white" />
               </div>
-              <h3 className="font-bold text-gray-800 mb-2">5. Hand Off</h3>
-              <p className="text-sm text-gray-600">Share code with developers</p>
+              <h3 className="font-bold text-gray-800 mb-2">5. Ship Code</h3>
+              <p className="text-sm text-gray-600">Deploy production-ready design</p>
             </div>
           </div>
         </div>
