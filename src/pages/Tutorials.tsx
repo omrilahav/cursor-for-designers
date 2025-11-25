@@ -75,158 +75,180 @@ const Tutorials = () => {
   const tutorials: Tutorial[] = [
     {
       id: 'build-first-component',
-      title: 'Build Your First Component (Hands-On)',
-      description: 'Create a working profile card from scratch - perfect for absolute beginners',
+      title: 'Build Your First Design Component (Hands-On)',
+      description: 'Create a production-quality product card from scratch - learn the designer workflow',
       difficulty: 'Beginner',
-      duration: '30 min',
+      duration: '35 min',
       steps: [
         {
           id: 'step-1',
           title: 'Set Up Your Project',
-          description: 'Get ready to build - create a place for your component',
+          description: 'Get ready to build like a professional designer',
           content: [
-            'Open Cursor and create a new folder on your Desktop called "my-first-component"',
+            'Open Cursor and create a new folder on your Desktop called "my-design-components"',
             'In Cursor, go to File → Open Folder and select your new folder',
             'You should now see an empty folder in the sidebar',
-            'We\'re going to build a beautiful profile card component!'
+            'We\'re going to build a beautiful product card - the kind you see on e-commerce sites!',
+            'This is the same workflow used by professional design teams'
           ],
           tips: [
             'Make sure the folder is empty - fresh start!',
             'If you see a "Trust" dialog, click "Trust" - it\'s your own folder',
-            'The sidebar on the left shows all your files'
+            'Think of this as your design playground'
           ],
           exercise: 'Create the folder and open it in Cursor. You\'re ready when you see an empty sidebar.'
         },
         {
           id: 'step-2',
           title: 'Create Your HTML File',
-          description: 'Make the canvas where we\'ll build',
+          description: 'Set up your canvas',
           content: [
             'Click the "New File" icon in the sidebar (or press Cmd+N)',
-            'A new file appears - let\'s save it immediately',
+            'A new file appears - save it immediately',
             'Press Cmd+S (or Ctrl+S on Windows) to save',
-            'Name it "profile-card.html" and press Enter',
-            'Perfect! You now have your first file'
+            'Name it "product-card.html" and press Enter',
+            'This file will contain your first design component!'
           ],
           tips: [
-            'Always save files right away so you don\'t lose work',
+            'Always save files right away - never lose work',
             'The .html extension tells Cursor this is a web page',
-            'You can see the file appear in the sidebar'
+            'Naming matters - "product-card" is descriptive and professional'
           ],
-          exercise: 'Create and save profile-card.html. The file should be visible in your sidebar.'
+          exercise: 'Create and save product-card.html. The file should be visible in your sidebar.'
         },
         {
           id: 'step-3',
-          title: 'Use AI to Build the Structure',
-          description: 'Let AI help you create the basic HTML structure',
+          title: 'Use AI to Build the Foundation',
+          description: 'Let AI create the page structure',
           content: [
-            'Make sure your cursor is in the empty profile-card.html file',
+            'Make sure your cursor is in the empty product-card.html file',
             'Press Cmd+K (or Ctrl+K on Windows) to open AI inline edit',
-            'Type: "create a basic HTML page structure"',
-            'Press Enter and watch the AI generate code!',
-            'Press Tab to accept the suggestion',
+            'Type: "create a modern HTML page structure with Tailwind CSS"',
+            'Press Enter and watch the AI generate the foundation!',
+            'Press Tab to accept',
             'Save the file (Cmd+S)'
           ],
           tips: [
-            'This is your first AI-generated code - congratulations!',
-            'The AI created the skeleton every HTML page needs',
-            'Don\'t worry about understanding every detail yet',
-            'You can always ask AI to explain: Cmd+L then "explain this code"'
+            'We\'re using Tailwind CSS - a designer-friendly styling system',
+            'The AI knows to include it from a CDN (Content Delivery Network)',
+            'This is your first AI-generated code - you\'re coding!',
+            'Don\'t worry about every detail - you\'ll learn by doing'
           ],
-          exercise: 'Use AI to generate basic HTML structure. You should see <html>, <head>, and <body> tags.'
+          exercise: 'Generate the HTML structure. You should see <html>, <head> with Tailwind, and <body> tags.'
         },
         {
           id: 'step-4',
-          title: 'Build the Profile Card',
-          description: 'Create an actual component with AI assistance',
+          title: 'Build the Product Card Component',
+          description: 'Create a real design component with AI',
           content: [
-            'Place your cursor inside the <body> tag (between <body> and </body>)',
+            'Place your cursor inside the <body> tag',
             'Press Cmd+K again',
-            'Type this detailed request: "create a centered profile card with a circular avatar image, name Sarah Chen, title UX Designer, short bio, and a follow button. Make it look modern with nice spacing and colors"',
-            'Press Enter and watch AI build it!',
-            'Press Tab to accept',
-            'Save your file'
+            'Type this detailed design request:',
+            '"Create a product card for wireless headphones with:',
+            '- Product image at top (use placeholder from unsplash)',
+            '- Product name: Premium Wireless Headphones',
+            '- Price: $299',
+            '- 5-star rating',
+            '- Short description',
+            '- Add to Cart button (blue, rounded)',
+            '- Hover effects on the card and button',
+            '- Modern design with shadows and rounded corners',
+            '- Responsive and centered"',
+            'Press Enter and watch AI build your component!',
+            'Accept with Tab and save'
           ],
           tips: [
-            'The more specific your description, the better the result',
-            'Notice how AI interpreted "modern" and "nice spacing"',
-            'You can always refine: select the code, Cmd+K, "make the button blue"'
+            'This is how professional designers describe components to AI',
+            'Be specific about interactions (hover effects)',
+            'Notice we mentioned colors, shapes, and behavior',
+            'The AI will use design best practices automatically'
           ],
-          exercise: 'Generate the profile card. You should see a complete card with avatar, text, and button.'
+          exercise: 'Generate the product card. You should see a complete, beautiful component with image, text, price, and button.'
         },
         {
           id: 'step-5',
-          title: 'Preview Your Creation',
-          description: 'See your component in a browser!',
+          title: 'Preview Your Design',
+          description: 'See your component come alive in the browser!',
           content: [
-            'Right-click on profile-card.html in the sidebar',
+            'Right-click on product-card.html in the sidebar',
             'Choose "Open with Live Server" (or just double-click the file)',
-            'Your default browser opens showing YOUR profile card!',
-            'This is a real, working component you just built!',
-            'Try resizing the browser - see how it adapts'
+            'Your browser opens showing YOUR product card!',
+            'This is a real, production-quality component you just designed!',
+            'Try hovering over the card and button - see the interactions!',
+            'Resize the browser - watch it adapt responsively'
           ],
           tips: [
-            'If "Open with Live Server" isn\'t there, just double-click the file and open it in a browser',
-            'You can edit the code and refresh to see changes',
-            'This is actual web development - you\'re doing it!'
+            'If "Open with Live Server" isn\'t there, double-click and open in any browser',
+            'This is what customers would actually see on a website',
+            'You just went from idea to working prototype in minutes!',
+            'Professional designers use this exact workflow'
           ],
-          exercise: 'Open your profile card in a browser. Celebrate - you built something real! 🎉'
+          exercise: 'Open your product card in a browser and interact with it. Test the hover effects! 🎉'
         },
         {
           id: 'step-6',
-          title: 'Customize and Iterate',
-          description: 'Make it your own with quick AI edits',
+          title: 'Design Iteration with AI',
+          description: 'Refine your design like a pro',
           content: [
-            'Back in Cursor, select the button code',
-            'Press Cmd+K and type: "add a hover effect that changes background to purple"',
-            'Accept the change, save, and refresh your browser',
-            'See the hover effect? You just added an interaction!',
-            'Try more: "make the avatar larger" or "add a shadow to the card"'
+            'Back in Cursor, let\'s add design polish',
+            'Select the button code, press Cmd+K',
+            'Type: "add a smooth scale animation on hover and a cart icon"',
+            'Accept, save, and refresh - the button now has personality!',
+            'Select the card, Cmd+K: "add a subtle lift animation on hover"',
+            'Try: "make the image have a gradient overlay with product name"',
+            'Experiment: "add a wishlist heart icon in top-right corner"'
           ],
           tips: [
-            'This iterative workflow is how professionals work',
-            'Make one change at a time so you can track what works',
-            'If you don\'t like something, Cmd+Z to undo',
-            'The cycle is: edit → save → refresh → repeat'
+            'This is the designer\'s iterative workflow: build → test → refine',
+            'Each small change compounds into a polished design',
+            'If something doesn\'t work, Cmd+Z and try differently',
+            'Professional designers iterate 10-20 times on components',
+            'Save versions you like before trying risky changes'
           ],
-          exercise: 'Add at least two customizations using AI. Make the card uniquely yours!'
+          exercise: 'Add at least 3 design refinements. Make this component uniquely beautiful!'
         },
         {
           id: 'step-7',
-          title: 'Understanding What You Built',
-          description: 'Learn from your code',
+          title: 'Understanding Design Decisions',
+          description: 'Learn from what you built',
           content: [
-            'Select all your code (Cmd+A)',
+            'Select your entire card code',
             'Press Cmd+L to open AI chat',
-            'Ask: "Explain this code to me like I\'m new to web development"',
-            'Read the explanation - AI will break down each part',
-            'Ask follow-up questions: "What does the style section do?" or "How does the button work?"'
+            'Ask: "Explain the design system decisions in this component"',
+            'AI will explain colors, spacing, hierarchy, interactions',
+            'Ask: "Why did you use these specific shadow values?"',
+            'Ask: "What makes this design feel modern and professional?"',
+            'Learn the principles behind the pixels'
           ],
           tips: [
-            'Understanding your code makes you a better builder',
-            'Don\'t move on until you grasp the basics',
-            'There\'s no shame in asking AI to explain things multiple times',
-            'This learning process is how you build real skills'
+            'Understanding WHY makes you a better designer',
+            'These principles apply to every component you\'ll build',
+            'Ask about accessibility: "Is this component accessible?"',
+            'Learn the vocabulary: spacing, hierarchy, contrast, etc.',
+            'This knowledge is what separates good from great designers'
           ],
-          exercise: 'Get an explanation of your code. Ask at least one follow-up question.'
+          exercise: 'Get a design explanation and ask 2 follow-up questions about design principles.'
         },
         {
           id: 'step-8',
-          title: 'Congratulations - You\'re a Builder!',
-          description: 'Celebrate your achievement!',
+          title: 'You\'re Now a Design Engineer!',
+          description: 'Celebrate and understand what you achieved',
           content: [
-            'You just built a real web component from scratch',
-            'You used AI assistance - that\'s the modern way to build',
-            'You iterated and improved your work',
-            'You learned by doing - the best way to learn',
-            'This is just the beginning of what you can create!'
+            'You built a production-quality design component from scratch!',
+            'You used AI as your design tool - the future of design',
+            'You iterated and refined like a professional',
+            'You understand the design principles behind your work',
+            'This component could go live on a real website today!',
+            'You\'re not just a designer - you\'re a design engineer who ships code'
           ],
           tips: [
-            'Save this project - you\'ll want to reference it',
-            'Try building variations: a product card, a testimonial card',
-            'Every professional started exactly where you are now',
-            'The next tutorial will build on these skills'
-          ]
+            'Save this project as your portfolio piece',
+            'Build more cards: blog post card, team member card, pricing card',
+            'Share with your team - they\'ll be impressed!',
+            'This workflow scales to entire design systems',
+            'The next tutorials teach design systems, handoffs, and animations'
+          ],
+          exercise: 'Screenshot your component and share it! You deserve to celebrate this achievement. 🚀'
         }
       ]
     },
