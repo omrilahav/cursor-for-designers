@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
       {/* Top Bar - Minimal */}
       <div className="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white text-center py-3 px-4 border-b border-white/10">
         <p className="text-sm font-semibold tracking-wide">
-          Master Cursor • Design with AI • Build Beautiful Things
+          For Product & UX/UI Designers • Learn Cursor + AI • No Coding Required
         </p>
       </div>
 
@@ -40,12 +40,12 @@ const Layout = ({ children }: LayoutProps) => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
-                <span className="text-white font-bold text-xl">C</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center transform group-hover:scale-105 transition-transform duration-200">
+                <span className="text-white font-bold text-xl">H</span>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-black text-gray-900">Cursor Academy</h1>
-                <p className="text-xs text-gray-500 font-medium">Learn AI-Powered Design</p>
+                <h1 className="text-xl font-black text-gray-900">The Home-Made Academy</h1>
+                <p className="text-xs text-gray-500 font-medium">Design with Cursor + AI</p>
               </div>
             </Link>
 
@@ -192,16 +192,16 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Brand */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">C</span>
+                <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">H</span>
                 </div>
-                <h2 className="text-xl font-black text-gray-900">Cursor Academy</h2>
+                <h2 className="text-xl font-black text-gray-900">The Home-Made Academy</h2>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed max-w-md">
-                Master the art of building stunning designs with AI assistance. Your complete learning platform for Cursor IDE.
+                A tutorial for product and UX/UI designers to learn how to use Cursor and Claude for design work. No coding background required.
               </p>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-gray-500">© 2024 Cursor Academy</span>
+                <span className="text-sm text-gray-500">© 2024 The Home-Made Academy</span>
               </div>
             </div>
 
@@ -230,7 +230,7 @@ const Layout = ({ children }: LayoutProps) => {
 
           <div className="mt-8 pt-8 border-t border-gray-200 text-center">
             <p className="text-sm text-gray-500">
-              Built with passion for product designers learning to code.
+              Built for product and UX/UI designers learning to design with AI.
             </p>
           </div>
         </div>
