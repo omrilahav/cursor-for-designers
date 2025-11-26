@@ -1,6 +1,6 @@
 {
   "name": "cursor-design-academy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Interactive learning platform for product designers to master Cursor",
   "type": "module",
   "scripts": {
