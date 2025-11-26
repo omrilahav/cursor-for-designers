@@ -176,7 +176,7 @@ const Home = () => {
           </p>
           
           <p className="animate-in animate-delay-3 text-lg text-zinc-500 max-w-2xl mx-auto mb-12">
-            Made with love for our friends, students, and the design community.
+            No coding experience required. Just your design eye and curiosity.
           </p>
 
           {/* CTA Buttons */}

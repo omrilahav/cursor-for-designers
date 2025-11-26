@@ -328,8 +328,7 @@ const Layout = ({ children }: LayoutProps) => {
                 <h2 className="text-2xl font-display font-bold text-white">Home-Made Academy</h2>
               </div>
               <p className="text-zinc-400 leading-relaxed mb-6 max-w-md">
-                A free community resource for product designers learning to become design engineers. 
-                Made with love for our friends, students, and the design community.
+                A free community resource for product designers learning to become design engineers.
               </p>
               <div className="flex items-center gap-4">
                 <Link 
@@ -413,7 +412,7 @@ const Layout = ({ children }: LayoutProps) => {
           {/* Bottom Bar */}
           <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-zinc-500">
-              © 2024 Home-Made Academy. Made with ❤️ for the design community.
+              © 2025 Home-Made Academy
             </p>
             <p className="text-sm text-zinc-600">
               Powered by Cursor + Claude
