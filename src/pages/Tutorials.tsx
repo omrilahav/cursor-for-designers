@@ -124,7 +124,7 @@ const Tutorials = () => {
           description: 'Let AI create the page structure',
           content: [
             'Make sure your cursor is in the empty product-card.html file',
-            'Press Cmd+K (or Ctrl+K on Windows) to open AI inline edit',
+            'Press Cmd+K (or Ctrl+K on Windows) for quick AI edit at cursor',
             'Type: "create a modern HTML page structure with Tailwind CSS"',
             'Press Enter and watch the AI generate the foundation!',
             'Press Tab to accept',
@@ -355,18 +355,18 @@ const Tutorials = () => {
       steps: [
         {
           id: 'step-1',
-          title: 'Inline Editing with Cmd+K',
-          description: 'Generate and modify code inline',
+          title: 'Quick Editing with Cmd+K',
+          description: 'Generate and modify code at your cursor position',
           content: [
             'Select code you want to change or place cursor where you want new code',
-            'Press Cmd+K (or Ctrl+K) to open the inline prompt',
+            'Press Cmd+K (or Ctrl+K) to open the quick edit prompt',
             'Describe what you want in natural language',
             'Review and accept with Tab, or reject with Esc'
           ],
           tips: [
             'Be specific: "Add error handling to this function"',
             'You can chain edits: accept one, then immediately ask for another',
-            'Use "refactor this to..." for code improvements'
+            'For larger tasks, use Agent mode (Cmd+I) instead'
           ],
           exercise: 'Try refactoring a function to use arrow syntax'
         },

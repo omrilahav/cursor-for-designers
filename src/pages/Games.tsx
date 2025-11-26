@@ -66,10 +66,10 @@ const Games = () => {
   const quizQuestions: { [key: string]: QuizQuestion[] } = {
     'shortcut-master': [
       {
-        question: 'What is the keyboard shortcut to open the AI inline edit?',
+        question: 'What is the keyboard shortcut to open the AI Agent panel?',
         options: ['Cmd/Ctrl + K', 'Cmd/Ctrl + L', 'Cmd/Ctrl + I', 'Cmd/Ctrl + P'],
-        correct: 0,
-        explanation: 'Cmd/Ctrl + K opens the inline AI edit, allowing you to generate or modify code directly in the editor.'
+        correct: 2,
+        explanation: 'Cmd/Ctrl + I opens the AI Agent panel where you can use Agent, Ask, and Manual modes to build features autonomously.'
       },
       {
         question: 'Which shortcut opens the AI chat panel?',

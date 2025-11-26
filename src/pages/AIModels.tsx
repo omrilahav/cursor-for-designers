@@ -40,6 +40,44 @@ const AIModels = () => {
 
   const models: Model[] = [
     {
+      id: 'composer',
+      name: 'Composer',
+      provider: 'Cursor',
+      version: '2.0',
+      icon: Zap,
+      color: 'cyan',
+      tagline: '⭐ NEW - Cursor\'s fastest model',
+      description: 'Cursor\'s proprietary coding model launched with Cursor 2.0. Optimized for rapid agentic coding—completes most tasks in under 30 seconds, 4x faster than comparable models.',
+      strengths: [
+        'Lightning fast—most tasks under 30 seconds',
+        '4x faster than similarly capable models',
+        'Optimized for multi-step coding tasks',
+        'Built specifically for Cursor\'s Agent mode',
+        'Excellent codebase-wide semantic search'
+      ],
+      weaknesses: [
+        'Newer model, still being refined',
+        'May not match Opus for highly creative tasks',
+        'Best within Cursor ecosystem'
+      ],
+      bestFor: [
+        'Fast iteration cycles',
+        'Agent mode tasks',
+        'Multi-file feature building',
+        'Quick prototyping',
+        'Background agent tasks'
+      ],
+      speed: 'fast',
+      cost: 'medium',
+      quality: 'excellent',
+      designerRating: 5,
+      tips: [
+        'Default choice for Agent mode—built for it',
+        'Great for rapid iteration on designs',
+        'Use when speed matters more than maximum creativity'
+      ]
+    },
+    {
       id: 'claude-sonnet',
       name: 'Claude Sonnet 4',
       provider: 'Anthropic',
@@ -47,7 +85,7 @@ const AIModels = () => {
       icon: Brain,
       color: 'purple',
       tagline: 'The balanced powerhouse',
-      description: 'Excellent balance of speed, quality, and cost. The go-to choice for most design tasks.',
+      description: 'Excellent balance of speed, quality, and cost. A great choice for most design tasks when you want proven reliability.',
       strengths: [
         'Outstanding at following design specifications',
         'Great at understanding design intent',
@@ -84,7 +122,7 @@ const AIModels = () => {
       icon: Sparkles,
       color: 'pink',
       tagline: 'Maximum intelligence',
-      description: 'The most capable model for complex reasoning, creative solutions, and nuanced understanding.',
+      description: 'The most capable model for complex reasoning, creative solutions, and nuanced understanding. Choose when quality matters most.',
       strengths: [
         'Superior creative problem-solving',
         'Deep understanding of complex requirements',
@@ -153,41 +191,41 @@ const AIModels = () => {
       ]
     },
     {
-      id: 'cursor-small',
-      name: 'cursor-small',
+      id: 'auto',
+      name: 'Auto Mode',
       provider: 'Cursor',
-      version: 'Built-in',
-      icon: Zap,
-      color: 'cyan',
-      tagline: 'Lightning fast for edits',
-      description: 'Cursor\'s own fast model, optimized for quick edits and inline changes.',
+      version: 'Smart Select',
+      icon: Target,
+      color: 'amber',
+      tagline: 'Let Cursor choose the best model',
+      description: 'Auto mode dynamically selects the best AI model for each task. Cursor analyzes your request and chooses the optimal model for speed and quality.',
       strengths: [
-        'Extremely fast',
-        'Perfect for ⌘K edits',
-        'Doesn\'t use API quota',
-        'Great for small changes',
-        'Low latency'
+        'Automatically picks best model per task',
+        'Cost-optimized selections',
+        'No need to manually switch models',
+        'Uses faster models for simple tasks',
+        'Upgrades to powerful models when needed'
       ],
       weaknesses: [
-        'Limited for complex tasks',
-        'Less context awareness',
-        'Not ideal for planning'
+        'Less control over which model is used',
+        'May not always match your preferences',
+        'Model selection not always transparent'
       ],
       bestFor: [
-        'Quick inline edits (⌘K)',
-        'Simple code modifications',
-        'Tab completions',
-        'Small bug fixes',
-        'Format adjustments'
+        'General daily workflow',
+        'Mixed complexity tasks',
+        'When you don\'t want to think about models',
+        'Cost-conscious usage',
+        'New users learning Cursor'
       ],
       speed: 'fast',
-      cost: 'free',
-      quality: 'good',
+      cost: 'low',
+      quality: 'great',
       designerRating: 4,
       tips: [
-        'Use for quick fixes while staying in flow',
-        'Perfect for "add a hover effect" type edits',
-        'Switch to a larger model for complex tasks'
+        'Great default for everyday work',
+        'Switch to specific model for specialized tasks',
+        'Monitor which models it selects to learn patterns'
       ]
     }
   ]
@@ -227,7 +265,8 @@ const AIModels = () => {
     purple: { bg: 'bg-purple-500/20', border: 'border-purple-500/30', text: 'text-purple-400', badge: 'badge-purple' },
     pink: { bg: 'bg-pink-500/20', border: 'border-pink-500/30', text: 'text-pink-400', badge: 'badge-pink' },
     emerald: { bg: 'bg-emerald-500/20', border: 'border-emerald-500/30', text: 'text-emerald-400', badge: 'badge-emerald' },
-    cyan: { bg: 'bg-cyan-500/20', border: 'border-cyan-500/30', text: 'text-cyan-400', badge: 'badge-cyan' }
+    cyan: { bg: 'bg-cyan-500/20', border: 'border-cyan-500/30', text: 'text-cyan-400', badge: 'badge-cyan' },
+    amber: { bg: 'bg-amber-500/20', border: 'border-amber-500/30', text: 'text-amber-400', badge: 'badge-amber' }
   }
 
   const getSpeedIcon = (speed: string) => {
@@ -486,7 +525,7 @@ const AIModels = () => {
                 <p className="text-white font-medium">"I want to build components"</p>
                 <p className="text-sm text-zinc-500">Claude Sonnet is your best friend for daily component work</p>
               </div>
-              <span className="badge-cyan">Composer</span>
+              <span className="badge-cyan">Agent</span>
             </div>
 
             <div className="flex items-center gap-4 p-4 bg-dark-800/50 rounded-xl">
@@ -527,10 +566,10 @@ const AIModels = () => {
           <div className="card-dark p-6">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center text-white font-bold text-sm">1</div>
-              <h3 className="font-semibold text-white">In Chat or Composer</h3>
+              <h3 className="font-semibold text-white">In Chat or Agent Panel</h3>
             </div>
             <p className="text-zinc-400 text-sm mb-4">
-              Look for the model dropdown at the bottom of the Chat panel or Composer window.
+              Look for the model dropdown at the bottom of the Chat or Agent panel.
             </p>
             <div className="bg-dark-800 rounded-lg p-4">
               <code className="text-sm text-cyan-400">Click model name → Select new model</code>
@@ -553,6 +592,152 @@ const AIModels = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
+          PRICING
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="max-w-4xl mx-auto">
+        <div className="text-center mb-10">
+          <span className="badge-amber mb-4">Pricing (Nov 2025)</span>
+          <h2 className="heading-section text-white mb-4">Cursor Pricing Plans</h2>
+          <p className="text-zinc-400">Choose the plan that fits your workflow</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="card-dark p-6 border border-white/10">
+            <h3 className="text-xl font-bold text-white mb-2">Pro</h3>
+            <p className="text-3xl font-bold text-cyan-400 mb-4">$20<span className="text-sm text-zinc-500">/month</span></p>
+            <ul className="space-y-2 text-sm text-zinc-400">
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />500 fast requests/month</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />Unlimited slow requests</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />All AI models access</li>
+            </ul>
+          </div>
+          
+          <div className="card-dark p-6 border border-purple-500/50 relative">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-purple-500 text-white text-xs rounded-full">Popular</span>
+            <h3 className="text-xl font-bold text-white mb-2">Pro Plus</h3>
+            <p className="text-3xl font-bold text-purple-400 mb-4">$60<span className="text-sm text-zinc-500">/month</span></p>
+            <ul className="space-y-2 text-sm text-zinc-400">
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />3x more fast requests</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />Priority access</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />Background agents</li>
+            </ul>
+          </div>
+          
+          <div className="card-dark p-6 border border-white/10">
+            <h3 className="text-xl font-bold text-white mb-2">Ultra</h3>
+            <p className="text-3xl font-bold text-pink-400 mb-4">$200<span className="text-sm text-zinc-500">/month</span></p>
+            <ul className="space-y-2 text-sm text-zinc-400">
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />Max fast requests</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />Unlimited background agents</li>
+              <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-400" />Team features</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CURSOR VS COMPETITORS
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="max-w-5xl mx-auto">
+        <div className="text-center mb-10">
+          <span className="badge-pink mb-4">Market Comparison</span>
+          <h2 className="heading-section text-white mb-4">Cursor vs Other AI Coding Tools</h2>
+          <p className="text-zinc-400">How Cursor compares to alternatives (Nov 2025)</p>
+        </div>
+
+        <div className="space-y-4">
+          <div className="card-dark p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-cyan-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">Cursor</h3>
+                <p className="text-sm text-zinc-500">Anysphere • AI-first code editor</p>
+              </div>
+            </div>
+            <p className="text-zinc-400 text-sm mb-4">The leading AI code editor with Agent mode, multi-agent workflows, Plan Mode, BugBot, and the new Composer model. Best for designers wanting powerful AI assistance with great UX.</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Multi-Agent</span>
+              <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Composer Model</span>
+              <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">Plan Mode</span>
+              <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded">BugBot</span>
+            </div>
+          </div>
+
+          <div className="card-dark p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center">
+                <Brain className="w-6 h-6 text-orange-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">Claude Code</h3>
+                <p className="text-sm text-zinc-500">Anthropic • Terminal-based AI coding</p>
+              </div>
+            </div>
+            <p className="text-zinc-400 text-sm mb-4">Anthropic's agentic coding tool running in terminal. Now with Opus 4.5, features autonomous bug-fixing, Chrome integration, and infinite chats. Powerful but terminal-only.</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Opus 4.5</span>
+              <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Chrome Integration</span>
+              <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Terminal-based</span>
+            </div>
+          </div>
+
+          <div className="card-dark p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                <Code className="w-6 h-6 text-emerald-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">Windsurf (Codeium)</h3>
+                <p className="text-sm text-zinc-500">Codeium • Free AI code editor</p>
+              </div>
+            </div>
+            <p className="text-zinc-400 text-sm mb-4">Free alternative with solid autocomplete and chat. Good for beginners or cost-conscious users. Less advanced than Cursor's agent features.</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Free tier</span>
+              <span className="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded">Good autocomplete</span>
+            </div>
+          </div>
+
+          <div className="card-dark p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                <Bot className="w-6 h-6 text-purple-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">GitHub Copilot</h3>
+                <p className="text-sm text-zinc-500">Microsoft/GitHub • VS Code extension</p>
+              </div>
+            </div>
+            <p className="text-zinc-400 text-sm mb-4">The original AI coding assistant. Great autocomplete, GitHub integration. Works as extension in any IDE. Less agentic than Cursor.</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">GitHub Integration</span>
+              <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">Works in any IDE</span>
+            </div>
+          </div>
+
+          <div className="card-dark p-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center">
+                <Rocket className="w-6 h-6 text-amber-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-lg">Google Antigravity</h3>
+                <p className="text-sm text-zinc-500">Google • Agent-first IDE (New Nov 2025)</p>
+              </div>
+            </div>
+            <p className="text-zinc-400 text-sm mb-4">Google's new "agent-first" IDE powered by Gemini 3 Pro. Multi-agent orchestration, browser/terminal control. Free during preview. Worth watching!</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-2 py-1 bg-amber-500/20 text-amber-400 text-xs rounded">Gemini 3 Pro</span>
+              <span className="px-2 py-1 bg-amber-500/20 text-amber-400 text-xs rounded">Agent-First</span>
+              <span className="px-2 py-1 bg-amber-500/20 text-amber-400 text-xs rounded">Free Preview</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
           CTA
       ═══════════════════════════════════════════════════════════ */}
       <section className="max-w-2xl mx-auto text-center">
@@ -563,8 +748,7 @@ const AIModels = () => {
           
           <h3 className="text-2xl font-bold text-white mb-4">Ready to Try Different Models?</h3>
           <p className="text-zinc-400 mb-6">
-            Start with Claude Sonnet for most tasks, and experiment with others as you become more comfortable.
-          </p>
+            Start with Composer or Claude Sonnet for most tasks. Use Auto mode to let Cursor pick the best model automatically.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

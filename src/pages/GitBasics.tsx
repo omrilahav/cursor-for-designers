@@ -584,6 +584,55 @@ const GitBasics = () => {
         </div>
       </div>
 
+      {/* Git Worktrees for Multi-Agent */}
+      <div className="card space-y-6">
+        <div className="flex items-center gap-3">
+          <span className="px-3 py-1 bg-cyan-500 text-white text-xs font-bold rounded-full">NEW 2025</span>
+          <h2 className="text-3xl font-bold text-white">Git Worktrees: Multi-Agent Isolation</h2>
+        </div>
+        <p className="text-gray-600">How Cursor uses Git for parallel AI agent work</p>
+
+        <div className="bg-gradient-to-br from-cyan-50 to-purple-50 border-2 border-cyan-300 rounded-xl p-6 space-y-4">
+          <div className="bg-white rounded-lg p-5">
+            <h3 className="text-xl font-bold text-gray-800 mb-3">What are Git Worktrees?</h3>
+            <p className="text-gray-700 mb-3">
+              Git worktrees let you have multiple working copies of the same repo at once. Cursor uses this for multi-agent workflows:
+            </p>
+            <ul className="space-y-2 text-sm text-gray-700">
+              <li>• Each AI agent works in its own isolated worktree</li>
+              <li>• No file conflicts between parallel agents</li>
+              <li>• Up to 8 agents can run simultaneously</li>
+              <li>• Changes merge cleanly when agents finish</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-lg p-5 space-y-3">
+            <h3 className="text-xl font-bold text-gray-800">How Cursor Uses Worktrees</h3>
+            <div className="space-y-2 text-sm text-gray-700">
+              <div className="bg-cyan-50 rounded p-3">
+                <p className="font-bold text-cyan-700 mb-1">🤖 Multi-Agent Mode</p>
+                <p>When you run multiple agents, Cursor automatically creates worktrees for each</p>
+              </div>
+              <div className="bg-purple-50 rounded p-3">
+                <p className="font-bold text-purple-700 mb-1">📁 Isolated Workspaces</p>
+                <p>Each agent has its own copy of files—no stepping on each other's toes</p>
+              </div>
+              <div className="bg-emerald-50 rounded p-3">
+                <p className="font-bold text-emerald-700 mb-1">✅ Automatic Merging</p>
+                <p>Cursor handles merging changes back together when agents complete</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border-l-4 border-green-500 p-4">
+            <p className="text-sm text-gray-700">
+              <strong>💡 Good News:</strong> Cursor handles all of this automatically! You don't need to 
+              manually manage worktrees. Just start multiple agents and Cursor takes care of the Git magic.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Next Steps */}
       <div className="card bg-gradient-to-r from-orange-500 to-red-500 text-white text-center space-y-4">
         <CheckCircle className="w-16 h-16 mx-auto" />

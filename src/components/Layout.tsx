@@ -107,13 +107,59 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-4 group">
               <div className="relative">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 overflow-hidden">
-                  {/* House/Home icon stylized */}
-                  <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor">
-                    <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                <div className="w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 overflow-hidden border border-white/10">
+                  {/* Abstract house/pen hybrid mark */}
+                  <svg viewBox="0 0 100 100" className="w-10 h-10">
+                    <defs>
+                      <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#06b6d4" />
+                        <stop offset="50%" stopColor="#8b5cf6" />
+                        <stop offset="100%" stopColor="#ec4899" />
+                      </linearGradient>
+                      <linearGradient id="logoAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#fbbf24" />
+                        <stop offset="100%" stopColor="#f97316" />
+                      </linearGradient>
+                    </defs>
+                    {/* Subtle grid */}
+                    <g opacity="0.15">
+                      <line x1="25" y1="0" x2="25" y2="100" stroke="#06b6d4" strokeWidth="0.5"/>
+                      <line x1="50" y1="0" x2="50" y2="100" stroke="#06b6d4" strokeWidth="0.5"/>
+                      <line x1="75" y1="0" x2="75" y2="100" stroke="#06b6d4" strokeWidth="0.5"/>
+                    </g>
+                    {/* House outline */}
+                    <path 
+                      d="M50 18 L78 38 L78 75 C78 78 76 80 73 80 L27 80 C24 80 22 78 22 75 L22 38 Z" 
+                      fill="none" 
+                      stroke="url(#logoGrad)" 
+                      strokeWidth="4" 
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    {/* Chimney/brush */}
+                    <path 
+                      d="M62 18 L62 30 M58 22 L66 22" 
+                      fill="none" 
+                      stroke="url(#logoAccent)" 
+                      strokeWidth="3" 
+                      strokeLinecap="round"
+                    />
+                    {/* Door bracket */}
+                    <path 
+                      d="M40 80 L40 55 C40 52 42 50 45 50 L55 50 C58 50 60 52 60 55 L60 80" 
+                      fill="none" 
+                      stroke="url(#logoGrad)" 
+                      strokeWidth="3" 
+                      strokeLinecap="round"
+                    />
+                    {/* Window artboard */}
+                    <rect x="32" y="44" width="14" height="14" rx="3" fill="none" stroke="#22d3ee" strokeWidth="2.5"/>
+                    <circle cx="39" cy="51" r="2.5" fill="url(#logoAccent)"/>
+                    {/* Cursor pointer */}
+                    <polygon points="73,28 79,42 73,39 69,45" fill="url(#logoAccent)"/>
                   </svg>
                 </div>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400 to-pink-500 blur-xl opacity-50 group-hover:opacity-80 transition-opacity" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-400 to-pink-500 blur-xl opacity-40 group-hover:opacity-70 transition-opacity" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="text-xl font-display font-bold text-white group-hover:text-gradient-cyan transition-all duration-300">
@@ -320,9 +366,32 @@ const Layout = ({ children }: LayoutProps) => {
             {/* Brand */}
             <div className="md:col-span-5">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-400 via-purple-500 to-pink-500 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="currentColor">
-                    <path d="M12 3L4 9v12h5v-7h6v7h5V9l-8-6z"/>
+                <div className="w-12 h-12 rounded-2xl bg-slate-900 flex items-center justify-center border border-white/10">
+                  <svg viewBox="0 0 100 100" className="w-10 h-10">
+                    <defs>
+                      <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#06b6d4" />
+                        <stop offset="50%" stopColor="#8b5cf6" />
+                        <stop offset="100%" stopColor="#ec4899" />
+                      </linearGradient>
+                      <linearGradient id="footerAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#fbbf24" />
+                        <stop offset="100%" stopColor="#f97316" />
+                      </linearGradient>
+                    </defs>
+                    <path 
+                      d="M50 18 L78 38 L78 75 C78 78 76 80 73 80 L27 80 C24 80 22 78 22 75 L22 38 Z" 
+                      fill="none" 
+                      stroke="url(#footerGrad)" 
+                      strokeWidth="4" 
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path d="M62 18 L62 30 M58 22 L66 22" fill="none" stroke="url(#footerAccent)" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M40 80 L40 55 C40 52 42 50 45 50 L55 50 C58 50 60 52 60 55 L60 80" fill="none" stroke="url(#footerGrad)" strokeWidth="3" strokeLinecap="round"/>
+                    <rect x="32" y="44" width="14" height="14" rx="3" fill="none" stroke="#22d3ee" strokeWidth="2.5"/>
+                    <circle cx="39" cy="51" r="2.5" fill="url(#footerAccent)"/>
+                    <polygon points="73,28 79,42 73,39 69,45" fill="url(#footerAccent)"/>
                   </svg>
                 </div>
                 <h2 className="text-2xl font-display font-bold text-white">Home-Made Academy</h2>

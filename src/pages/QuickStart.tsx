@@ -231,30 +231,30 @@ const QuickStart = () => {
           <div className="grid gap-4">
             <div className="bg-dark-800/50 border border-cyan-500/30 rounded-xl p-5">
               <div className="flex items-center gap-4">
-                <kbd className="px-4 py-2 bg-dark-900 rounded-lg text-cyan-400 font-mono text-lg">⌘L</kbd>
+                <kbd className="px-4 py-2 bg-dark-900 rounded-lg text-cyan-400 font-mono text-lg">⌘I</kbd>
                 <div>
-                  <h4 className="font-bold text-white">AI Chat</h4>
-                  <p className="text-sm text-zinc-400">Ask questions, plan features, get explanations</p>
+                  <h4 className="font-bold text-white">AI Agent Panel</h4>
+                  <p className="text-sm text-zinc-400">Open Agent mode to build features, fix bugs, create files. Choose Agent, Ask, or Manual modes.</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-dark-800/50 border border-purple-500/30 rounded-xl p-5">
               <div className="flex items-center gap-4">
-                <kbd className="px-4 py-2 bg-dark-900 rounded-lg text-purple-400 font-mono text-lg">⌘K</kbd>
+                <kbd className="px-4 py-2 bg-dark-900 rounded-lg text-purple-400 font-mono text-lg">⌘L</kbd>
                 <div>
-                  <h4 className="font-bold text-white">Inline Edit</h4>
-                  <p className="text-sm text-zinc-400">Edit code exactly where your cursor is—fastest for quick changes</p>
+                  <h4 className="font-bold text-white">AI Chat</h4>
+                  <p className="text-sm text-zinc-400">Open chat for quick questions and conversations</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-dark-800/50 border border-pink-500/30 rounded-xl p-5">
               <div className="flex items-center gap-4">
-                <kbd className="px-4 py-2 bg-dark-900 rounded-lg text-pink-400 font-mono text-lg">⌘I</kbd>
+                <kbd className="px-4 py-2 bg-dark-900 rounded-lg text-pink-400 font-mono text-lg">⌘K</kbd>
                 <div>
-                  <h4 className="font-bold text-white">Composer (Agent)</h4>
-                  <p className="text-sm text-zinc-400">Build entire features across multiple files</p>
+                  <h4 className="font-bold text-white">Quick Edit</h4>
+                  <p className="text-sm text-zinc-400">Edit code at your cursor position—great for quick inline changes</p>
                 </div>
               </div>
             </div>

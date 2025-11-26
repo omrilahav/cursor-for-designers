@@ -1,11 +1,88 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#d946ef;stop-opacity:1" />
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  <rect width="100" height="100" rx="20" fill="url(#grad1)"/>
-  <text x="50" y="70" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle">C</text>
+  
+  <!-- Background with rounded corners -->
+  <rect width="100" height="100" rx="22" fill="#0f172a"/>
+  
+  <!-- Subtle grid pattern -->
+  <g opacity="0.1">
+    <line x1="25" y1="0" x2="25" y2="100" stroke="#06b6d4" stroke-width="0.5"/>
+    <line x1="50" y1="0" x2="50" y2="100" stroke="#06b6d4" stroke-width="0.5"/>
+    <line x1="75" y1="0" x2="75" y2="100" stroke="#06b6d4" stroke-width="0.5"/>
+    <line x1="0" y1="25" x2="100" y2="25" stroke="#06b6d4" stroke-width="0.5"/>
+    <line x1="0" y1="50" x2="100" y2="50" stroke="#06b6d4" stroke-width="0.5"/>
+    <line x1="0" y1="75" x2="100" y2="75" stroke="#06b6d4" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Abstract house/pen hybrid mark -->
+  <!-- Main house shape with stylized roof -->
+  <path 
+    d="M50 18 L78 38 L78 75 C78 78 76 80 73 80 L27 80 C24 80 22 78 22 75 L22 38 Z" 
+    fill="none" 
+    stroke="url(#mainGrad)" 
+    stroke-width="4" 
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#glow)"
+  />
+  
+  <!-- Chimney as a paintbrush tip -->
+  <path 
+    d="M62 18 L62 30 M58 22 L66 22" 
+    fill="none" 
+    stroke="url(#accentGrad)" 
+    stroke-width="3" 
+    stroke-linecap="round"
+  />
+  
+  <!-- Door opening - representing a code bracket -->
+  <path 
+    d="M40 80 L40 55 C40 52 42 50 45 50 L55 50 C58 50 60 52 60 55 L60 80" 
+    fill="none" 
+    stroke="url(#mainGrad)" 
+    stroke-width="3" 
+    stroke-linecap="round"
+  />
+  
+  <!-- Window as a design artboard -->
+  <rect 
+    x="32" y="44" 
+    width="14" height="14" 
+    rx="3"
+    fill="none" 
+    stroke="#22d3ee" 
+    stroke-width="2.5"
+  />
+  
+  <!-- Small accent dot inside window -->
+  <circle cx="39" cy="51" r="2.5" fill="url(#accentGrad)"/>
+  
+  <!-- Cursor/pointer element floating near roof -->
+  <polygon 
+    points="73,28 79,42 73,39 69,45" 
+    fill="url(#accentGrad)"
+  />
+  
+  <!-- Sparkle accents -->
+  <g fill="#22d3ee" opacity="0.8">
+    <circle cx="28" cy="28" r="2"/>
+    <circle cx="18" cy="50" r="1.5"/>
+  </g>
 </svg>
-

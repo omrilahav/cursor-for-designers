@@ -359,13 +359,28 @@ const IDEBasics = () => {
       description: 'Leverage Cursor\'s AI superpowers',
       content: [
         {
-          heading: '🤖 Three Ways to Use AI',
-          text: 'Cursor has three main AI features, each for different situations:'
+          heading: '🤖 Powerful AI Modes',
+          text: 'Cursor offers several AI modes for different situations. Here are the main ways to interact:'
         },
         {
-          heading: '1. Inline Edit (Cmd+K / Ctrl+K)',
-          description: 'Generate or modify code directly where your cursor is',
-          when: 'Use when you know exactly what you want to create or change',
+          heading: '1. AI Agent Panel (Cmd+I / Ctrl+I)',
+          description: 'The main AI interface with Agent, Ask, and Manual modes',
+          when: 'Use for building features, exploring code, or complex multi-file tasks',
+          examples: [
+            'Agent mode: "Create a user profile page with header, stats, and tabs"',
+            'Ask mode: "How does authentication work in this codebase?"',
+            'Manual mode: "Add a new variant to this Button component"'
+          ],
+          tips: [
+            'Agent mode is autonomous—it creates files, runs commands, fixes errors',
+            'Ask mode is read-only—great for learning before making changes',
+            'You can run multiple agents in parallel for max productivity!'
+          ]
+        },
+        {
+          heading: '2. Quick Edit (Cmd+K / Ctrl+K)',
+          description: 'Fast inline editing directly at your cursor position',
+          when: 'Use for quick, targeted edits without leaving your flow',
           examples: [
             'Place cursor in empty space, press Cmd+K, type: "Create a blue button"',
             'Select existing code, press Cmd+K, type: "Add hover effect"',
@@ -373,17 +388,15 @@ const IDEBasics = () => {
           ],
           tips: [
             'Be specific: "Create a button" vs "Create a rounded blue button with shadow"',
-            'The AI sees your surrounding code for context',
             'Press Tab to accept, Esc to reject',
-            'You can accept then immediately Cmd+K again to refine'
+            'For larger tasks, use Agent mode (Cmd+I) instead'
           ]
         },
         {
-          heading: '2. AI Chat (Cmd+L / Ctrl+L)',
-          description: 'Have a conversation with AI about your code',
-          when: 'Use for questions, explanations, planning, or complex requests',
+          heading: '3. AI Chat (Cmd+L / Ctrl+L)',
+          description: 'Quick questions and conversations with AI',
+          when: 'Use for quick questions, explanations, or simple requests',
           examples: [
-            '"How should I structure this component?"',
             '"What does this code do?" (with code selected)',
             '"Why isn\'t my button centering?"',
             '"Explain React hooks in simple terms"'
@@ -391,12 +404,11 @@ const IDEBasics = () => {
           tips: [
             'Chat remembers your conversation - you can ask follow-ups',
             'Use @filename to reference specific files',
-            'Great for learning - ask "why" and "how" questions',
             'The AI can see your entire project for context'
           ]
         },
         {
-          heading: '3. Tab Autocomplete',
+          heading: '4. Tab Autocomplete',
           description: 'AI predicts what you\'re going to type next',
           when: 'Always on - just start typing and press Tab to accept suggestions',
           examples: [

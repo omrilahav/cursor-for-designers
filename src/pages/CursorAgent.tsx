@@ -4,7 +4,8 @@ import {
   Bot, MessageSquare, Edit3, Wand2, CheckCircle, Lightbulb, 
   Zap, FileCode, ArrowRight, Play, Star, Clock, ChevronRight,
   Target, Users, Sparkles, Code, Layers, Eye, Palette,
-  Terminal, GitBranch, Rocket, Copy, Check, Bug, Cpu, Image
+  Terminal, GitBranch, Rocket, Copy, Check, Bug, Cpu, Image,
+  Settings, Search, Hand, PenTool, PlayCircle, ListTodo, Workflow
 } from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
 
@@ -26,109 +27,172 @@ const CursorAgent = () => {
 
   const aiModes = [
     {
-      id: 'chat',
-      name: 'Chat',
-      shortcut: '⌘L',
-      icon: MessageSquare,
-      color: 'purple',
-      tagline: 'Your AI pair programmer',
-      description: 'Have conversations, ask questions, plan your approach, debug issues together.',
-      bestFor: [
-        'Asking "how do I..." questions',
-        'Getting code explanations',
-        'Planning before building',
-        'Debugging with context',
-        'Learning new concepts'
-      ],
-      notIdeal: [
-        'Making actual code changes',
-        'Quick edits while coding',
-        'Multi-file operations'
-      ],
-      example: {
-        prompt: 'I want to build a dashboard with a sidebar navigation, main content area with data cards, and a header with user info. How should I structure the components?',
-        response: 'Great question! Let me help you plan this out...'
-      }
-    },
-    {
-      id: 'composer',
-      name: 'Composer',
+      id: 'agent',
+      name: 'Agent',
       shortcut: '⌘I',
       icon: Bot,
       color: 'cyan',
-      tagline: 'The multi-file powerhouse',
-      description: 'Build entire features, create multiple files, run terminal commands. Toggle "Agent" mode for autonomous operation.',
+      tagline: 'The autonomous powerhouse',
+      description: 'Agent autonomously explores your codebase, edits multiple files, runs terminal commands, and fixes errors. The default mode for building features.',
       bestFor: [
         'Building complete features',
         'Creating multiple files at once',
         'Running terminal commands',
         'Complex multi-step tasks',
-        'Project-wide changes'
+        'Project-wide changes',
+        'Fixing bugs across files'
       ],
       notIdeal: [
-        'Quick single-line edits',
-        'Questions and explanations',
-        'Staying in flow state'
+        'Just asking questions (use Ask mode)',
+        'When you want full control',
+        'Read-only exploration'
       ],
       example: {
         prompt: 'Create a complete user profile page with: 1) ProfileHeader component (avatar, name, bio, edit button) 2) ProfileStats component (followers, following, posts counts) 3) ProfileTabs component (posts, likes, bookmarks tabs) 4) Add them all to a ProfilePage that combines them. Use my design tokens from @design-tokens.ts',
-        response: 'I\'ll create these components for you. Here\'s my plan...'
+        response: 'I\'ll create these components for you. Let me plan this out and execute...'
       }
     },
     {
-      id: 'inline',
-      name: 'Inline Edit',
-      shortcut: '⌘K',
-      icon: Edit3,
-      color: 'emerald',
-      tagline: 'Quick and focused',
-      description: 'Generate or modify code exactly where your cursor is. Stay in flow, iterate fast.',
+      id: 'ask',
+      name: 'Ask',
+      shortcut: '⌘I → Ask',
+      icon: Search,
+      color: 'purple',
+      tagline: 'Read-only exploration',
+      description: 'Ask mode searches your codebase and provides answers without making any changes. Perfect for learning and understanding code before modifying it.',
       bestFor: [
-        'Adding a single function',
-        'Modifying specific code',
-        'Quick iterations',
-        'Staying in flow state',
-        'Small, precise changes'
+        'Asking "how does this work?" questions',
+        'Getting code explanations',
+        'Planning before building',
+        'Understanding existing patterns',
+        'Learning new concepts',
+        'Exploring unfamiliar code'
       ],
       notIdeal: [
-        'Creating multiple files',
-        'Complex multi-step features',
-        'Getting explanations'
+        'Making actual code changes',
+        'Multi-file operations',
+        'Running commands'
       ],
       example: {
-        prompt: 'add a hover effect that scales up 5% and adds a subtle shadow',
-        response: '[Code appears inline, ready to accept with Tab]'
+        prompt: 'How is authentication handled in this codebase? What patterns are used?',
+        response: 'Let me search your codebase and explain the auth flow...'
+      }
+    },
+    {
+      id: 'manual',
+      name: 'Manual',
+      shortcut: '⌘I → Manual',
+      icon: Hand,
+      color: 'emerald',
+      tagline: 'Precise control',
+      description: 'Manual mode only edits files you explicitly select. No automatic file discovery, no commands. For when you want total control over what changes.',
+      bestFor: [
+        'Targeted, specific edits',
+        'When you know exactly what to change',
+        'Precise modifications',
+        'Editing sensitive files',
+        'Learning by doing step-by-step'
+      ],
+      notIdeal: [
+        'Complex multi-file features',
+        'Tasks needing file discovery',
+        'Running terminal commands'
+      ],
+      example: {
+        prompt: 'Update the Button component to add a new "ghost" variant with transparent background',
+        response: 'I\'ll edit just the Button.tsx file you selected...'
+      }
+    },
+    {
+      id: 'custom',
+      name: 'Custom Modes',
+      shortcut: '⌘I → Settings',
+      icon: Settings,
+      color: 'pink',
+      tagline: 'Your personalized workflows',
+      description: 'Create specialized AI assistants with custom instructions and capabilities. Build modes for specific tasks like code review, documentation, or design system work.',
+      bestFor: [
+        'Repetitive specialized tasks',
+        'Team-specific workflows',
+        'Code review automation',
+        'Documentation generation',
+        'Design system maintenance'
+      ],
+      notIdeal: [
+        'One-off tasks',
+        'General exploration',
+        'Quick simple edits'
+      ],
+      example: {
+        prompt: 'Create a custom mode called "Design System Auditor" that checks components for accessibility and design token usage',
+        response: 'I\'ll create a specialized mode with those instructions...'
       }
     }
   ]
 
   const advancedFeatures = [
     {
-      id: 'agent-mode',
-      name: 'Agent Mode',
-      icon: Cpu,
-      color: 'pink',
-      description: 'Toggle in Composer for autonomous file operations',
-      details: 'When enabled, AI can browse your codebase, create/edit files, and run commands without asking permission for each step. Perfect for larger tasks where you want AI to take initiative.',
-      howTo: 'In Composer (⌘I), click the toggle at the bottom to enable Agent mode before sending your prompt.'
+      id: 'multi-agent',
+      name: 'Multi-Agent Parallel',
+      icon: Users,
+      color: 'cyan',
+      description: 'Run up to 8 agents simultaneously on different tasks',
+      details: 'Cursor 2.0 lets you run multiple agents in parallel, each in isolated workspaces using Git worktrees. Build features, fix bugs, and refactor—all at the same time!',
+      howTo: 'Start multiple agent sessions from the sidebar. Each runs independently without file conflicts.'
     },
     {
-      id: 'bug-finder',
-      name: 'Bug Finder',
-      icon: Bug,
+      id: 'planning',
+      name: 'Plan Mode',
+      icon: ListTodo,
+      color: 'pink',
+      description: 'AI drafts step-by-step plans before coding',
+      details: 'Plan Mode has the AI draft a detailed plan before executing. It asks clarifying questions to improve quality, and you can search plans with ⌘+F. Great for complex tasks!',
+      howTo: 'Enable Plan Mode for complex tasks. Review and edit the plan before Agent executes.'
+    },
+    {
+      id: 'background-agents',
+      name: 'Background Agents',
+      icon: PlayCircle,
       color: 'amber',
-      description: 'Automatically detect issues in your code',
-      details: 'Ask AI to scan your code for bugs, accessibility issues, or potential problems. It understands your entire project context.',
-      howTo: 'In Chat, type: "Review @ComponentName.tsx for bugs, accessibility issues, and potential improvements"'
+      description: 'Agents that work while you focus on other things',
+      details: 'Start background agents on tasks and continue working. They run on remote machines, isolated from your main workspace. Check back when they\'re done!',
+      howTo: 'Click "Run in Background" when starting an agent task. Monitor progress from the agent panel.'
+    },
+    {
+      id: 'bugbot',
+      name: 'BugBot',
+      icon: Bug,
+      color: 'emerald',
+      description: 'AI automatically reviews your pull requests',
+      details: 'BugBot integrates with GitHub to automatically review PRs, identify bugs, and suggest fixes. It adds comments directly to your PRs and can even auto-generate patches!',
+      howTo: 'Connect your GitHub account in settings. BugBot will automatically review new pull requests.'
+    },
+    {
+      id: 'web-search',
+      name: 'Auto Web Search',
+      icon: Search,
+      color: 'purple',
+      description: 'Agent automatically searches the web for info',
+      details: 'Agent now searches the web automatically when it needs current information—no more @Web commands needed. Great for finding latest docs, APIs, and solutions.',
+      howTo: 'Just ask Agent anything. It will search the web automatically when needed.'
+    },
+    {
+      id: 'browser',
+      name: 'Built-in Browser',
+      icon: Eye,
+      color: 'blue',
+      description: 'Browse the web directly inside Cursor',
+      details: 'Cursor now includes an inline browser pane! Browse docs, test web apps, extract data from pages—all without leaving the editor. Agent can read and interact with web content.',
+      howTo: 'Open the browser pane from the sidebar. Navigate to any URL and let Agent interact with the content.'
     },
     {
       id: 'image-context',
-      name: 'Image Understanding',
+      name: 'Image & Voice Input',
       icon: Image,
-      color: 'emerald',
-      description: 'Paste screenshots and mockups directly',
-      details: 'Paste screenshots, Figma exports, or design mockups directly into Chat. AI analyzes the image and can generate matching code!',
-      howTo: 'Simply ⌘V a screenshot in Chat, then say "Recreate this design in React with Tailwind"'
+      color: 'cyan',
+      description: 'Paste screenshots or use voice commands',
+      details: 'Paste screenshots and Figma exports directly. Voice Mode lets you control agents with speech! Natural, hands-free coding workflow.',
+      howTo: '⌘V to paste images. Enable Voice Mode in settings to use speech commands.'
     }
   ]
 
@@ -223,28 +287,28 @@ const CursorAgent = () => {
     title: 'Real-World Workflow: Building a Feature',
     steps: [
       {
-        mode: 'Chat',
-        action: 'Plan the approach',
+        mode: 'Ask',
+        action: 'Understand & Plan',
         prompt: 'I need to build a user settings page with sections for profile, notifications, privacy, and account. How should I structure this? What components do I need?',
-        why: 'Start with Chat to think through the architecture before writing code'
+        why: 'Use Ask mode to explore and plan without making changes yet'
       },
       {
         mode: 'Agent',
-        action: 'Build the structure',
+        action: 'Build the feature',
         prompt: 'Create the user settings feature: 1) SettingsLayout with sidebar navigation showing sections 2) SettingsSection wrapper component 3) ProfileSettings, NotificationSettings, PrivacySettings, AccountSettings components 4) Put them all in a SettingsPage. Use @design-tokens.ts for styling.',
-        why: 'Agent creates multiple files at once, following your plan'
+        why: 'Agent autonomously creates all files, runs commands, and handles errors'
       },
       {
-        mode: 'Inline',
-        action: 'Polish and iterate',
-        prompt: 'add a smooth slide transition when switching between sections',
-        why: 'Quick refinements without leaving your flow'
+        mode: 'Manual',
+        action: 'Precise adjustments',
+        prompt: 'In SettingsPage.tsx, add a smooth slide transition when switching between sections',
+        why: 'Use Manual mode when you want full control over specific edits'
       },
       {
-        mode: 'Chat',
-        action: 'Debug if needed',
-        prompt: '@SettingsPage.tsx the sidebar nav isn\'t highlighting the active section. Can you help me fix this?',
-        why: 'Back to Chat when you need to understand and debug issues'
+        mode: 'Agent',
+        action: 'Fix and iterate',
+        prompt: 'The sidebar nav isn\'t highlighting the active section. Fix this bug and make sure the transition works properly.',
+        why: 'Let Agent find and fix bugs across files autonomously'
       }
     ]
   }
@@ -254,7 +318,8 @@ const CursorAgent = () => {
     purple: { bg: 'bg-purple-500', light: 'bg-purple-500/10', border: 'border-purple-500/30', text: 'text-purple-400' },
     emerald: { bg: 'bg-emerald-500', light: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-400' },
     pink: { bg: 'bg-pink-500', light: 'bg-pink-500/10', border: 'border-pink-500/30', text: 'text-pink-400' },
-    amber: { bg: 'bg-amber-500', light: 'bg-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400' }
+    amber: { bg: 'bg-amber-500', light: 'bg-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400' },
+    blue: { bg: 'bg-blue-500', light: 'bg-blue-500/10', border: 'border-blue-500/30', text: 'text-blue-400' }
   }
 
   return (
@@ -269,12 +334,12 @@ const CursorAgent = () => {
           <span className="badge-pink mb-6">Chapter 3</span>
           
           <h1 className="heading-display text-white mb-8">
-            Mastering the<br />
-            <span className="text-gradient-multi">Three AI Modes</span>
+            Mastering Cursor's<br />
+            <span className="text-gradient-multi">AI Modes & Agents</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Chat, Agent, and Inline—three tools, each perfect for different moments. Learn when to use each and watch your productivity multiply.
+            Agent, Ask, Manual, and Custom modes—plus multi-agent workflows. Learn when to use each and unlock the full power of Cursor 2.0.
           </p>
 
           <div className="flex items-center justify-center gap-2 text-zinc-500">
@@ -288,18 +353,18 @@ const CursorAgent = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          THE THREE MODES
+          THE FOUR MODES
       ═══════════════════════════════════════════════════════════ */}
       <section className="relative">
         <div className="text-center mb-12">
           <span className="badge-cyan mb-4">The Foundation</span>
-          <h2 className="heading-section text-white mb-4">Three Modes, Three Superpowers</h2>
+          <h2 className="heading-section text-white mb-4">Four Modes, Infinite Possibilities</h2>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Each mode is designed for specific situations. Master all three to unlock your full potential.
+            Cursor 2.0 introduces powerful new modes. Master them all to unlock your full potential.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {aiModes.map((mode) => {
             const Icon = mode.icon
             const colors = colorClasses[mode.color as keyof typeof colorClasses]
@@ -359,7 +424,7 @@ const CursorAgent = () => {
             <span className="badge-purple mb-4">Real-World Example</span>
             <h2 className="heading-section text-white mb-4">{workflowExample.title}</h2>
             <p className="text-xl text-zinc-400">
-              Watch how the three modes work together in a real design task
+              Watch how different modes work together in a real design task
             </p>
           </div>
 
@@ -367,7 +432,7 @@ const CursorAgent = () => {
             {workflowExample.steps.map((step, index) => {
               const mode = aiModes.find(m => m.name === step.mode)
               const colors = mode ? colorClasses[mode.color as keyof typeof colorClasses] : colorClasses.cyan
-              const Icon = mode?.icon || MessageSquare
+              const Icon = mode?.icon || Bot
 
               return (
                 <div key={index} className="relative flex items-start gap-6">
@@ -585,7 +650,7 @@ const CursorAgent = () => {
             <span className="badge-emerald mb-4">Hands-On Exercise</span>
             <h2 className="heading-section text-white mb-4">Try It Yourself</h2>
             <p className="text-xl text-zinc-400">
-              Practice using all three modes to build a feature
+              Practice using different modes to build a feature
             </p>
           </div>
 
@@ -596,10 +661,10 @@ const CursorAgent = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-lg bg-purple-500 flex items-center justify-center flex-shrink-0">
-                    <MessageSquare className="w-4 h-4 text-white" />
+                    <Search className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-purple-400 mb-1">1. Start with Chat</p>
+                    <p className="font-medium text-purple-400 mb-1">1. Explore with Ask Mode</p>
                     <p className="text-sm text-zinc-400">Ask: "What should a good pricing card include? What makes them effective?"</p>
                   </div>
                 </div>
@@ -609,17 +674,17 @@ const CursorAgent = () => {
                     <Bot className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-cyan-400 mb-1">2. Build with Agent</p>
+                    <p className="font-medium text-cyan-400 mb-1">2. Build with Agent Mode</p>
                     <p className="text-sm text-zinc-400">Create the full component with plan name, price, features list, and CTA button</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center flex-shrink-0">
-                    <Edit3 className="w-4 h-4 text-white" />
+                    <Hand className="w-4 h-4 text-white" />
                   </div>
                   <div>
-                    <p className="font-medium text-emerald-400 mb-1">3. Polish with Inline</p>
+                    <p className="font-medium text-emerald-400 mb-1">3. Refine with Manual Mode</p>
                     <p className="text-sm text-zinc-400">Add hover effects, a "popular" badge, and make the featured plan stand out</p>
                   </div>
                 </div>

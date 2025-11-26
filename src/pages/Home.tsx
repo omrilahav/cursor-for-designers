@@ -34,12 +34,12 @@ const Home = () => {
     },
     {
       chapter: 3,
-      title: 'The AI Modes: Chat, Agent & Inline',
-      description: 'Master the three ways to work with AI for different design tasks',
+      title: 'Cursor AI Modes & Multi-Agent',
+      description: 'Master Agent, Ask, Manual modes plus multi-agent parallel workflows',
       link: '/cursor-agent',
       icon: Bot,
       color: 'pink',
-      topics: ['When to use each mode', 'Effective prompting', 'Multi-file editing']
+      topics: ['Agent, Ask & Manual modes', 'Plan Mode & Background Agents', 'Multi-agent parallel work']
     },
     {
       chapter: 4,

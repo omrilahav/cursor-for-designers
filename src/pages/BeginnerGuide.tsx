@@ -54,14 +54,14 @@ const BeginnerGuide = () => {
     {
       id: 'ai-modes',
       icon: Bot,
-      title: 'The Three AI Modes',
-      simple: 'Three ways to talk to AI: Chat for questions, Agent for big tasks, Inline for quick edits.',
+      title: 'Cursor AI Modes',
+      simple: 'Four powerful modes: Agent builds autonomously, Ask explores read-only, Manual gives precise control, Custom creates your workflows.',
       detailed: [
-        'Chat (Cmd+L): Have conversations, ask questions, plan your approach',
-        'Agent: Build entire features, create multiple files, execute complex workflows',
-        'Inline (Cmd+K): Quick edits exactly where your cursor is—fastest for iterations',
-        'All three work together—use the right tool for each job',
-        'Start with Chat to plan, use Agent to build, Inline to polish'
+        'Agent (Cmd+I): Autonomously builds features, edits files, runs commands, fixes errors',
+        'Ask: Read-only exploration—search codebase and get answers without changes',
+        'Manual: Precise control—only edits files you explicitly select',
+        'Custom: Create specialized workflows with your own instructions',
+        'Multi-Agent: Run up to 8 agents in parallel for maximum productivity!'
       ]
     },
     {

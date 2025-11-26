@@ -38,20 +38,20 @@ const CheatSheet = () => {
           icon: MessageSquare
         },
         {
-          id: 'inline',
-          name: 'Inline Edit (Cmd+K)',
+          id: 'agent',
+          name: 'AI Agent Panel',
+          description: 'Open Agent mode—build features, fix bugs, create files autonomously',
+          mac: '⌘I',
+          windows: 'Ctrl+I',
+          icon: Bot
+        },
+        {
+          id: 'quick-edit',
+          name: 'Quick Edit',
           description: 'Edit code right where your cursor is—fast and precise',
           mac: '⌘K',
           windows: 'Ctrl+K',
           icon: Wand2
-        },
-        {
-          id: 'composer',
-          name: 'Composer (Agent Mode)',
-          description: 'Build features across multiple files with AI',
-          mac: '⌘I',
-          windows: 'Ctrl+I',
-          icon: Bot
         },
         {
           id: 'accept',
@@ -303,26 +303,26 @@ const CheatSheet = () => {
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           <div className="card-glow p-8 text-center border-cyan-500/30">
             <kbd className="inline-block px-6 py-4 bg-dark-900 rounded-xl text-3xl font-mono text-cyan-400 mb-4">
-              {getShortcut('⌘L', 'Ctrl+L')}
+              {getShortcut('⌘I', 'Ctrl+I')}
             </kbd>
-            <h3 className="font-display font-bold text-white text-xl mb-2">AI Chat</h3>
-            <p className="text-zinc-400 text-sm">Questions, explanations, planning</p>
+            <h3 className="font-display font-bold text-white text-xl mb-2">AI Agent</h3>
+            <p className="text-zinc-400 text-sm">Agent, Ask, Manual modes—build features autonomously</p>
           </div>
 
           <div className="card-glow p-8 text-center border-purple-500/30">
             <kbd className="inline-block px-6 py-4 bg-dark-900 rounded-xl text-3xl font-mono text-purple-400 mb-4">
-              {getShortcut('⌘K', 'Ctrl+K')}
+              {getShortcut('⌘L', 'Ctrl+L')}
             </kbd>
-            <h3 className="font-display font-bold text-white text-xl mb-2">Inline Edit</h3>
-            <p className="text-zinc-400 text-sm">Quick changes at cursor position</p>
+            <h3 className="font-display font-bold text-white text-xl mb-2">AI Chat</h3>
+            <p className="text-zinc-400 text-sm">Quick questions and conversations</p>
           </div>
 
           <div className="card-glow p-8 text-center border-pink-500/30">
             <kbd className="inline-block px-6 py-4 bg-dark-900 rounded-xl text-3xl font-mono text-pink-400 mb-4">
-              {getShortcut('⌘I', 'Ctrl+I')}
+              {getShortcut('⌘K', 'Ctrl+K')}
             </kbd>
-            <h3 className="font-display font-bold text-white text-xl mb-2">Composer</h3>
-            <p className="text-zinc-400 text-sm">Multi-file agent mode</p>
+            <h3 className="font-display font-bold text-white text-xl mb-2">Quick Edit</h3>
+            <p className="text-zinc-400 text-sm">Fast inline edits at cursor</p>
           </div>
         </div>
       </section>
@@ -388,10 +388,10 @@ const CheatSheet = () => {
       <section className="card-premium p-8 md:p-10">
         <div className="text-center mb-8">
           <h2 className="font-display font-bold text-white text-2xl mb-2">
-            @ Mentions - Talk to AI About Specific Things
+            @ Mentions - Give AI Context
           </h2>
           <p className="text-zinc-400">
-            In Chat or Composer, type @ to reference files, docs, and more
+            In Chat or Agent mode, type @ to reference files, docs, and more
           </p>
         </div>
 
