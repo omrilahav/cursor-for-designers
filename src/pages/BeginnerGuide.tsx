@@ -1,269 +1,392 @@
-import { Book, Code, Terminal as TerminalIcon, GitBranch, Lightbulb, ArrowRight, CheckCircle, Rocket, Heart, Shield, Zap, Award, Play } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { 
+  Lightbulb, ArrowRight, CheckCircle, Rocket, Zap, Play, Star,
+  Code, Terminal as TerminalIcon, GitBranch, Users, Palette, 
+  Layers, MousePointer, Eye, Wand2, MessageSquare, Bot, 
+  Target, Clock, ChevronRight, Sparkles, Award, Heart
+} from 'lucide-react'
+import { useProgress } from '../contexts/ProgressContext'
 
 const BeginnerGuide = () => {
-  const concepts = [
+  const { completeLesson, completedLessons } = useProgress()
+
+  const designerSuperpowers = [
     {
-      id: 'what-is-cursor',
-      icon: Code,
-      title: 'What is Cursor (For Designers)?',
-      simple: 'Cursor is your AI-powered builder tool. Describe your vision, and Claude generates complete, working designs—ready to ship.',
-      detailed: [
-        'Start with an idea: "Create a modern landing page for a SaaS product"',
-        'AI (Claude) generates the entire design—layout, colors, typography, interactions',
-        'Refine through conversation: "Make it more minimalist", "Add animations to the hero section"',
-        'Build complete design systems: "Generate a color palette and component library for a fintech brand"',
-        'The result is production-ready code that looks professional and works perfectly'
-      ],
-      example: 'Say: "Design a dashboard with sidebar navigation, data cards, and charts in a dark theme" - AI creates everything!'
+      title: 'Build Interactive Prototypes in Hours',
+      description: 'Turn your static mockups into fully functional prototypes that actually work. Click buttons, fill forms, see real interactions.',
+      icon: MousePointer,
+      example: 'Describe a signup flow → Get working form with validation, animations, and responsive design'
     },
     {
-      id: 'what-is-ide',
-      icon: Book,
-      title: 'What is an IDE?',
-      simple: 'IDE stands for "Integrated Development Environment" - it\'s where you write and manage code.',
-      detailed: [
-        'Think of it as Microsoft Word, but for code instead of documents.',
-        'It has a file explorer (like Finder on Mac or File Explorer on Windows) on the left',
-        'A large area in the middle where you write your code',
-        'Tools at the bottom for running commands and seeing output',
-        'Cursor is an IDE - specifically, it\'s a super-powered IDE with AI built in'
-      ],
-      example: 'Just like Word helps you write documents, Cursor helps you write code - but with AI assistance!'
+      title: 'Create Living Design Systems',
+      description: 'Build component libraries that aren\'t just documentation—they\'re real, testable code that developers can use directly.',
+      icon: Layers,
+      example: 'Generate a complete button system with variants, states, and accessibility built in'
     },
     {
-      id: 'what-is-terminal',
-      icon: TerminalIcon,
-      title: 'What is the Terminal?',
-      simple: 'The terminal is a text-based way to give commands to your computer.',
-      detailed: [
-        'Before graphical interfaces (windows, icons, mouse), people controlled computers by typing commands.',
-        'The terminal still exists because it\'s faster for certain tasks.',
-        'Think of it as texting with your computer instead of pointing and clicking.',
-        'Common commands: "npm install" (download tools), "git commit" (save your work)',
-        'Don\'t worry - Cursor has a built-in terminal, and we\'ll teach you the few commands you need'
-      ],
-      example: 'Instead of downloading an app by clicking, you type: "npm install app-name"'
+      title: 'Ship Designs, Not Just Specs',
+      description: 'Hand developers working code instead of static mockups. No more "that\'s not what I designed" conversations.',
+      icon: Rocket,
+      example: 'Your prototype IS the spec—developers see exactly how it should look and behave'
     },
     {
-      id: 'what-is-git',
-      icon: GitBranch,
-      title: 'What is Git?',
-      simple: 'Git is a system for tracking changes to your code (like "Track Changes" in Word, but more powerful).',
-      detailed: [
-        'Imagine you\'re working on a design and want to try different versions without losing your progress.',
-        'Git lets you save "snapshots" of your work at any point.',
-        'You can go back to any previous version, try experimental changes, and work with others.',
-        'GitHub is like Dropbox for code - it stores your Git projects online.',
-        'Cursor has visual Git tools, so you rarely need to type Git commands'
-      ],
-      example: 'Save your progress: Click the checkmark button in Cursor, write "Added new button", done!'
+      title: 'Iterate at the Speed of Thought',
+      description: 'Make changes in seconds, not hours. "Make it more spacious" or "Add a hover effect" and see it instantly.',
+      icon: Zap,
+      example: 'Real-time iteration with AI: change colors, spacing, animations with simple prompts'
     }
   ]
 
-  const fears = [
+  const coreConcepts = [
     {
-      fear: '"I\'m not technical"',
-      reality: 'Neither were most successful designers who code now. You don\'t need a computer science degree - you just need curiosity!',
-      icon: '🎨'
+      id: 'cursor',
+      icon: Code,
+      title: 'What is Cursor?',
+      simple: 'Cursor is your AI design partner. You describe what you want, and AI builds it with you.',
+      detailed: [
+        'It\'s like VS Code (a code editor), but with AI superpowers built in',
+        'You can write in plain English: "Create a blue button with rounded corners"',
+        'AI understands your entire project and keeps things consistent',
+        'It\'s free to start, with generous AI usage included',
+        'Everything runs locally on your computer—your designs stay private'
+      ]
     },
     {
-      fear: '"I\'ll break something"',
-      reality: 'Code is incredibly forgiving. You can always undo, go back, or start over. Nothing you do on your computer can cause permanent damage.',
-      icon: '🛡️'
+      id: 'ai-modes',
+      icon: Bot,
+      title: 'The Three AI Modes',
+      simple: 'Three ways to talk to AI: Chat for questions, Agent for big tasks, Inline for quick edits.',
+      detailed: [
+        'Chat (Cmd+L): Have conversations, ask questions, plan your approach',
+        'Agent: Build entire features, create multiple files, execute complex workflows',
+        'Inline (Cmd+K): Quick edits exactly where your cursor is—fastest for iterations',
+        'All three work together—use the right tool for each job',
+        'Start with Chat to plan, use Agent to build, Inline to polish'
+      ]
     },
     {
-      fear: '"I don\'t understand the jargon"',
-      reality: 'Every expert started as a beginner. This academy explains everything in plain English. When you see a technical term, we\'ll explain it.',
-      icon: '📚'
+      id: 'terminal',
+      icon: TerminalIcon,
+      title: 'The Terminal',
+      simple: 'A text-based way to run commands. You\'ll only need 3-4 commands to start.',
+      detailed: [
+        'Think of it as texting your computer instead of clicking',
+        '"npm install" downloads tools you need',
+        '"npm run dev" starts a live preview of your work',
+        'Cursor has a built-in terminal—no separate app needed',
+        'AI can help you with any command you\'re unsure about'
+      ]
     },
     {
-      fear: '"I need to memorize syntax"',
-      reality: 'With AI tools like Cursor, you describe what you want in natural language. The AI handles the technical syntax.',
-      icon: '🤖'
+      id: 'git',
+      icon: GitBranch,
+      title: 'Git (Version Control)',
+      simple: 'Like "undo history" for your entire project. Save snapshots, try experiments, never lose work.',
+      detailed: [
+        'Save your work at any point with a description of what you did',
+        'Go back to any previous version if something breaks',
+        'Try risky experiments without fear—you can always revert',
+        'Share your work with developers through GitHub',
+        'Cursor has visual Git tools—you rarely need to type Git commands'
+      ]
+    }
+  ]
+
+  const mindsetShifts = [
+    {
+      from: '"I\'m not technical"',
+      to: 'AI handles the technical parts—you bring the design vision',
+      explanation: 'You don\'t need to memorize code. You need to describe what you want clearly—which is exactly what designers do.',
+      icon: Lightbulb
     },
     {
-      fear: '"It will take forever to learn"',
-      reality: 'You can build your first component in hours, not months. You learn by doing, and every small win builds confidence.',
-      icon: '⚡'
+      from: '"I might break something"',
+      to: 'Everything is reversible. Git saves your work constantly.',
+      explanation: 'Code is the most forgiving medium. Undo exists. Versions exist. You literally cannot cause permanent damage.',
+      icon: Heart
+    },
+    {
+      from: '"It will take forever to learn"',
+      to: 'You\'ll build your first component in under an hour',
+      explanation: 'This isn\'t a CS degree. It\'s learning 5 shortcuts and how to describe your designs to AI. That\'s it.',
+      icon: Clock
+    },
+    {
+      from: '"Developers won\'t take my code seriously"',
+      to: 'AI generates professional-quality code that developers love',
+      explanation: 'The code AI writes follows best practices. Developers will be impressed, not skeptical.',
+      icon: Users
     }
   ]
 
   const timeline = [
-    { time: 'Day 1', task: 'Install Cursor, complete first tutorial', feel: 'Excited & curious' },
-    { time: 'Day 2-3', task: 'Learn keyboard shortcuts, understand the interface', feel: 'Getting comfortable' },
-    { time: 'Week 1', task: 'Create your first button with AI help', feel: 'Proud!' },
-    { time: 'Week 2', task: 'Build a complete card component', feel: 'Confident' },
-    { time: 'Week 3', task: 'Create a small page with multiple components', feel: 'Empowered' },
-    { time: 'Month 2', task: 'Build your first full project', feel: 'Unstoppable!' }
+    { 
+      time: 'Hour 1', 
+      title: 'First Component',
+      description: 'Install Cursor, build your first card component with AI',
+      icon: Rocket
+    },
+    { 
+      time: 'Day 2-3', 
+      title: 'Comfortable Flow',
+      description: 'Know the shortcuts, understand the interface, iterate confidently',
+      icon: Zap
+    },
+    { 
+      time: 'Week 1', 
+      title: 'Full Page',
+      description: 'Build a complete page with multiple components and interactions',
+      icon: Layers
+    },
+    { 
+      time: 'Week 2', 
+      title: 'Design System',
+      description: 'Create a reusable component library with tokens and documentation',
+      icon: Palette
+    },
+    { 
+      time: 'Week 3', 
+      title: 'Developer Handoff',
+      description: 'Share production-ready code with your dev team via Git',
+      icon: GitBranch
+    },
+    { 
+      time: 'Month 1', 
+      title: 'Full Applications',
+      description: 'Build complete interactive prototypes for any feature',
+      icon: Star
+    }
   ]
 
+  const handleStartLearning = () => {
+    completeLesson('beginner-guide-read', 'foundation')
+  }
+
   return (
-    <div className="space-y-20 animate-fade-in">
-      {/* Hero Section */}
-      <div className="relative">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-green-300/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-300/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        </div>
+    <div className="space-y-24 animate-fade-in">
+      {/* ═══════════════════════════════════════════════════════════
+          HERO SECTION
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative pt-8">
+        <div className="absolute inset-0 grid-pattern opacity-30" />
         
-        <div className="text-center space-y-8 max-w-5xl mx-auto pt-12">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl">
-            <Rocket className="w-5 h-5" />
-            <span>Start From Zero</span>
-          </div>
+        <div className="relative max-w-4xl mx-auto text-center">
+          <span className="badge-cyan mb-6">Chapter 1</span>
           
-          <h1 className="section-title">
-            You're a Designer.<br />
-            <span className="gradient-text">Not a Developer. Perfect.</span>
+          <h1 className="heading-display text-white mb-8">
+            Why Cursor Changes<br />
+            <span className="text-gradient-multi">Everything for Designers</span>
           </h1>
           
-          <p className="section-subtitle max-w-3xl mx-auto">
-            This tutorial teaches you everything from scratch—no coding or IDE experience needed. 
-            Learn how to use Cursor and Claude to design products, build design systems, and collaborate with teams.
+          <p className="text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-8 leading-relaxed">
+            You've spent years mastering visual design. Now imagine if you could build 
+            <span className="text-white font-medium"> exactly what you design</span>—not just mockups, but real, working products.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
-            <Link to="/tutorials" className="btn-primary text-lg group">
-              <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-              <span>Start Learning Now</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Learn Section */}
-      <section className="space-y-10">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">What This Tutorial Covers</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Master everything from basics to advanced AI design techniques
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="card-hover glow group">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
-              <Zap className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Creating Designs with AI</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Learn how to describe your vision to Claude and create complete designs—layouts, colors, typography, interactions. Master the art of iterating through conversation.
-            </p>
-          </div>
-          
-          <div className="card-hover glow group">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
-              <Code className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Perfect Developer Handoffs</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Share working prototypes with developers. They see exactly how designs should behave—interactions, animations, responsive layouts. Clear, accurate handoffs every time.
-            </p>
-          </div>
-          
-          <div className="card-hover glow group">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
-              <Lightbulb className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Building Design Systems</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Learn how to create design systems with AI—tokens, components, guidelines, and documentation. Follow best practices used by top design teams.
-            </p>
-          </div>
-          
-          <div className="card-hover glow group">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-400 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
-              <Rocket className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-2xl font-black text-gray-900 mb-3">Team Collaboration</h3>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Learn how to collaborate effectively with your design team and developers. Share your work, give and receive feedback, and work together on design projects.
-            </p>
+          <div className="flex items-center justify-center gap-2 text-zinc-500 mb-8">
+            <Clock className="w-5 h-5" />
+            <span>30 minute read</span>
+            <span className="mx-2">•</span>
+            <Star className="w-5 h-5 text-amber-400" />
+            <span>Foundation Knowledge</span>
           </div>
         </div>
       </section>
 
-      {/* Core Concepts */}
-      <section className="space-y-10">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Core Concepts</h2>
-          <p className="text-xl text-gray-600">
-            Everything explained like you're five
-          </p>
-        </div>
-        
-        {concepts.map((concept) => {
-          const Icon = concept.icon
-          return (
-            <div key={concept.id} className="card-hover glow space-y-8">
-              <div className="flex items-start gap-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl flex items-center justify-center flex-shrink-0 shadow-xl">
-                  <Icon className="w-10 h-10 text-white" />
+      {/* ═══════════════════════════════════════════════════════════
+          THE PROBLEM
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="card-premium p-8 md:p-12">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="heading-section text-white text-center mb-8">The Designer's Frustration</h2>
+            
+            <div className="space-y-6 text-lg text-zinc-300 leading-relaxed">
+              <p>
+                You design something beautiful. You spec it out meticulously. You hand it off. And then...
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-4 my-8">
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
+                  <p className="text-red-400 font-medium">"The spacing is off"</p>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-3xl font-black text-gray-900 mb-4 tracking-tight">{concept.title}</h3>
-                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-6 rounded-r-2xl">
-                    <p className="text-xl text-gray-900 leading-relaxed font-bold">
-                      {concept.simple}
-                    </p>
-                  </div>
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
+                  <p className="text-red-400 font-medium">"That's not quite the animation I meant"</p>
                 </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="font-black text-gray-900 text-xl">The Full Story</h4>
-                <div className="space-y-4">
-                  {concept.detailed.map((point, index) => (
-                    <div key={index} className="flex items-start gap-4 bg-white/50 backdrop-blur rounded-2xl p-5">
-                      <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 leading-relaxed text-lg">{point}</p>
-                    </div>
-                  ))}
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
+                  <p className="text-red-400 font-medium">"Can you update the spec for this edge case?"</p>
+                </div>
+                <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-6">
+                  <p className="text-red-400 font-medium">"We didn't have time for those hover states"</p>
                 </div>
               </div>
+              
+              <p>
+                The problem isn't your designs. It's that <span className="text-white font-medium">mockups can never fully capture your vision</span>. 
+                They're pictures of an experience, not the experience itself.
+              </p>
 
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-500 rounded-2xl p-6">
-                <p className="text-gray-900 leading-relaxed text-lg">
-                  <strong className="font-black text-green-700">💡 Example: </strong>
-                  <span className="text-gray-700 font-medium">{concept.example}</span>
+              <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-6 mt-8">
+                <p className="text-cyan-400 font-medium text-xl">
+                  What if you could hand developers <span className="text-white">working code</span> instead of static images?
                 </p>
               </div>
             </div>
-          )
-        })}
+          </div>
+        </div>
       </section>
 
-      {/* Addressing Fears */}
-      <section className="bg-gradient-to-br from-purple-50 to-blue-50 border-2 border-purple-200 rounded-3xl p-8 md:p-12">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-black text-gray-900 mb-3">Let's Address Common Fears</h2>
-          <p className="text-lg text-gray-600">
-            Every expert started exactly where you are now
+      {/* ═══════════════════════════════════════════════════════════
+          VISUAL COMPARISON
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <span className="badge-amber mb-4">See The Difference</span>
+          <h2 className="heading-section text-white mb-4">From Description to Reality</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Watch how Cursor transforms your words into working UI
           </p>
         </div>
-        
-        <div className="max-w-4xl mx-auto space-y-4">
-          {fears.map((item, index) => {
-            const icons = {
-              '🎨': Shield,
-              '🛡️': Heart,
-              '📚': Book,
-              '🤖': Code,
-              '⚡': Zap
-            }
-            const IconComponent = icons[item.icon as keyof typeof icons] || Shield
+
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Before - Your Prompt */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center">
+                <MessageSquare className="w-4 h-4 text-purple-400" />
+              </div>
+              <span className="text-purple-400 font-medium">What You Type</span>
+            </div>
             
+            <div className="bg-dark-900 border border-white/10 rounded-xl p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-3 h-3 rounded-full bg-red-500" />
+                <div className="w-3 h-3 rounded-full bg-amber-500" />
+                <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                <span className="text-xs text-zinc-600 ml-2">Cursor Chat</span>
+              </div>
+              <p className="text-zinc-300 font-mono text-sm leading-relaxed">
+                <span className="text-cyan-400">You:</span> Create a team member card with:
+                <br />- A circular avatar placeholder
+                <br />- Name and role/title
+                <br />- A short bio (2 lines max)
+                <br />- Social media links as icons
+                <br />- Subtle hover animation
+                <br />- Modern, rounded design
+              </p>
+            </div>
+
+            <div className="bg-dark-800/30 border border-dashed border-zinc-700 rounded-xl p-6 text-center">
+              <Eye className="w-8 h-8 text-zinc-600 mx-auto mb-3" />
+              <p className="text-zinc-500 text-sm">In Figma, you'd spend 30+ minutes</p>
+              <p className="text-zinc-600 text-xs mt-1">Creating layers, frames, components...</p>
+            </div>
+          </div>
+
+          {/* After - The Result */}
+          <div className="space-y-4">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                <Wand2 className="w-4 h-4 text-emerald-400" />
+              </div>
+              <span className="text-emerald-400 font-medium">What AI Builds (in seconds)</span>
+            </div>
+            
+            {/* Live Preview Card - Team Member */}
+            <div className="bg-gradient-to-br from-dark-800 to-dark-900 border border-white/10 rounded-2xl p-8 relative overflow-hidden group hover:border-cyan-500/50 transition-all duration-500 hover:scale-[1.02] text-center">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-2xl" />
+              
+              {/* Avatar */}
+              <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center">
+                <span className="text-3xl font-bold text-white">SK</span>
+              </div>
+              
+              {/* Name & Role */}
+              <h3 className="text-xl font-display font-bold text-white mb-1">Sarah Kim</h3>
+              <p className="text-cyan-400 text-sm font-medium mb-4">Lead Product Designer</p>
+              
+              {/* Bio */}
+              <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+                Design systems enthusiast. Turning complexity into clarity through thoughtful interfaces.
+              </p>
+              
+              {/* Social Links */}
+              <div className="flex items-center justify-center gap-4">
+                {['Twitter', 'LinkedIn', 'Dribbble'].map((social, i) => (
+                  <div key={i} className="w-10 h-10 rounded-full bg-white/5 hover:bg-cyan-500/20 flex items-center justify-center transition-colors cursor-pointer">
+                    <span className="text-zinc-400 text-xs">{social[0]}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4 text-center">
+              <p className="text-emerald-400 text-sm font-medium">✓ Working React component</p>
+              <p className="text-zinc-500 text-xs mt-1">With hover effects, responsive design, and all states</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          DESIGNER SUPERPOWERS
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-12">
+          <span className="badge-purple mb-4">Your New Superpowers</span>
+          <h2 className="heading-section text-white mb-4">What You'll Be Able to Do</h2>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {designerSuperpowers.map((power, index) => {
+            const Icon = power.icon
             return (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <IconComponent className="w-6 h-6 text-red-600" />
+              <div key={index} className="card-dark p-8 group hover:border-cyan-500/30 transition-all duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                  <Icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="font-display font-bold text-white text-xl mb-3">{power.title}</h3>
+                <p className="text-zinc-400 mb-4">{power.description}</p>
+                <div className="bg-dark-800/50 border border-white/5 rounded-lg p-4">
+                  <p className="text-sm text-zinc-500">
+                    <span className="text-cyan-400 font-medium">Example: </span>
+                    {power.example}
+                  </p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          MINDSET SHIFTS
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-12">
+          <span className="badge-pink mb-4">Mindset Shifts</span>
+          <h2 className="heading-section text-white mb-4">Reframe Your Thinking</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Let's address the fears that hold designers back
+          </p>
+        </div>
+
+        <div className="space-y-4 max-w-4xl mx-auto">
+          {mindsetShifts.map((shift, index) => {
+            const Icon = shift.icon
+            return (
+              <div key={index} className="card-dark p-6 md:p-8">
+                <div className="flex flex-col md:flex-row md:items-center gap-6">
+                  <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-pink-400" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-lg font-bold text-red-600 mb-2">{item.fear}</p>
-                    <p className="text-gray-700 leading-relaxed">{item.reality}</p>
+                    <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                      <span className="text-zinc-500 line-through">{shift.from}</span>
+                      <ArrowRight className="w-4 h-4 text-cyan-400 hidden md:block" />
+                      <span className="text-cyan-400 font-medium">{shift.to}</span>
+                    </div>
+                    <p className="text-zinc-400 text-sm">{shift.explanation}</p>
                   </div>
                 </div>
               </div>
@@ -272,118 +395,275 @@ const BeginnerGuide = () => {
         </div>
       </section>
 
-      {/* Realistic Timeline */}
-      <section className="card space-y-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-black text-gray-900 mb-3">Your Realistic Learning Timeline</h2>
-          <p className="text-lg text-gray-600">
-            See exactly what to expect in your first weeks
-          </p>
+      {/* ═══════════════════════════════════════════════════════════
+          VISUAL WORKFLOW
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative max-w-5xl mx-auto">
+        <div className="text-center mb-12">
+          <span className="badge-emerald mb-4">Your New Workflow</span>
+          <h2 className="heading-section text-white mb-4">How AI Assists Every Step</h2>
         </div>
-        
-        <div className="space-y-4 max-w-4xl mx-auto">
-          {timeline.map((item, index) => (
-            <div key={index} className="flex items-start gap-4">
-              <div className="w-24 flex-shrink-0">
-                <div className="bg-gray-900 text-white px-4 py-2.5 rounded-xl text-sm font-bold text-center">
-                  {item.time}
+
+        <div className="relative">
+          {/* Connection line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500 transform -translate-x-1/2 hidden md:block" />
+
+          <div className="space-y-8">
+            {/* Step 1 */}
+            <div className="relative flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1 text-right hidden md:block">
+                <div className="bg-dark-800/50 border border-cyan-500/30 rounded-xl p-5 ml-auto max-w-sm">
+                  <p className="text-cyan-400 font-mono text-sm">"Create a signup form with email, password, and validation"</p>
                 </div>
               </div>
-              <div className="flex-1 content-box">
-                <p className="font-bold text-gray-900 mb-1.5">{item.task}</p>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-gray-600">How you'll feel:</span>
-                  <span className="inline-flex items-center gap-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full font-semibold">
-                    <Award className="w-3.5 h-3.5" />
-                    {item.feel}
-                  </span>
+              <div className="w-16 h-16 rounded-full bg-cyan-500/20 border-4 border-cyan-500 flex items-center justify-center z-10">
+                <span className="text-cyan-400 font-bold text-xl">1</span>
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-white text-lg mb-1">Describe What You Want</h4>
+                <p className="text-zinc-500 text-sm">Use natural language—like talking to a designer colleague</p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1 text-right hidden md:block">
+                <h4 className="font-bold text-white text-lg mb-1">AI Generates Code</h4>
+                <p className="text-zinc-500 text-sm">Watch as components appear in real-time</p>
+              </div>
+              <div className="w-16 h-16 rounded-full bg-purple-500/20 border-4 border-purple-500 flex items-center justify-center z-10">
+                <span className="text-purple-400 font-bold text-xl">2</span>
+              </div>
+              <div className="flex-1 hidden md:block">
+                <div className="bg-dark-800/50 border border-purple-500/30 rounded-xl p-4 max-w-sm">
+                  <div className="flex gap-1 mb-2">
+                    <div className="w-2 h-2 rounded-full bg-red-500" />
+                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                  </div>
+                  <div className="font-mono text-xs space-y-1">
+                    <p><span className="text-pink-400">const</span> <span className="text-cyan-400">SignupForm</span> = () =&gt; {"{"}</p>
+                    <p className="pl-4"><span className="text-pink-400">return</span> (</p>
+                    <p className="pl-6 text-zinc-500">// Form components...</p>
+                    <p className="pl-4">)</p>
+                    <p>{"}"}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
+
+            {/* Step 3 */}
+            <div className="relative flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1 text-right hidden md:block">
+                <div className="bg-dark-800/50 border border-emerald-500/30 rounded-xl p-4 ml-auto max-w-sm">
+                  <div className="space-y-2">
+                    <div className="h-8 bg-dark-700 rounded-lg" />
+                    <div className="h-8 bg-dark-700 rounded-lg" />
+                    <div className="h-10 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg" />
+                  </div>
+                </div>
+              </div>
+              <div className="w-16 h-16 rounded-full bg-emerald-500/20 border-4 border-emerald-500 flex items-center justify-center z-10">
+                <span className="text-emerald-400 font-bold text-xl">3</span>
+              </div>
+              <div className="flex-1">
+                <h4 className="font-bold text-white text-lg mb-1">See Live Preview</h4>
+                <p className="text-zinc-500 text-sm">Your component appears instantly—real and interactive</p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="relative flex flex-col md:flex-row items-center gap-6">
+              <div className="flex-1 text-right hidden md:block">
+                <h4 className="font-bold text-white text-lg mb-1">Iterate With Words</h4>
+                <p className="text-zinc-500 text-sm">"Make the button larger" or "Add a loading spinner"</p>
+              </div>
+              <div className="w-16 h-16 rounded-full bg-pink-500/20 border-4 border-pink-500 flex items-center justify-center z-10">
+                <span className="text-pink-400 font-bold text-xl">4</span>
+              </div>
+              <div className="flex-1 hidden md:block">
+                <div className="bg-dark-800/50 border border-pink-500/30 rounded-xl p-5 max-w-sm">
+                  <p className="text-pink-400 font-mono text-sm">"Add password strength indicator and show/hide password toggle"</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Key Principles */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-black mb-3">4 Principles for Success</h2>
-          <p className="text-lg text-gray-300">
-            Follow these and you'll succeed, guaranteed
+      {/* ═══════════════════════════════════════════════════════════
+          CORE CONCEPTS
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-12">
+          <span className="badge-cyan mb-4">Core Concepts</span>
+          <h2 className="heading-section text-white mb-4">The Only Things You Need to Know</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Four concepts. That's it. Everything else builds on these.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all">
-            <div className="text-3xl font-black text-purple-400 mb-2">1</div>
-            <h3 className="font-bold text-xl mb-3">Start Small</h3>
-            <p className="text-gray-200 leading-relaxed">
-              Don't try to build Facebook on day one. Start with a button. Then a card. Then a page. Small wins build confidence.
-            </p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all">
-            <div className="text-3xl font-black text-blue-400 mb-2">2</div>
-            <h3 className="font-bold text-xl mb-3">Learn by Doing</h3>
-            <p className="text-gray-200 leading-relaxed">
-              Reading about code won't teach you to code. You have to actually build things. Even if they're simple at first.
-            </p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all">
-            <div className="text-3xl font-black text-green-400 mb-2">3</div>
-            <h3 className="font-bold text-xl mb-3">Use AI Fearlessly</h3>
-            <p className="text-gray-200 leading-relaxed">
-              AI is your coding mentor. Ask questions, request explanations, experiment freely. The AI never judges and is always patient.
-            </p>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/15 transition-all">
-            <div className="text-3xl font-black text-amber-400 mb-2">4</div>
-            <h3 className="font-bold text-xl mb-3">Google is Your Friend</h3>
-            <p className="text-gray-200 leading-relaxed">
-              Every developer (even experts) googles things constantly. Not knowing something is normal. Looking it up is professional.
-            </p>
-          </div>
+
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {coreConcepts.map((concept, index) => {
+            const Icon = concept.icon
+            return (
+              <div key={concept.id} className="card-glow p-8">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-display font-bold text-white text-2xl mb-2">{concept.title}</h3>
+                    <p className="text-lg text-cyan-400">{concept.simple}</p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-3 ml-0 md:ml-22">
+                  {concept.detailed.map((point, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
+                      <p className="text-zinc-400 text-sm">{point}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </section>
 
-      {/* Quick Start CTA */}
-      <section className="card-premium text-center space-y-6 py-12">
-        <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-blue-600 rounded-full flex items-center justify-center mx-auto">
-          <Rocket className="w-8 h-8 text-white" />
-        </div>
-        
-        <h2 className="text-4xl font-black text-gray-900">Ready to Start?</h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          You've learned the basics. Now it's time to get hands-on and build something real!
-        </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <Link to="/tutorials" className="btn-primary text-lg">
-            <Play className="w-5 h-5" />
-            <span>Start First Tutorial</span>
-            <ArrowRight className="w-5 h-5" />
-          </Link>
-          <Link to="/ide-basics" className="btn-outline text-lg">
-            <Book className="w-5 h-5" />
-            <span>Learn the IDE</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* Encouragement */}
-      <section className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8 md:p-12">
-        <div className="text-center space-y-6 max-w-3xl mx-auto">
-          <div className="text-7xl">✨</div>
-          <h3 className="text-3xl font-black text-gray-900">You've Got This!</h3>
-          <p className="text-xl text-gray-700 leading-relaxed">
-            Every expert designer who codes started exactly where you are right now.
-            The only difference between them and you is that they started.
-            <strong className="block mt-4 text-2xl text-gray-900">
-              Today is your day one. Let's make it count!
-            </strong>
+      {/* ═══════════════════════════════════════════════════════════
+          YOUR TIMELINE
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-12">
+          <span className="badge-amber mb-4">Your Journey</span>
+          <h2 className="heading-section text-white mb-4">Realistic Timeline to Mastery</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Here's exactly what to expect as you progress
           </p>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-purple-500 to-pink-500"></div>
+            
+            <div className="space-y-8">
+              {timeline.map((item, index) => {
+                const Icon = item.icon
+                return (
+                  <div key={index} className="relative flex items-start gap-6 pl-16">
+                    {/* Timeline Node */}
+                    <div className="absolute left-0 w-12 h-12 rounded-full bg-dark-900 border-2 border-cyan-500 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-cyan-400" />
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1 card-dark p-6">
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="text-sm font-bold text-cyan-400">{item.time}</span>
+                        <span className="text-zinc-500">•</span>
+                        <span className="font-display font-bold text-white">{item.title}</span>
+                      </div>
+                      <p className="text-zinc-400">{item.description}</p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          SUCCESS PRINCIPLES
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="card-dark p-8 md:p-12">
+          <div className="text-center mb-10">
+            <span className="badge-purple mb-4">Principles for Success</span>
+            <h2 className="heading-section text-white">4 Rules to Learn By</h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-dark-800/50 border border-white/5 rounded-xl p-6">
+              <span className="text-4xl font-display font-bold text-gradient-cyan">01</span>
+              <h3 className="font-display font-bold text-white text-xl mt-2 mb-3">Start Small</h3>
+              <p className="text-zinc-400">
+                Don't try to build an entire app on day one. Start with a button. Then a card. Then a page. 
+                Small wins build confidence and compound quickly.
+              </p>
+            </div>
+            
+            <div className="bg-dark-800/50 border border-white/5 rounded-xl p-6">
+              <span className="text-4xl font-display font-bold text-gradient-pink">02</span>
+              <h3 className="font-display font-bold text-white text-xl mt-2 mb-3">Learn by Doing</h3>
+              <p className="text-zinc-400">
+                Reading about Cursor won't teach you Cursor. You have to build things. 
+                Every tutorial in this guide has hands-on exercises—do them.
+              </p>
+            </div>
+            
+            <div className="bg-dark-800/50 border border-white/5 rounded-xl p-6">
+              <span className="text-4xl font-display font-bold text-gradient-cyan">03</span>
+              <h3 className="font-display font-bold text-white text-xl mt-2 mb-3">Use AI Fearlessly</h3>
+              <p className="text-zinc-400">
+                AI is your patient, judgment-free mentor. Ask it anything. Ask it to explain. 
+                Ask it to try again. There are no stupid questions.
+              </p>
+            </div>
+            
+            <div className="bg-dark-800/50 border border-white/5 rounded-xl p-6">
+              <span className="text-4xl font-display font-bold text-gradient-pink">04</span>
+              <h3 className="font-display font-bold text-white text-xl mt-2 mb-3">Embrace Iteration</h3>
+              <p className="text-zinc-400">
+                Your first attempt won't be perfect. That's not failure—that's the process. 
+                Professional designers iterate 10-20 times on components. So will you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CTA - NEXT CHAPTER
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="relative overflow-hidden rounded-[2.5rem] p-12 md:p-16 text-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-purple-600 to-pink-600 opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-black/50" />
+          <div className="absolute inset-0 grid-pattern opacity-20" />
+          
+          <div className="relative space-y-8">
+            <div className="w-20 h-20 mx-auto bg-white/10 backdrop-blur rounded-full flex items-center justify-center">
+              <Rocket className="w-10 h-10 text-white" />
+            </div>
+            
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+                Ready to Start Building?
+              </h2>
+              <p className="text-xl text-white/80 max-w-2xl mx-auto">
+                You understand why this matters. Now let's get Cursor installed and build your first component.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link 
+                to="/installation" 
+                onClick={handleStartLearning}
+                className="btn bg-white text-dark-950 hover:bg-zinc-100 text-lg shadow-2xl px-10 group"
+              >
+                <span className="font-bold">Continue to Chapter 2</span>
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            <p className="text-white/50 text-sm">
+              Chapter 2: Getting Started with Cursor
+            </p>
+          </div>
         </div>
       </section>
     </div>
@@ -391,4 +671,3 @@ const BeginnerGuide = () => {
 }
 
 export default BeginnerGuide
-

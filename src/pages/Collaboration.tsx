@@ -27,7 +27,7 @@ const Collaboration = () => {
 
       {/* The Modern Design Team */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The Modern Design Team Workflow</h2>
+        <h2 className="text-3xl font-bold text-white">The Modern Design Team Workflow</h2>
         
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 space-y-6">
           <p className="text-lg text-gray-800">
@@ -76,7 +76,7 @@ const Collaboration = () => {
 
       {/* Collaboration Scenarios */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Common Collaboration Scenarios</h2>
+        <h2 className="text-3xl font-bold text-white">Common Collaboration Scenarios</h2>
 
         <div className="space-y-4">
           {/* Scenario 1 */}
@@ -225,7 +225,7 @@ const Collaboration = () => {
             <GitBranch className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Setting Up Your Team</h2>
+            <h2 className="text-3xl font-bold text-white">Setting Up Your Team</h2>
             <p className="text-gray-600">One-time setup for smooth collaboration</p>
           </div>
         </div>
@@ -316,7 +316,7 @@ const Collaboration = () => {
             <Clock className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Daily Collaboration Workflow</h2>
+            <h2 className="text-3xl font-bold text-white">Daily Collaboration Workflow</h2>
             <p className="text-gray-600">What to do every day</p>
           </div>
         </div>
@@ -374,7 +374,7 @@ const Collaboration = () => {
             <MessageSquare className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Communication Best Practices</h2>
+            <h2 className="text-3xl font-bold text-white">Communication Best Practices</h2>
             <p className="text-gray-600">Keep everyone in sync</p>
           </div>
         </div>
@@ -474,7 +474,7 @@ spacing feels off!`}
             <Shield className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Handling Merge Conflicts</h2>
+            <h2 className="text-3xl font-bold text-white">Handling Merge Conflicts</h2>
             <p className="text-gray-600">What to do when changes collide</p>
           </div>
         </div>
@@ -577,4 +577,5 @@ background: green
 }
 
 export default Collaboration
+
 

@@ -27,7 +27,7 @@ const DesignHandoff = () => {
 
       {/* The Problem */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The Traditional Handoff Problem</h2>
+        <h2 className="text-3xl font-bold text-white">The Traditional Handoff Problem</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-red-50 border-2 border-red-300 rounded-xl p-6">
@@ -107,8 +107,8 @@ const DesignHandoff = () => {
             <Code className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 1: Clean Up Your Code</h2>
-            <p className="text-gray-600">Make it production-ready</p>
+            <h2 className="text-3xl font-bold text-white">Step 1: Clean Up Your Code</h2>
+            <p className="text-zinc-400">Make it production-ready</p>
           </div>
         </div>
 
@@ -220,8 +220,8 @@ const DesignHandoff = () => {
             <FileCode className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 2: Document the Component</h2>
-            <p className="text-gray-600">Create a clear guide for developers</p>
+            <h2 className="text-3xl font-bold text-white">Step 2: Document the Component</h2>
+            <p className="text-zinc-400">Create a clear guide for developers</p>
           </div>
         </div>
 
@@ -355,8 +355,8 @@ import { Button } from './components/Button'
             <Users className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 3: Hand Off to Developers</h2>
-            <p className="text-gray-600">Multiple ways to share your work</p>
+            <h2 className="text-3xl font-bold text-white">Step 3: Hand Off to Developers</h2>
+            <p className="text-zinc-400">Multiple ways to share your work</p>
           </div>
         </div>
 
@@ -454,8 +454,8 @@ import { Button } from './components/Button'
 
       {/* What Developers Need */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">What Developers Actually Need</h2>
-        <p className="text-gray-600">Straight from developers - here's what makes handoffs smooth:</p>
+        <h2 className="text-3xl font-bold text-white">What Developers Actually Need</h2>
+        <p className="text-zinc-400">Straight from developers - here's what makes handoffs smooth:</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-green-50 rounded-lg p-5">
@@ -499,7 +499,7 @@ import { Button } from './components/Button'
 
       {/* Collaboration Tips */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Ongoing Collaboration Tips</h2>
+        <h2 className="text-3xl font-bold text-white">Ongoing Collaboration Tips</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 rounded-lg p-5">

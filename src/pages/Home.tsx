@@ -1,220 +1,404 @@
 import { Link } from 'react-router-dom'
-import { BookOpen, GraduationCap, Gamepad2, ArrowRight, Target, Users, Zap, Lightbulb, Trophy, Star, Play, CheckCircle, Code, Sparkles } from 'lucide-react'
+import { 
+  ArrowRight, CheckCircle, Sparkles, Zap, Target, Users, 
+  Lightbulb, Layers, Palette, MousePointer, BookOpen, 
+  GraduationCap, Gamepad2, Star, Trophy,
+  Bot, Code, Rocket, ChevronRight, ArrowUpRight,
+  Wand2, GitBranch, Share2, Eye, Timer, Keyboard, Heart,
+  Coffee
+} from 'lucide-react'
 import { useProgress } from '../contexts/ProgressContext'
 
 const Home = () => {
   const { completedLessons, achievements, totalPoints } = useProgress()
   const unlockedAchievements = achievements.filter(a => a.unlocked).length
 
-  const courses = [
-      {
-        icon: Lightbulb,
-        title: 'Designer Quick Start',
-        description: 'Go from mockup to prototype in your first session',
-        duration: '1 hour',
-        lessons: 5,
-        level: 'Beginner',
-        link: '/beginner-guide',
-        featured: true
-      },
+  const learningPath = [
     {
-      icon: BookOpen,
-      title: 'Interactive Tutorials',
-      description: 'Hands-on lessons from basics to advanced',
-      duration: '4 hours',
-      lessons: 12,
-      level: 'All Levels',
-      link: '/tutorials'
+      chapter: 1,
+      title: 'Why Cursor Changes Everything',
+      description: 'Understand why designers who code with AI have an unfair advantage',
+      link: '/beginner-guide',
+      icon: Lightbulb,
+      color: 'cyan',
+      topics: ['The designer-coder gap', 'AI as your coding partner', 'Real examples of what\'s possible']
     },
     {
-      icon: GraduationCap,
-      title: 'Complete Training Path',
-      description: 'Master every IDE feature and workflow',
-      duration: '6 hours',
-      lessons: 20,
-      level: 'Intermediate',
-      link: '/training'
+      chapter: 2,
+      title: 'Getting Started with Cursor',
+      description: 'Set up your design powerhouse and build something real',
+      link: '/installation',
+      icon: Zap,
+      color: 'purple',
+      topics: ['Installation & setup', 'Interface mastery', 'Your first AI-built component']
     },
     {
-      icon: Gamepad2,
-      title: 'Interactive Games',
-      description: 'Learn through fun gamified challenges',
-      duration: '3 hours',
-      lessons: 10,
-      level: 'Beginner',
-      link: '/games'
+      chapter: 3,
+      title: 'The AI Modes: Chat, Agent & Inline',
+      description: 'Master the three ways to work with AI for different design tasks',
+      link: '/cursor-agent',
+      icon: Bot,
+      color: 'pink',
+      topics: ['When to use each mode', 'Effective prompting', 'Multi-file editing']
     },
+    {
+      chapter: 4,
+      title: 'Design to Code Workflow',
+      description: 'Transform mockups into production-ready interactive prototypes',
+      link: '/design-to-prototype',
+      icon: Palette,
+      color: 'amber',
+      topics: ['Describing designs to AI', 'Component building', 'Interactions & states']
+    },
+    {
+      chapter: 5,
+      title: 'Building Design Systems',
+      description: 'Create scalable tokens, components, and documentation',
+      link: '/design-systems',
+      icon: Layers,
+      color: 'emerald',
+      topics: ['Design tokens', 'Component libraries', 'Documentation']
+    },
+    {
+      chapter: 6,
+      title: 'Team Collaboration & Handoffs',
+      description: 'Work seamlessly with developers and ship with confidence',
+      link: '/design-handoff',
+      icon: Users,
+      color: 'blue',
+      topics: ['Git basics', 'Code handoffs', 'Review workflows']
+    }
   ]
 
-  const features = [
+  const advancedPath = [
     {
-      icon: Sparkles,
-      title: 'Learn AI-Powered Design',
-      description: 'Master how to create designs with Cursor and Claude'
+      chapter: 7,
+      title: 'Cursor Rules & Project Context',
+      description: 'Configure AI to understand your design system, conventions, and preferences',
+      link: '/cursor-rules',
+      icon: Target,
+      color: 'amber',
+      topics: ['.cursorrules file', 'Design system context', 'Custom prompting']
     },
     {
-      icon: Trophy,
-      title: 'Build Design Systems',
-      description: 'Learn best practices for tokens, components, and guidelines'
-    },
-    {
+      chapter: 8,
+      title: 'Building AI Agent Teams',
+      description: 'Orchestrate multiple AI personas for comprehensive design validation',
+      link: '/agent-teams',
       icon: Users,
-      title: 'Collaborate with Teams',
-      description: 'Work with designers and developers effectively'
+      color: 'purple',
+      topics: ['Design review agents', 'UX validation', 'Developer perspective']
     },
     {
-      icon: Lightbulb,
-      title: 'Best Practices & Rules',
-      description: 'How the best designers use AI tools'
+      chapter: 9,
+      title: 'Research & Discovery with AI',
+      description: 'Comprehensive research workflows before you start designing',
+      link: '/research-discovery',
+      icon: Eye,
+      color: 'cyan',
+      topics: ['Competitive analysis', 'User research', 'Pattern discovery']
     },
+    {
+      chapter: 10,
+      title: 'Complex System Design',
+      description: 'Design enterprise-grade features that integrate with larger systems',
+      link: '/complex-systems',
+      icon: Layers,
+      color: 'pink',
+      topics: ['System architecture', 'Multi-component features', 'Integration patterns']
+    }
+  ]
+
+  const transformations = [
+    {
+      before: 'Static mockups in Figma',
+      after: 'Interactive prototypes that actually work',
+      icon: MousePointer
+    },
+    {
+      before: 'Specs documents nobody reads',
+      after: 'Production-ready code developers love',
+      icon: Code
+    },
+    {
+      before: 'Weeks of back-and-forth',
+      after: 'Same-day design to implementation',
+      icon: Rocket
+    },
+    {
+      before: 'Design systems in PDFs',
+      after: 'Living, testable component libraries',
+      icon: Layers
+    }
   ]
 
   const stats = [
-    { value: completedLessons.length, label: 'Completed', sublabel: 'Lessons' },
-    { value: totalPoints, label: 'Total', sublabel: 'Points' },
-    { value: unlockedAchievements, label: 'Unlocked', sublabel: 'Achievements' },
+    { value: completedLessons.length, label: 'Lessons', icon: BookOpen },
+    { value: totalPoints, label: 'Points', icon: Star },
+    { value: unlockedAchievements, label: 'Achievements', icon: Trophy },
   ]
 
-  const benefits = [
-    'How to use Cursor and Claude for design work',
-    'Creating designs and design systems from scratch',
-    'Best practices, rules, and guidelines for AI design',
-    'Collaborating with your design team',
-    'Working with developers and sharing your work',
-    'Turning ideas into best-in-class designs'
-  ]
+  const colorClasses = {
+    cyan: { bg: 'from-cyan-500 to-cyan-600', light: 'bg-cyan-500/10', border: 'border-cyan-500/30', text: 'text-cyan-400' },
+    purple: { bg: 'from-purple-500 to-purple-600', light: 'bg-purple-500/10', border: 'border-purple-500/30', text: 'text-purple-400' },
+    pink: { bg: 'from-pink-500 to-pink-600', light: 'bg-pink-500/10', border: 'border-pink-500/30', text: 'text-pink-400' },
+    amber: { bg: 'from-amber-500 to-amber-600', light: 'bg-amber-500/10', border: 'border-amber-500/30', text: 'text-amber-400' },
+    emerald: { bg: 'from-emerald-500 to-emerald-600', light: 'bg-emerald-500/10', border: 'border-emerald-500/30', text: 'text-emerald-400' },
+    blue: { bg: 'from-blue-500 to-blue-600', light: 'bg-blue-500/10', border: 'border-blue-500/30', text: 'text-blue-400' },
+  }
 
   return (
-    <div className="space-y-20 md:space-y-32 animate-fade-in">
-      {/* Hero Section */}
-      <section className="relative pt-12 md:pt-20">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-300/30 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-300/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-        </div>
+    <div className="space-y-32 md:space-y-40">
+      {/* ═══════════════════════════════════════════════════════════
+          HERO SECTION
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative pt-8 md:pt-16">
+        <div className="absolute inset-0 grid-pattern opacity-50" />
         
-        <div className="max-w-5xl mx-auto text-center space-y-12">
-          <div className="space-y-6">
-            <h1 className="section-title">
-              Learn to Design
-              <br />
-              <span className="gradient-text">with Cursor and AI.</span>
-            </h1>
-            
-            <p className="section-subtitle max-w-3xl mx-auto">
-              A complete tutorial for product and UX/UI designers to master Cursor and Claude. 
-              No coding background needed. Learn how to turn ideas into designs and design systems.
-            </p>
+        <div className="relative max-w-5xl mx-auto text-center">
+          {/* Badge */}
+          <div className="animate-in animate-delay-1 mb-8">
+            <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium">
+              <Heart className="w-4 h-4" />
+              A Free Community Resource
+            </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link to="/beginner-guide" className="btn-primary text-lg group">
-              <Lightbulb className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              <span>Begin Your Journey</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          {/* Main Heading */}
+          <h1 className="animate-in animate-delay-2 heading-display mb-8">
+            <span className="block text-white">From Designer</span>
+            <span className="block text-gradient-multi">to Design Engineer</span>
+          </h1>
+          
+          {/* Subtitle */}
+          <p className="animate-in animate-delay-3 text-xl md:text-2xl text-zinc-400 max-w-3xl mx-auto mb-6 leading-relaxed">
+            Everything you need to go from product designer to design engineer. Learn to build production-ready prototypes, design systems, and real applications.
+          </p>
+          
+          <p className="animate-in animate-delay-3 text-lg text-zinc-500 max-w-2xl mx-auto mb-12">
+            Made with love for our friends, students, and the design community.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="animate-in animate-delay-4 flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <Link to="/quick-start" className="btn-primary text-lg group">
+              <Timer className="w-5 h-5" />
+              <span>5-Minute Quick Start</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link to="/tutorials" className="btn-outline text-lg group">
-              <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
-              <span>Explore Tutorials</span>
+            <Link to="/beginner-guide" className="btn-secondary text-lg group">
+              <BookOpen className="w-5 h-5" />
+              <span>Start Full Course</span>
             </Link>
           </div>
-        </div>
 
-        
-        {/* Stats Overview */}
-        <div className="mt-20">
-          <div className="grid grid-cols-3 gap-6 max-w-3xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-6xl md:text-7xl font-black gradient-text mb-2 group-hover:scale-110 transition-transform">
-                  {stat.value}
-                </div>
-                <div className="text-sm font-bold text-gray-600 uppercase tracking-wide">{stat.label}</div>
-                <div className="text-xs text-gray-500">{stat.sublabel}</div>
+          {/* Trust Indicators */}
+          <div className="animate-in animate-delay-5 flex flex-wrap items-center justify-center gap-8 text-sm text-zinc-500 mb-16">
+            <span className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-emerald-400" />
+              100% free forever
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-emerald-400" />
+              No coding experience needed
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-emerald-400" />
+              Learn at your own pace
+            </span>
+            <span className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-emerald-400" />
+              Build real projects
+            </span>
+          </div>
+
+          {/* Stats Row - Only show if user has progress */}
+          {totalPoints > 0 && (
+            <div className="animate-in animate-delay-5 grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
+              {stats.map((stat, index) => {
+                const Icon = stat.icon
+                return (
+                  <div 
+                    key={index} 
+                    className="group relative card-dark p-6 md:p-8 text-center hover:border-cyan-500/30 transition-all duration-500"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+                    <div className="relative">
+                      <Icon className="w-5 h-5 text-cyan-500 mx-auto mb-3 opacity-60" />
+                      <div className="text-4xl md:text-5xl font-display font-bold text-gradient-cyan mb-1">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs uppercase tracking-widest text-zinc-500">{stat.label}</div>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          QUICK WIN - WHAT YOU'LL BUILD IN 5 MINUTES
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="card-premium relative overflow-hidden p-8 md:p-12">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          
+          <div className="relative flex flex-col lg:flex-row items-center gap-10">
+            <div className="flex-1 space-y-6">
+              <span className="badge-cyan">5-Minute Quick Start</span>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
+                Build Your First Component<br />
+                <span className="text-gradient-cyan">Before Your Coffee Gets Cold</span>
+              </h2>
+              <p className="text-lg text-zinc-400">
+                No setup guides. No theory. Just follow 6 simple steps and you'll have a working, 
+                styled product card—built entirely with AI. Takes less than 5 minutes.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link to="/quick-start" className="btn-primary group">
+                  <Coffee className="w-5 h-5" />
+                  <span>Try the 5-Min Start</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <Link to="/cheatsheet" className="btn-secondary">
+                  <Keyboard className="w-5 h-5" />
+                  <span>View Shortcuts</span>
+                </Link>
               </div>
-            ))}
+            </div>
+            
+            {/* Visual representation */}
+            <div className="lg:w-96 w-full">
+              <div className="bg-dark-900/80 rounded-2xl p-6 border border-white/5">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                  </div>
+                  <span className="text-xs text-zinc-500 font-mono">product-card.html</span>
+                </div>
+                <div className="space-y-2 font-mono text-sm">
+                  <p className="text-purple-400">{"<!-- AI Generated 🤖 -->"}</p>
+                  <p className="text-zinc-500">&lt;div class="<span className="text-cyan-400">card shadow-lg</span>"&gt;</p>
+                  <p className="text-zinc-500 pl-4">&lt;img src="..." /&gt;</p>
+                  <p className="text-zinc-500 pl-4">&lt;h2&gt;<span className="text-white">Product Name</span>&lt;/h2&gt;</p>
+                  <p className="text-zinc-500 pl-4">&lt;p&gt;<span className="text-emerald-400">$299</span>&lt;/p&gt;</p>
+                  <p className="text-zinc-500 pl-4">&lt;button&gt;<span className="text-pink-400">Add to Cart</span>&lt;/button&gt;</p>
+                  <p className="text-zinc-500">&lt;/div&gt;</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="space-y-12">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">What You'll Learn</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to master AI-powered design</p>
+      {/* ═══════════════════════════════════════════════════════════
+          THE TRANSFORMATION
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-16">
+          <span className="badge-pink mb-4">The Transformation</span>
+          <h2 className="heading-section text-white mb-4">From Designer to Design Engineer</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Here's what changes when you learn to build with AI
+          </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => {
-            const Icon = feature.icon
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {transformations.map((item, index) => {
+            const Icon = item.icon
             return (
-              <div key={index} className="card-hover glow group text-center">
-                <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg">
-                  <Icon className="w-8 h-8 text-white" />
+              <div 
+                key={index} 
+                className="card-dark p-8 group hover:border-cyan-500/30 transition-all duration-500"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-500 flex items-center justify-center flex-shrink-0">
+                    <Icon className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-zinc-500 text-sm line-through">{item.before}</span>
+                    </div>
+                    <p className="text-white font-medium text-lg">{item.after}</p>
+                  </div>
                 </div>
-                <h4 className="font-black text-gray-900 mb-2 text-lg">{feature.title}</h4>
-                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
               </div>
             )
           })}
         </div>
       </section>
 
-      {/* Learning Paths */}
-      <section className="space-y-12">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">Your Learning Path</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">From complete beginner to confident builder</p>
+      {/* ═══════════════════════════════════════════════════════════
+          THE LEARNING PATH
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="absolute -inset-x-4 inset-y-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent -z-10" />
+        
+        <div className="text-center mb-16">
+          <span className="badge-cyan mb-4">The Learning Path</span>
+          <h2 className="heading-section text-white mb-4">Your Journey to Design Engineer</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            A structured path from complete beginner to shipping production prototypes
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {courses.map((course, index) => {
-            const Icon = course.icon
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {learningPath.map((chapter, index) => {
+            const Icon = chapter.icon
+            const colors = colorClasses[chapter.color as keyof typeof colorClasses]
+            const isCompleted = completedLessons.some(l => l.id.includes(chapter.link.replace('/', '')))
+            
             return (
               <Link
                 key={index}
-                to={course.link}
-                className="card-hover glow group relative overflow-hidden"
+                to={chapter.link}
+                className="group block card-glow p-6 md:p-8 hover:border-white/10 transition-all duration-500"
               >
-                {course.featured && (
-                  <div className="absolute -top-2 -right-2">
-                    <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg transform rotate-12">
-                      Start Here
+                <div className="flex flex-col md:flex-row md:items-center gap-6">
+                  {/* Chapter Number & Icon */}
+                  <div className="flex items-center gap-4 md:flex-shrink-0">
+                    <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${colors.bg} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <Icon className="w-8 h-8 text-white" />
+                      {isCompleted && (
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="md:hidden">
+                      <span className={`text-sm font-bold ${colors.text}`}>Chapter {chapter.chapter}</span>
+                      <h3 className="text-xl font-display font-bold text-white">{chapter.title}</h3>
                     </div>
                   </div>
-                )}
 
-                <div className="flex gap-6 mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-blue-600 rounded-3xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl">
-                    <Icon className="w-10 h-10 text-white" />
-                  </div>
+                  {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-2xl font-black text-gray-900 mb-3 group-hover:gradient-text transition-all">
-                      {course.title}
+                    <span className={`hidden md:block text-sm font-bold ${colors.text} mb-1`}>Chapter {chapter.chapter}</span>
+                    <h3 className="hidden md:block text-2xl font-display font-bold text-white mb-2 group-hover:text-gradient-cyan transition-all">
+                      {chapter.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
-                      {course.description}
-                    </p>
+                    <p className="text-zinc-400 mb-4">{chapter.description}</p>
+                    
+                    {/* Topics */}
+                    <div className="flex flex-wrap gap-2">
+                      {chapter.topics.map((topic, i) => (
+                        <span key={i} className={`text-xs px-3 py-1 rounded-full ${colors.light} ${colors.border} border ${colors.text}`}>
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                <div className="flex items-center gap-6 text-sm text-gray-600 mb-6">
-                  <span className="flex items-center gap-2">
-                    <Target className="w-5 h-5" />
-                    <span className="font-semibold">{course.level}</span>
-                  </span>
-                  <span className="flex items-center gap-2">
-                    <BookOpen className="w-5 h-5" />
-                    <span className="font-semibold">{course.lessons} lessons</span>
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between pt-6 border-t border-gray-200/50">
-                  <span className="text-sm font-bold text-gray-900 uppercase tracking-wide">{course.duration}</span>
-                  <span className="flex items-center gap-2 font-bold gradient-text group-hover:gap-4 transition-all">
-                    <span>Begin</span>
-                    <ArrowRight className="w-5 h-5" />
-                  </span>
+                  {/* Arrow */}
+                  <div className="flex items-center gap-4 md:flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 text-cyan-400" />
+                    </div>
+                  </div>
                 </div>
               </Link>
             )
@@ -222,55 +406,240 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why This Works */}
-      <section className="card-glass relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 -z-10"></div>
-        
-        <div className="max-w-4xl mx-auto text-center space-y-12">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-              Why This Works
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Everything you need to go from zero to building
-            </p>
-          </div>
+      {/* ═══════════════════════════════════════════════════════════
+          ADVANCED LEARNING PATH
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-16">
+          <span className="badge-purple mb-4">Master Level</span>
+          <h2 className="heading-section text-white mb-4">Advanced Techniques</h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Go beyond basics with AI agent orchestration, research workflows, and system design
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-4 bg-white/50 backdrop-blur rounded-2xl p-6 hover:bg-white/80 transition-all group">
-                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <CheckCircle className="w-5 h-5 text-white" />
+        <div className="space-y-6 max-w-4xl mx-auto">
+          {advancedPath.map((chapter, index) => {
+            const Icon = chapter.icon
+            const colors = colorClasses[chapter.color as keyof typeof colorClasses]
+            const isCompleted = completedLessons.some(l => l.id.includes(chapter.link.replace('/', '')))
+            
+            return (
+              <Link
+                key={index}
+                to={chapter.link}
+                className="group block card-glow p-6 md:p-8 hover:border-purple-500/30 transition-all duration-500"
+              >
+                <div className="flex flex-col md:flex-row md:items-center gap-6">
+                  {/* Chapter Number & Icon */}
+                  <div className="flex items-center gap-4 md:flex-shrink-0">
+                    <div className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${colors.bg} flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <Icon className="w-8 h-8 text-white" />
+                      {isCompleted && (
+                        <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
+                          <CheckCircle className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="md:hidden">
+                      <span className={`text-sm font-bold ${colors.text}`}>Chapter {chapter.chapter}</span>
+                      <h3 className="text-xl font-display font-bold text-white">{chapter.title}</h3>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <span className={`hidden md:block text-sm font-bold ${colors.text} mb-1`}>Chapter {chapter.chapter}</span>
+                    <h3 className="hidden md:block text-2xl font-display font-bold text-white mb-2 group-hover:text-gradient-pink transition-all">
+                      {chapter.title}
+                    </h3>
+                    <p className="text-zinc-400 mb-4">{chapter.description}</p>
+                    
+                    {/* Topics */}
+                    <div className="flex flex-wrap gap-2">
+                      {chapter.topics.map((topic, i) => (
+                        <span key={i} className={`text-xs px-3 py-1 rounded-full ${colors.light} ${colors.border} border ${colors.text}`}>
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex items-center gap-4 md:flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 text-purple-400" />
+                    </div>
+                  </div>
                 </div>
-                <span className="text-lg font-bold text-gray-900">{benefit}</span>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          WHAT MAKES THIS DIFFERENT
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="card-premium relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-pink-500/20 to-transparent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+          
+          <div className="relative max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <span className="badge-purple mb-4">Why This Guide</span>
+              <h2 className="heading-section text-white mb-4">Built by Designers, for Designers</h2>
+              <p className="text-xl text-zinc-400">
+                This isn't a coding bootcamp. It's a design superpower.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-dark-900/50 border border-white/5">
+                <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-4">
+                  <Eye className="w-6 h-6 text-cyan-400" />
+                </div>
+                <h4 className="font-display font-bold text-white text-lg mb-2">Design-First Approach</h4>
+                <p className="text-sm text-zinc-400">Every lesson starts with design thinking. You'll learn to describe your vision to AI the way you'd brief a developer.</p>
               </div>
-            ))}
+
+              <div className="p-6 rounded-2xl bg-dark-900/50 border border-white/5">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-4">
+                  <Wand2 className="w-6 h-6 text-purple-400" />
+                </div>
+                <h4 className="font-display font-bold text-white text-lg mb-2">AI Does the Heavy Lifting</h4>
+                <p className="text-sm text-zinc-400">You won't memorize syntax. You'll learn to direct AI to build exactly what you envision. Focus on design, not debugging.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-dark-900/50 border border-white/5">
+                <div className="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-4">
+                  <Share2 className="w-6 h-6 text-pink-400" />
+                </div>
+                <h4 className="font-display font-bold text-white text-lg mb-2">Production-Ready Output</h4>
+                <p className="text-sm text-zinc-400">Everything you build can go live. No "demo-quality" prototypes—real, shippable code that developers can use.</p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-dark-900/50 border border-white/5">
+                <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4">
+                  <GitBranch className="w-6 h-6 text-amber-400" />
+                </div>
+                <h4 className="font-display font-bold text-white text-lg mb-2">Team Collaboration Built-In</h4>
+                <p className="text-sm text-zinc-400">Learn Git and handoff workflows that make developers love working with you. Bridge the design-dev gap forever.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-purple-600 via-blue-600 to-purple-600 p-12 md:p-20 text-center text-white shadow-2xl">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-        
-        <div className="relative space-y-8">
-          <div className="space-y-4">
-            <h2 className="text-5xl md:text-6xl font-black tracking-tight">
-              Ready to Start Building?
-            </h2>
-            <p className="text-2xl font-medium opacity-90 max-w-2xl mx-auto">
-              Everything you need to learn Cursor, all in one place
-            </p>
-          </div>
+      {/* ═══════════════════════════════════════════════════════════
+          MORE RESOURCES
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="text-center mb-12">
+          <span className="badge-cyan mb-4">More Ways to Learn</span>
+          <h2 className="heading-section text-white mb-4">Dive Deeper</h2>
+        </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
-            <Link to="/beginner-guide" className="btn bg-white text-gray-900 hover:bg-gray-100 text-lg shadow-2xl">
-              <span>Begin Learning</span>
-              <ArrowRight className="w-6 h-6" />
-            </Link>
-            <Link to="/tutorials" className="btn-outline border-white text-white hover:bg-white/20 text-lg">
-              <span>Explore Content</span>
-            </Link>
+        <div className="grid md:grid-cols-4 gap-6">
+          <Link to="/cheatsheet" className="card-dark p-8 group hover:border-cyan-500/30 transition-all duration-500 text-center">
+            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+              <Keyboard className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="font-display font-bold text-white text-xl mb-2">Cheat Sheet</h3>
+            <p className="text-zinc-400 text-sm mb-4">All keyboard shortcuts in one printable page</p>
+            <span className="text-cyan-400 text-sm font-medium flex items-center justify-center gap-2 group-hover:gap-3 transition-all">
+              View <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+
+          <Link to="/training" className="card-dark p-8 group hover:border-cyan-500/30 transition-all duration-500 text-center">
+            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+              <GraduationCap className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="font-display font-bold text-white text-xl mb-2">Training Modules</h3>
+            <p className="text-zinc-400 text-sm mb-4">Deep-dive into specific features and workflows</p>
+            <span className="text-cyan-400 text-sm font-medium flex items-center justify-center gap-2 group-hover:gap-3 transition-all">
+              Explore <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+
+          <Link to="/games" className="card-dark p-8 group hover:border-cyan-500/30 transition-all duration-500 text-center">
+            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500 to-cyan-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+              <Gamepad2 className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="font-display font-bold text-white text-xl mb-2">Practice Games</h3>
+            <p className="text-zinc-400 text-sm mb-4">Build muscle memory with fun challenges</p>
+            <span className="text-cyan-400 text-sm font-medium flex items-center justify-center gap-2 group-hover:gap-3 transition-all">
+              Play <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+
+          <Link to="/best-practices" className="card-dark p-8 group hover:border-cyan-500/30 transition-all duration-500 text-center">
+            <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+              <Lightbulb className="w-8 h-8 text-white" />
+            </div>
+            <h3 className="font-display font-bold text-white text-xl mb-2">Best Practices</h3>
+            <p className="text-zinc-400 text-sm mb-4">Pro tips from experienced design engineers</p>
+            <span className="text-cyan-400 text-sm font-medium flex items-center justify-center gap-2 group-hover:gap-3 transition-all">
+              Learn <ArrowRight className="w-4 h-4" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          FINAL CTA
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="relative">
+        <div className="relative overflow-hidden rounded-[2.5rem] p-12 md:p-20 text-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-600 via-purple-600 to-pink-600 opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-black/50 via-transparent to-black/50" />
+          <div className="absolute inset-0 grid-pattern opacity-20" />
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-cyan-400 rounded-full blur-[120px] opacity-30 animate-float" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-pink-400 rounded-full blur-[120px] opacity-30 animate-float-slow" />
+          
+          <div className="relative space-y-8">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white tracking-tight">
+                Ready to Start Your Journey?
+              </h2>
+              <p className="text-xl md:text-2xl font-medium text-white/80 max-w-2xl mx-auto">
+                Join our community of designers learning to build. Everything you need is right here, free and open.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link 
+                to="/beginner-guide" 
+                className="btn bg-white text-dark-950 hover:bg-zinc-100 text-lg shadow-2xl px-10 group"
+              >
+                <Rocket className="w-5 h-5" />
+                <span className="font-bold">Start Learning</span>
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link 
+                to="/tutorials" 
+                className="btn-secondary border-white/30 text-white hover:bg-white/10 text-lg"
+              >
+                <span>Browse Tutorials</span>
+              </Link>
+            </div>
+
+            <div className="pt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-white/60">
+              <span className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-300" />
+                100% free forever
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-300" />
+                No coding experience needed
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-cyan-300" />
+                Made for our community
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -279,4 +648,3 @@ const Home = () => {
 }
 
 export default Home
-

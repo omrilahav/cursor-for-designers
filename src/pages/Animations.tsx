@@ -29,7 +29,7 @@ const Animations = () => {
 
       {/* Why Animations Matter */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Why Animations Matter in Design</h2>
+        <h2 className="text-3xl font-bold text-white">Why Animations Matter in Design</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6">
@@ -68,7 +68,7 @@ const Animations = () => {
 
       {/* Types of Animations */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Types of Animations You'll Use</h2>
+        <h2 className="text-3xl font-bold text-white">Types of Animations You'll Use</h2>
 
         <div className="space-y-4">
           <div className="bg-white border-2 border-blue-200 rounded-xl p-6">
@@ -170,7 +170,7 @@ const Animations = () => {
             <Zap className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Building Animations with AI</h2>
+            <h2 className="text-3xl font-bold text-white">Building Animations with AI</h2>
             <p className="text-gray-600">Let Cursor do the heavy lifting</p>
           </div>
         </div>
@@ -305,7 +305,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
       {/* Common Animation Patterns */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Common Animation Patterns to Build</h2>
+        <h2 className="text-3xl font-bold text-white">Common Animation Patterns to Build</h2>
         <p className="text-gray-600">Copy these prompts to create polished interactions</p>
 
         <div className="space-y-4">
@@ -414,7 +414,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
       {/* Animation Best Practices */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Animation Best Practices</h2>
+        <h2 className="text-3xl font-bold text-white">Animation Best Practices</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-green-50 rounded-xl p-6">
@@ -509,7 +509,7 @@ const Modal = ({ isOpen, onClose, children }) => {
 
       {/* Testing Your Animations */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Testing Your Animations</h2>
+        <h2 className="text-3xl font-bold text-white">Testing Your Animations</h2>
 
         <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 space-y-4">
           <h3 className="text-xl font-bold text-gray-800">Before Handing Off, Test:</h3>

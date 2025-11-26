@@ -27,7 +27,7 @@ const DesignToPrototype = () => {
 
       {/* The Workflow Overview */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The AI-First Design Workflow</h2>
+        <h2 className="text-3xl font-bold text-white">The AI-First Design Workflow</h2>
         <p className="text-gray-600 text-lg">How to generate world-class designs using only AI and conversation</p>
 
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
@@ -99,7 +99,7 @@ const DesignToPrototype = () => {
             <Figma className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 1: Design Your Mockup</h2>
+            <h2 className="text-3xl font-bold text-white">Step 1: Design Your Mockup</h2>
             <p className="text-gray-600">Start with what you know - visual design</p>
           </div>
         </div>
@@ -194,7 +194,7 @@ const DesignToPrototype = () => {
             <Wand2 className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 2: Describe Your Design to AI</h2>
+            <h2 className="text-3xl font-bold text-white">Step 2: Describe Your Design to AI</h2>
             <p className="text-gray-600">Translate visual into words - AI does the rest</p>
           </div>
         </div>
@@ -306,7 +306,7 @@ const DesignToPrototype = () => {
             <Play className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 3: Build with Cursor Agent</h2>
+            <h2 className="text-3xl font-bold text-white">Step 3: Build with Cursor Agent</h2>
             <p className="text-gray-600">Let AI turn your description into working code</p>
           </div>
         </div>
@@ -422,7 +422,7 @@ const DesignToPrototype = () => {
             <Eye className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 4: Test & Iterate</h2>
+            <h2 className="text-3xl font-bold text-white">Step 4: Test & Iterate</h2>
             <p className="text-gray-600">The magic of working prototypes</p>
           </div>
         </div>

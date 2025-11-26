@@ -17,7 +17,7 @@ interface Tutorial {
   title: string
   description: string
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
-  duration: string
+  duration?: string
   steps: TutorialStep[]
 }
 
@@ -35,7 +35,6 @@ const Tutorials = () => {
       title: 'Design to Prototype',
       description: 'Turn mockups into working prototypes using AI - the complete designer workflow',
       difficulty: 'Beginner' as const,
-      duration: '30 min',
       link: '/design-to-prototype'
     },
     {
@@ -43,7 +42,6 @@ const Tutorials = () => {
       title: 'Building Design Systems',
       description: 'Create scalable component libraries and design tokens that your team can use',
       difficulty: 'Intermediate' as const,
-      duration: '45 min',
       link: '/design-systems'
     },
     {
@@ -51,7 +49,6 @@ const Tutorials = () => {
       title: 'Design Handoff to Developers',
       description: 'Perfect handoffs with production-ready code that developers will love',
       difficulty: 'Intermediate' as const,
-      duration: '30 min',
       link: '/design-handoff'
     },
     {
@@ -59,7 +56,6 @@ const Tutorials = () => {
       title: 'Prototyping Interactions & Animations',
       description: 'Bring designs to life with smooth, delightful animations',
       difficulty: 'Intermediate' as const,
-      duration: '35 min',
       link: '/animations'
     },
     {
@@ -67,7 +63,6 @@ const Tutorials = () => {
       title: 'Team Collaboration for Designers',
       description: 'Work seamlessly with other designers, developers, and stakeholders',
       difficulty: 'Beginner' as const,
-      duration: '25 min',
       link: '/collaboration'
     }
   ]
@@ -841,7 +836,7 @@ const Tutorials = () => {
         {/* Back Button */}
         <button
           onClick={handleCloseTutorial}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 font-medium transition-colors"
+          className="flex items-center gap-2 text-zinc-400 hover:text-white font-medium transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           <span>Back to Tutorials</span>
@@ -852,19 +847,21 @@ const Tutorials = () => {
           <div className="mb-6">
             <div className="flex items-start justify-between gap-4 mb-4">
               <div className="flex-1">
-                <h1 className="text-3xl font-black text-gray-900 mb-2">{selectedTutorial.title}</h1>
-                <p className="text-gray-600 text-lg">{selectedTutorial.description}</p>
+                <h1 className="text-3xl font-black text-white mb-2">{selectedTutorial.title}</h1>
+                <p className="text-zinc-400 text-lg">{selectedTutorial.description}</p>
               </div>
               <span className={`${getDifficultyColor(selectedTutorial.difficulty)} whitespace-nowrap`}>
                 {selectedTutorial.difficulty}
               </span>
             </div>
             
-            <div className="flex items-center gap-6 text-sm text-gray-600">
-              <span className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                {selectedTutorial.duration}
-              </span>
+            <div className="flex items-center gap-6 text-sm text-zinc-400">
+              {selectedTutorial.duration && (
+                <span className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {selectedTutorial.duration}
+                </span>
+              )}
               <span className="flex items-center gap-2">
                 <BookOpen className="w-4 h-4" />
                 {selectedTutorial.steps.length} steps
@@ -878,7 +875,7 @@ const Tutorials = () => {
           
           <div className="space-y-2">
             <div className="flex items-center justify-between text-sm font-medium">
-              <span className="text-gray-700">Step {currentStep + 1} of {selectedTutorial.steps.length}</span>
+              <span className="text-zinc-300">Step {currentStep + 1} of {selectedTutorial.steps.length}</span>
               <span className="text-purple-600">{Math.round(progress)}% Complete</span>
             </div>
             <div className="progress-bar h-3">
@@ -895,22 +892,22 @@ const Tutorials = () => {
               {currentStep + 1}
             </div>
             <div className="flex-1">
-              <h2 className="text-3xl font-black text-gray-900 mb-2">{currentStepData.title}</h2>
-              <p className="text-lg text-gray-600">{currentStepData.description}</p>
+              <h2 className="text-3xl font-black text-white mb-2">{currentStepData.title}</h2>
+              <p className="text-lg text-zinc-400">{currentStepData.description}</p>
             </div>
           </div>
 
           {/* Content */}
           <div className="content-box space-y-4">
             <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="w-5 h-5 text-gray-700" />
-              <h3 className="font-bold text-gray-900 text-lg">What You'll Learn</h3>
+              <BookOpen className="w-5 h-5 text-cyan-400" />
+              <h3 className="font-bold text-white text-lg">What You'll Learn</h3>
             </div>
             <div className="space-y-3">
               {currentStepData.content.map((point, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-gray-700 leading-relaxed">{point}</p>
+                  <p className="text-zinc-300 leading-relaxed">{point}</p>
                 </div>
               ))}
             </div>
@@ -921,13 +918,13 @@ const Tutorials = () => {
             <div className="bg-purple-50 border border-purple-200 rounded-2xl p-6 space-y-4">
               <div className="flex items-center gap-2">
                 <Lightbulb className="w-5 h-5 text-purple-600" />
-                <h3 className="font-bold text-gray-900 text-lg">Pro Tips</h3>
+                <h3 className="font-bold text-white text-lg">Pro Tips</h3>
               </div>
               <div className="space-y-3">
                 {currentStepData.tips.map((tip, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <ChevronRight className="w-5 h-5 text-purple-600 flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-700 leading-relaxed">{tip}</p>
+                    <p className="text-zinc-300 leading-relaxed">{tip}</p>
                   </div>
                 ))}
               </div>
@@ -939,9 +936,9 @@ const Tutorials = () => {
             <div className="bg-green-50 border-2 border-green-500 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-3">
                 <Target className="w-5 h-5 text-green-600" />
-                <h3 className="font-bold text-gray-900 text-lg">Try This Exercise</h3>
+                <h3 className="font-bold text-white text-lg">Try This Exercise</h3>
               </div>
-              <p className="text-gray-700 leading-relaxed">{currentStepData.exercise}</p>
+              <p className="text-zinc-300 leading-relaxed">{currentStepData.exercise}</p>
             </div>
           )}
         </div>
@@ -957,7 +954,7 @@ const Tutorials = () => {
             <span>Previous</span>
           </button>
           
-          <span className="text-sm font-medium text-gray-600">
+          <span className="text-sm font-medium text-zinc-400">
             Step {currentStep + 1} / {selectedTutorial.steps.length}
           </span>
           
@@ -979,13 +976,13 @@ const Tutorials = () => {
                   <Award className="w-10 h-10 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-3xl font-black text-gray-900 mb-2">Congratulations!</h3>
-                  <p className="text-lg text-gray-600">
+                  <h3 className="text-3xl font-black text-white mb-2">Congratulations!</h3>
+                  <p className="text-lg text-zinc-400">
                     You've completed <strong>"{selectedTutorial.title}"</strong>
                   </p>
                 </div>
-                <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-xl p-6">
-                  <div className="flex items-center justify-center gap-2 text-2xl font-bold text-gray-900">
+                <div className="bg-dark-800 border border-white/10 rounded-xl p-6">
+                  <div className="flex items-center justify-center gap-2 text-2xl font-bold text-white">
                     <Star className="w-6 h-6 fill-amber-400 text-amber-400" />
                     <span>+100 Points</span>
                   </div>
@@ -1029,12 +1026,12 @@ const Tutorials = () => {
         
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
           <div>
-            <h2 className="text-3xl font-black text-gray-900 mb-2">Your Progress</h2>
-            <p className="text-gray-600 font-medium">
+            <h2 className="text-3xl font-black text-white mb-2">Your Progress</h2>
+            <p className="text-zinc-400 font-medium">
               {tutorials.filter(t => isTutorialCompleted(t.id)).length} of {tutorials.length} tutorials completed
             </p>
           </div>
-          <div className="text-5xl font-black gradient-text">
+          <div className="text-5xl font-black text-gradient-cyan">
             {Math.round((tutorials.filter(t => isTutorialCompleted(t.id)).length / tutorials.length) * 100)}%
           </div>
         </div>
@@ -1050,11 +1047,11 @@ const Tutorials = () => {
       {/* Designer-Focused Tutorials */}
       <div className="space-y-6">
         <div className="flex items-center gap-3">
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
-          <h2 className="text-2xl font-black text-gray-900">🎨 Designer Workflows</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-300 to-transparent"></div>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+          <h2 className="text-2xl font-black text-white">🎨 Designer Workflows</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
         </div>
-        <p className="text-center text-gray-600 max-w-3xl mx-auto">
+        <p className="text-center text-zinc-400 max-w-3xl mx-auto">
           Complete guides for product and UX/UI designers to build prototypes, design systems, and collaborate with teams
         </p>
 
@@ -1076,24 +1073,26 @@ const Tutorials = () => {
                   {/* Header */}
                   <div>
                     <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="text-3xl font-black text-gray-900 group-hover:gradient-text transition-all leading-tight">
+                      <h3 className="text-3xl font-black text-white group-hover:text-gradient-cyan transition-all leading-tight">
                         {tutorial.title}
                       </h3>
                       <span className={`${getDifficultyColor(tutorial.difficulty)} whitespace-nowrap text-xs`}>
                         {tutorial.difficulty}
                       </span>
                     </div>
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-zinc-400 leading-relaxed text-lg">
                       {tutorial.description}
                     </p>
                   </div>
 
                   {/* Meta Info */}
-                  <div className="flex items-center gap-6 text-sm font-semibold text-gray-600">
-                    <span className="flex items-center gap-2">
-                      <Clock className="w-5 h-5" />
-                      {tutorial.duration}
-                    </span>
+                  <div className="flex items-center gap-6 text-sm font-semibold text-zinc-400">
+                    {tutorial.duration && (
+                      <span className="flex items-center gap-2">
+                        <Clock className="w-5 h-5" />
+                        {tutorial.duration}
+                      </span>
+                    )}
                     <span className="flex items-center gap-2">
                       <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
                       150
@@ -1129,10 +1128,10 @@ const Tutorials = () => {
       <div className="space-y-6">
         <div className="flex items-center gap-3">
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
-          <h2 className="text-2xl font-black text-gray-900">💻 Interactive Tutorials</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
+          <h2 className="text-2xl font-black text-white">💻 Interactive Tutorials</h2>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
         </div>
-        <p className="text-center text-gray-600 max-w-3xl mx-auto">
+        <p className="text-center text-zinc-400 max-w-3xl mx-auto">
           Step-by-step hands-on tutorials where you learn by doing
         </p>
 
@@ -1155,24 +1154,26 @@ const Tutorials = () => {
                 {/* Header */}
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-4">
-                    <h3 className="text-3xl font-black text-gray-900 group-hover:gradient-text transition-all leading-tight">
+                    <h3 className="text-3xl font-black text-white group-hover:text-gradient-cyan transition-all leading-tight">
                       {tutorial.title}
                     </h3>
                     <span className={`${getDifficultyColor(tutorial.difficulty)} whitespace-nowrap text-xs`}>
                       {tutorial.difficulty}
                     </span>
                   </div>
-                  <p className="text-gray-600 leading-relaxed text-lg">
+                  <p className="text-zinc-400 leading-relaxed text-lg">
                     {tutorial.description}
                   </p>
                 </div>
 
                 {/* Meta Info */}
-                <div className="flex items-center gap-6 text-sm font-semibold text-gray-600">
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-5 h-5" />
-                    {tutorial.duration}
-                  </span>
+                <div className="flex items-center gap-6 text-sm font-semibold text-zinc-400">
+                  {tutorial.duration && (
+                    <span className="flex items-center gap-2">
+                      <Clock className="w-5 h-5" />
+                      {tutorial.duration}
+                    </span>
+                  )}
                   <span className="flex items-center gap-2">
                     <BookOpen className="w-5 h-5" />
                     {tutorial.steps.length} steps

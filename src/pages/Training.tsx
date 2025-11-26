@@ -333,7 +333,7 @@ const Training = () => {
 
         <div className="card space-y-6">
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedLesson.title}</h2>
+            <h2 className="text-3xl font-bold text-white mb-2">{selectedLesson.title}</h2>
             <div className="h-1 w-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded"></div>
           </div>
 
@@ -413,7 +413,7 @@ const Training = () => {
               <selectedModule.icon className="w-8 h-8 text-white" />
             </div>
             <div className="flex-1">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">{selectedModule.title}</h2>
+              <h2 className="text-3xl font-bold text-white mb-2">{selectedModule.title}</h2>
               <p className="text-gray-600 mb-4">{selectedModule.description}</p>
               
               <div className="flex items-center space-x-4">

@@ -190,7 +190,7 @@ const Troubleshooting = () => {
 
       {/* The Debugging Mindset */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The Debugging Mindset</h2>
+        <h2 className="text-3xl font-bold text-white">The Debugging Mindset</h2>
         
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 space-y-4">
           <p className="text-lg text-gray-800">
@@ -252,7 +252,7 @@ const Troubleshooting = () => {
               <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-600 to-red-600 flex items-center justify-center">
                 <CategoryIcon className="w-7 h-7 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-gray-800">{category.category}</h2>
+              <h2 className="text-3xl font-bold text-white">{category.category}</h2>
             </div>
 
             <div className="space-y-4">
@@ -291,7 +291,7 @@ const Troubleshooting = () => {
 
       {/* How to Get Help */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">How to Get Help When Really Stuck</h2>
+        <h2 className="text-3xl font-bold text-white">How to Get Help When Really Stuck</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-xl p-6 space-y-4">
@@ -372,7 +372,7 @@ const Troubleshooting = () => {
 
       {/* Prevention Tips */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Preventing Problems</h2>
+        <h2 className="text-3xl font-bold text-white">Preventing Problems</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-blue-50 rounded-lg p-5">
@@ -443,4 +443,5 @@ const Troubleshooting = () => {
 }
 
 export default Troubleshooting
+
 

@@ -27,7 +27,7 @@ const GitBasics = () => {
 
       {/* What is Git */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">What is Git? (Explained Simply)</h2>
+        <h2 className="text-3xl font-bold text-white">What is Git? (Explained Simply)</h2>
         
         <div className="bg-blue-50 rounded-lg p-6 space-y-4">
           <p className="text-lg text-gray-700">
@@ -93,7 +93,7 @@ const GitBasics = () => {
 
       {/* Git vs GitHub */}
       <div className="card space-y-4">
-        <h2 className="text-3xl font-bold text-gray-800">Git vs. GitHub - What's the Difference?</h2>
+        <h2 className="text-3xl font-bold text-white">Git vs. GitHub - What's the Difference?</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-blue-50 rounded-lg p-6">
@@ -129,7 +129,7 @@ const GitBasics = () => {
 
       {/* Core Concepts */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The 3 Core Concepts</h2>
+        <h2 className="text-3xl font-bold text-white">The 3 Core Concepts</h2>
 
         <div className="space-y-4">
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300 rounded-lg p-6">
@@ -219,7 +219,7 @@ const GitBasics = () => {
 
       {/* Using Git in Cursor */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Using Git in Cursor (The Easy Way)</h2>
+        <h2 className="text-3xl font-bold text-white">Using Git in Cursor (The Easy Way)</h2>
         <p className="text-gray-600">Cursor has visual Git tools - no need to memorize commands!</p>
 
         <div className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg p-6 space-y-6">
@@ -334,7 +334,7 @@ const GitBasics = () => {
 
       {/* Best Practices */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Git Best Practices for Designers</h2>
+        <h2 className="text-3xl font-bold text-white">Git Best Practices for Designers</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-green-50 rounded-lg p-6">
@@ -361,7 +361,7 @@ const GitBasics = () => {
 
       {/* Collaboration Workflows */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Collaborating with GitHub</h2>
+        <h2 className="text-3xl font-bold text-white">Collaborating with GitHub</h2>
         <p className="text-gray-600">How to work with teammates on the same project</p>
 
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 space-y-6">
@@ -537,7 +537,7 @@ const GitBasics = () => {
 
       {/* Branching (Advanced) */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Branches: Working on Features Separately (Advanced)</h2>
+        <h2 className="text-3xl font-bold text-white">Branches: Working on Features Separately (Advanced)</h2>
         <p className="text-gray-600">For when you want to experiment without affecting the main code</p>
 
         <div className="bg-blue-50 border-2 border-blue-300 rounded-xl p-6 space-y-4">

@@ -336,7 +336,7 @@ const Games = () => {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            <h2 className="text-3xl font-bold text-white mb-2">
               {isPerfect ? 'Perfect Score! 🎉' : passed ? 'Great Job! ⭐' : 'Good Try! 💪'}
             </h2>
             <p className="text-gray-600 text-lg">

@@ -27,7 +27,7 @@ const TerminalBasics = () => {
 
       {/* What is Terminal */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">What is the Terminal?</h2>
+        <h2 className="text-3xl font-bold text-white">What is the Terminal?</h2>
         
         <div className="bg-blue-50 rounded-lg p-6 space-y-4">
           <p className="text-lg text-gray-700">
@@ -59,7 +59,7 @@ const TerminalBasics = () => {
 
       {/* Opening Terminal */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Opening the Terminal in Cursor</h2>
+        <h2 className="text-3xl font-bold text-white">Opening the Terminal in Cursor</h2>
         
         <div className="space-y-4">
           <div className="bg-gradient-to-r from-primary-50 to-accent-50 rounded-lg p-6">
@@ -126,7 +126,7 @@ const TerminalBasics = () => {
 
       {/* Essential Commands */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">The 10 Commands You Actually Need</h2>
+        <h2 className="text-3xl font-bold text-white">The 10 Commands You Actually Need</h2>
         <p className="text-gray-600">
           These are the only commands most designers ever use. Master these and you're set!
         </p>
@@ -309,7 +309,7 @@ const TerminalBasics = () => {
 
       {/* Common Pitfalls */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">Common Mistakes & How to Fix Them</h2>
+        <h2 className="text-3xl font-bold text-white">Common Mistakes & How to Fix Them</h2>
 
         <div className="space-y-4">
           <div className="bg-red-50 border-l-4 border-red-500 p-6">

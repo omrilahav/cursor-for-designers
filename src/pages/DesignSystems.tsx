@@ -34,7 +34,7 @@ const DesignSystems = () => {
 
       {/* What is a Design System */}
       <div className="card space-y-6">
-        <h2 className="text-3xl font-bold text-gray-800">What is a Design System?</h2>
+        <h2 className="text-3xl font-bold text-white">What is a Design System?</h2>
         
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6 space-y-4">
           <p className="text-lg text-gray-800">
@@ -90,7 +90,7 @@ const DesignSystems = () => {
             <Palette className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 1: Create Design Tokens</h2>
+            <h2 className="text-3xl font-bold text-white">Step 1: Create Design Tokens</h2>
             <p className="text-gray-600">Define your design foundation</p>
           </div>
         </div>
@@ -370,7 +370,7 @@ export const breakpoints = {
             <Package className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 2: Build Your Component Library</h2>
+            <h2 className="text-3xl font-bold text-white">Step 2: Build Your Component Library</h2>
             <p className="text-gray-600">Create reusable, consistent components</p>
           </div>
         </div>
@@ -504,7 +504,7 @@ export const breakpoints = {
             <Layers className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Step 3: Document Your System</h2>
+            <h2 className="text-3xl font-bold text-white">Step 3: Document Your System</h2>
             <p className="text-gray-600">Make it easy for your team to use</p>
           </div>
         </div>
@@ -579,7 +579,7 @@ export const breakpoints = {
             <RefreshCw className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Maintaining & Scaling Your System</h2>
+            <h2 className="text-3xl font-bold text-white">Maintaining & Scaling Your System</h2>
             <p className="text-gray-600">Keep it healthy as it grows</p>
           </div>
         </div>
@@ -634,7 +634,7 @@ export const breakpoints = {
             <Share2 className="w-8 h-8 text-white" />
           </div>
           <div>
-            <h2 className="text-3xl font-bold text-gray-800">Sharing with Your Team</h2>
+            <h2 className="text-3xl font-bold text-white">Sharing with Your Team</h2>
             <p className="text-gray-600">Get everyone using the system</p>
           </div>
         </div>
