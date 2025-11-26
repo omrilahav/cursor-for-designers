@@ -29,7 +29,14 @@ const Tutorials = () => {
   const navigate = useNavigate()
 
   // Designer-focused tutorials (link to dedicated pages)
-  const designerTutorials = [
+  const designerTutorials: Array<{
+    id: string
+    title: string
+    description: string
+    difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
+    duration?: string
+    link: string
+  }> = [
     {
       id: 'design-to-prototype',
       title: 'Design to Prototype',

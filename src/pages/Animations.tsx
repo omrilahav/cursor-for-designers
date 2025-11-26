@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Sparkles, Play, Zap, MousePointer, Move, Eye, CheckCircle, ArrowRight, Layers, Repeat } from 'lucide-react'
+import { Sparkles, Zap, MousePointer, Move, Eye, CheckCircle, ArrowRight, Layers, Repeat, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useProgress } from '../contexts/ProgressContext'
 
